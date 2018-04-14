@@ -14,6 +14,7 @@ namespace InternshipControlSystem.Model
         public String RFC;
         public int Company_Assessor_Id;
 
+        // Constructor de la Clase
         public Company(int Id, String Name, String RFC, int Company_Assessor_Id)
         {
             this.Id = Id;

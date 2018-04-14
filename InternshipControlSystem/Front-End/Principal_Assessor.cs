@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InternshipControlSystem.Front_End
 {
-    public partial class PrincipalAssessor : Form
+    public partial class Principal_Assessor : Form
     {
-        public PrincipalAssessor()
+        public Principal_Assessor()
         {
             InitializeComponent();
         }

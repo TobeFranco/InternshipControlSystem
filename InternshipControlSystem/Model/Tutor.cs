@@ -8,5 +8,17 @@ namespace InternshipControlSystem.Model
 {
     class Tutor
     {
+        // Variables de Clase
+        public int Id;
+        public String FirstName;
+        public String LastName;
+
+        // Constructor de la clase
+        public Tutor(int Id, String FirstName, String LastName)
+        {
+            this.Id = Id;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+        }
     }
 }
