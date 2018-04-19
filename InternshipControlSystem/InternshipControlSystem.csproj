@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Back-End\Conection.cs" />
+    <Compile Include="Back-End\RevisorsDAO.cs" />
     <Compile Include="Front-End\Login.cs">
       <SubType>Form</SubType>
     </Compile>
