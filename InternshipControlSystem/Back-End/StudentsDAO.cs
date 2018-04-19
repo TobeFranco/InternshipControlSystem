@@ -76,12 +76,14 @@ namespace InternshipControlSystem.Back_End
             }
         }
 
-        public static void update(Student student){
+        public static void UpdateItem(Student student){
             MySqlConnection conn = Conection.getConnection();
             try{
                 conn.Open();
-                string sqlStatement = "UPDATE students set control_id=@controlId, first_name=@firstName, last_name=@lastName, career=@career, semester=@semester, cordinator=@coordinator, tutor_id=@tutorId";
+                string sqlStatement = "UPDATE students set control_id=@controlId, first_name=@firstName, last_name=@lastName," +
+                    "career=@career, semester=@semester, cordinator=@coordinator, tutor_id=@tutorId WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", student.Id);
                 cmd.Parameters.AddWithValue("@controlId", student.Control_id);
                 cmd.Parameters.AddWithValue("@firstName", student.First_name);
                 cmd.Parameters.AddWithValue("@lastName", student.Last_name);
