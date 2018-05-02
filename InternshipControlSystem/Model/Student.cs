@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternshipControlSystem.Model
 {
-    class Student
+    public class Student
     {
         // Variables de clase
         public int Id;
