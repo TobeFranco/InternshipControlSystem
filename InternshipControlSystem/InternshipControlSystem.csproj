@@ -67,11 +67,23 @@
     <Compile Include="Front-End\Request.Designer.cs">
       <DependentUpon>Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="Front-End\studentFollow-up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-End\studentFollow-up.Designer.cs">
+      <DependentUpon>studentFollow-up.cs</DependentUpon>
+    </Compile>
     <Compile Include="Front-End\Student_Catalog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Front-End\Student_Catalog.Designer.cs">
       <DependentUpon>Student_Catalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Front-End\TakeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-End\TakeData.Designer.cs">
+      <DependentUpon>TakeData.cs</DependentUpon>
     </Compile>
     <Compile Include="Front-End\Tracing.cs">
       <SubType>Form</SubType>
@@ -94,6 +106,18 @@
     <EmbeddedResource Include="Front-End\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\Principal_Assessor.resx">
+      <DependentUpon>Principal_Assessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\studentFollow-up.resx">
+      <DependentUpon>studentFollow-up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\Student_Catalog.resx">
+      <DependentUpon>Student_Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\TakeData.resx">
+      <DependentUpon>TakeData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -102,6 +126,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +141,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\25c7116aef0d5d235d40f246ac00ea28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
