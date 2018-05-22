@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.pnlStudentOverview = new System.Windows.Forms.Panel();
-            this.btnStudentDetails = new System.Windows.Forms.Button();
-            this.lblPeriodHolder = new System.Windows.Forms.Label();
-            this.lblPeriod = new System.Windows.Forms.Label();
-            this.lblProyectNameHolder = new System.Windows.Forms.Label();
             this.lblProyectName = new System.Windows.Forms.Label();
             this.lblNoControlHolder = new System.Windows.Forms.Label();
+            this.lblProyectNameHolder = new System.Windows.Forms.Label();
             this.lblNoControl = new System.Windows.Forms.Label();
+            this.lblPeriodHolder = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblPeriod = new System.Windows.Forms.Label();
             this.lblStudentNameHolder = new System.Windows.Forms.Label();
+            this.btnStudentDetails = new System.Windows.Forms.Button();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblPnlHeader = new System.Windows.Forms.Label();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
@@ -45,19 +46,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbStudentOverview = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.NoControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Career = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Assessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlStudentOverview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStudentOverview)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlStudentOverview
             // 
             this.pnlStudentOverview.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.pnlStudentOverview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlStudentOverview.Controls.Add(this.button1);
             this.pnlStudentOverview.Controls.Add(this.lblProyectName);
             this.pnlStudentOverview.Controls.Add(this.lblNoControlHolder);
             this.pnlStudentOverview.Controls.Add(this.lblProyectNameHolder);
@@ -68,7 +72,6 @@
             this.pnlStudentOverview.Controls.Add(this.lblStudentNameHolder);
             this.pnlStudentOverview.Controls.Add(this.btnStudentDetails);
             this.pnlStudentOverview.Controls.Add(this.lblStudentName);
-            this.pnlStudentOverview.Controls.Add(this.pbStudentOverview);
             this.pnlStudentOverview.Controls.Add(this.lblPnlHeader);
             this.pnlStudentOverview.ForeColor = System.Drawing.Color.White;
             this.pnlStudentOverview.Location = new System.Drawing.Point(0, 0);
@@ -76,54 +79,11 @@
             this.pnlStudentOverview.Size = new System.Drawing.Size(218, 470);
             this.pnlStudentOverview.TabIndex = 5;
             // 
-            // btnStudentDetails
-            // 
-            this.btnStudentDetails.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnStudentDetails.FlatAppearance.BorderSize = 0;
-            this.btnStudentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnStudentDetails.Location = new System.Drawing.Point(-1, 434);
-            this.btnStudentDetails.Name = "btnStudentDetails";
-            this.btnStudentDetails.Size = new System.Drawing.Size(218, 31);
-            this.btnStudentDetails.TabIndex = 7;
-            this.btnStudentDetails.Text = "Detalles de Alumno";
-            this.btnStudentDetails.UseVisualStyleBackColor = true;
-            // 
-            // lblPeriodHolder
-            // 
-            this.lblPeriodHolder.AutoSize = true;
-            this.lblPeriodHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblPeriodHolder.Location = new System.Drawing.Point(17, 381);
-            this.lblPeriodHolder.Name = "lblPeriodHolder";
-            this.lblPeriodHolder.Size = new System.Drawing.Size(37, 13);
-            this.lblPeriodHolder.TabIndex = 6;
-            this.lblPeriodHolder.Text = "----------";
-            // 
-            // lblPeriod
-            // 
-            this.lblPeriod.AutoSize = true;
-            this.lblPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPeriod.Location = new System.Drawing.Point(12, 345);
-            this.lblPeriod.Name = "lblPeriod";
-            this.lblPeriod.Size = new System.Drawing.Size(57, 17);
-            this.lblPeriod.TabIndex = 5;
-            this.lblPeriod.Text = "Periodo";
-            // 
-            // lblProyectNameHolder
-            // 
-            this.lblProyectNameHolder.AutoSize = true;
-            this.lblProyectNameHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblProyectNameHolder.Location = new System.Drawing.Point(17, 323);
-            this.lblProyectNameHolder.Name = "lblProyectNameHolder";
-            this.lblProyectNameHolder.Size = new System.Drawing.Size(37, 13);
-            this.lblProyectNameHolder.TabIndex = 4;
-            this.lblProyectNameHolder.Text = "----------";
-            // 
             // lblProyectName
             // 
             this.lblProyectName.AutoSize = true;
             this.lblProyectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblProyectName.Location = new System.Drawing.Point(11, 297);
+            this.lblProyectName.Location = new System.Drawing.Point(11, 253);
             this.lblProyectName.Name = "lblProyectName";
             this.lblProyectName.Size = new System.Drawing.Size(68, 17);
             this.lblProyectName.TabIndex = 3;
@@ -133,37 +93,90 @@
             // 
             this.lblNoControlHolder.AutoSize = true;
             this.lblNoControlHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblNoControlHolder.Location = new System.Drawing.Point(14, 261);
+            this.lblNoControlHolder.Location = new System.Drawing.Point(14, 217);
             this.lblNoControlHolder.Name = "lblNoControlHolder";
             this.lblNoControlHolder.Size = new System.Drawing.Size(37, 13);
             this.lblNoControlHolder.TabIndex = 3;
             this.lblNoControlHolder.Text = "----------";
             // 
+            // lblProyectNameHolder
+            // 
+            this.lblProyectNameHolder.AutoSize = true;
+            this.lblProyectNameHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblProyectNameHolder.Location = new System.Drawing.Point(17, 279);
+            this.lblProyectNameHolder.Name = "lblProyectNameHolder";
+            this.lblProyectNameHolder.Size = new System.Drawing.Size(37, 13);
+            this.lblProyectNameHolder.TabIndex = 4;
+            this.lblProyectNameHolder.Text = "----------";
+            // 
             // lblNoControl
             // 
             this.lblNoControl.AutoSize = true;
             this.lblNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNoControl.Location = new System.Drawing.Point(10, 235);
+            this.lblNoControl.Location = new System.Drawing.Point(10, 191);
             this.lblNoControl.Name = "lblNoControl";
             this.lblNoControl.Size = new System.Drawing.Size(83, 17);
             this.lblNoControl.TabIndex = 2;
             this.lblNoControl.Text = "No. Control:";
             // 
+            // lblPeriodHolder
+            // 
+            this.lblPeriodHolder.AutoSize = true;
+            this.lblPeriodHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblPeriodHolder.Location = new System.Drawing.Point(17, 337);
+            this.lblPeriodHolder.Name = "lblPeriodHolder";
+            this.lblPeriodHolder.Size = new System.Drawing.Size(37, 13);
+            this.lblPeriodHolder.TabIndex = 6;
+            this.lblPeriodHolder.Text = "----------";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Estudiante";
+            // 
+            // lblPeriod
+            // 
+            this.lblPeriod.AutoSize = true;
+            this.lblPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPeriod.Location = new System.Drawing.Point(12, 301);
+            this.lblPeriod.Name = "lblPeriod";
+            this.lblPeriod.Size = new System.Drawing.Size(57, 17);
+            this.lblPeriod.TabIndex = 5;
+            this.lblPeriod.Text = "Periodo";
+            // 
             // lblStudentNameHolder
             // 
             this.lblStudentNameHolder.AutoSize = true;
             this.lblStudentNameHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblStudentNameHolder.Location = new System.Drawing.Point(12, 209);
+            this.lblStudentNameHolder.Location = new System.Drawing.Point(12, 165);
             this.lblStudentNameHolder.Name = "lblStudentNameHolder";
             this.lblStudentNameHolder.Size = new System.Drawing.Size(37, 13);
             this.lblStudentNameHolder.TabIndex = 1;
             this.lblStudentNameHolder.Text = "----------";
             // 
+            // btnStudentDetails
+            // 
+            this.btnStudentDetails.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.btnStudentDetails.FlatAppearance.BorderSize = 0;
+            this.btnStudentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnStudentDetails.Location = new System.Drawing.Point(-1, 392);
+            this.btnStudentDetails.Name = "btnStudentDetails";
+            this.btnStudentDetails.Size = new System.Drawing.Size(218, 31);
+            this.btnStudentDetails.TabIndex = 7;
+            this.btnStudentDetails.Text = "Detalles de Alumno";
+            this.btnStudentDetails.UseVisualStyleBackColor = false;
+            this.btnStudentDetails.Click += new System.EventHandler(this.btnStudentDetails_Click);
+            // 
             // lblStudentName
             // 
             this.lblStudentName.AutoSize = true;
             this.lblStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblStudentName.Location = new System.Drawing.Point(10, 183);
+            this.lblStudentName.Location = new System.Drawing.Point(10, 139);
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(62, 17);
             this.lblStudentName.TabIndex = 0;
@@ -181,11 +194,20 @@
             // 
             // dgvStudents
             // 
+            this.dgvStudents.AllowUserToAddRows = false;
+            this.dgvStudents.AllowUserToDeleteRows = false;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NoControl,
+            this.studentName,
+            this.Career,
+            this.Assessor});
             this.dgvStudents.Location = new System.Drawing.Point(224, 44);
             this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.ReadOnly = true;
             this.dgvStudents.Size = new System.Drawing.Size(709, 413);
             this.dgvStudents.TabIndex = 9;
+            this.dgvStudents.SelectionChanged += new System.EventHandler(this.dgvStudents_SelectionChanged);
             // 
             // lblStudentId
             // 
@@ -203,6 +225,7 @@
             this.txtNoControlFilter.Name = "txtNoControlFilter";
             this.txtNoControlFilter.Size = new System.Drawing.Size(169, 20);
             this.txtNoControlFilter.TabIndex = 7;
+            this.txtNoControlFilter.TextChanged += new System.EventHandler(this.txtNoControlFilter_TextChanged);
             // 
             // label2
             // 
@@ -235,26 +258,44 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pbStudentOverview
+            // NoControl
             // 
-            this.pbStudentOverview.Image = global::InternshipControlSystem.Properties.Resources._25c7116aef0d5d235d40f246ac00ea28;
-            this.pbStudentOverview.Location = new System.Drawing.Point(62, 43);
-            this.pbStudentOverview.Name = "pbStudentOverview";
-            this.pbStudentOverview.Size = new System.Drawing.Size(100, 99);
-            this.pbStudentOverview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbStudentOverview.TabIndex = 1;
-            this.pbStudentOverview.TabStop = false;
+            this.NoControl.Frozen = true;
+            this.NoControl.HeaderText = "No. Control";
+            this.NoControl.Name = "NoControl";
+            this.NoControl.ReadOnly = true;
             // 
-            // label1
+            // studentName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Estudiante";
+            this.studentName.Frozen = true;
+            this.studentName.HeaderText = "Nombre Alumno";
+            this.studentName.Name = "studentName";
+            this.studentName.ReadOnly = true;
+            // 
+            // Career
+            // 
+            this.Career.Frozen = true;
+            this.Career.HeaderText = "Carrera";
+            this.Career.Name = "Career";
+            this.Career.ReadOnly = true;
+            // 
+            // Assessor
+            // 
+            this.Assessor.Frozen = true;
+            this.Assessor.HeaderText = "Asesor";
+            this.Assessor.Name = "Assessor";
+            this.Assessor.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(63, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Student_Catalog
             // 
@@ -270,13 +311,11 @@
             this.Controls.Add(this.label2);
             this.Name = "Student_Catalog";
             this.Text = "Student_Catalog";
-            this.Load += new System.EventHandler(this.Student_Catalog_Load);
             this.pnlStudentOverview.ResumeLayout(false);
             this.pnlStudentOverview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStudentOverview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +333,6 @@
         private System.Windows.Forms.Label lblNoControl;
         private System.Windows.Forms.Label lblStudentNameHolder;
         private System.Windows.Forms.Label lblStudentName;
-        private System.Windows.Forms.PictureBox pbStudentOverview;
         private System.Windows.Forms.Label lblPnlHeader;
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Label lblStudentId;
@@ -303,5 +341,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoControl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Career;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Assessor;
+        private System.Windows.Forms.Button button1;
     }
 }

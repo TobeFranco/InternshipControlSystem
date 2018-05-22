@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Back-End\Company_AssessorsDAO.cs" />
     <Compile Include="Back-End\Conection.cs" />
     <Compile Include="Back-End\AssessorsDAO.cs" />
+    <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
     <Compile Include="Front-End\Login.cs">
       <SubType>Form</SubType>
@@ -72,6 +74,12 @@
     </Compile>
     <Compile Include="Front-End\studentFollow-up.Designer.cs">
       <DependentUpon>studentFollow-up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Front-End\StudentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-End\StudentDetails.Designer.cs">
+      <DependentUpon>StudentDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Front-End\Student_Catalog.cs">
       <SubType>Form</SubType>
@@ -117,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\TakeData.resx">
       <DependentUpon>TakeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\StudentDetails.resx">
+      <DependentUpon>StudentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
