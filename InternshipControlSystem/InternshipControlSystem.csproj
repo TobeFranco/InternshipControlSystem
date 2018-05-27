@@ -32,7 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Datos">
+      <HintPath>..\..\..\BaseDeDatos_Practica\Datos\bin\Debug\Datos.dll</HintPath>
+    </Reference>
+    <Reference Include="Modelo">
+      <HintPath>..\..\..\BaseDeDatos_Practica\Datos\bin\Debug\Modelo.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\BaseDeDatos_Practica\Datos\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +57,7 @@
     <Compile Include="Back-End\Company_AssessorsDAO.cs" />
     <Compile Include="Back-End\Conection.cs" />
     <Compile Include="Back-End\AssessorsDAO.cs" />
+    <Compile Include="Back-End\DaoUsuario.cs" />
     <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
     <Compile Include="Front-End\Login.cs">

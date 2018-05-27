@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace InternshipControlSystem.Front_End
 {
@@ -52,5 +53,26 @@ namespace InternshipControlSystem.Front_End
         {
             this.Close();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;database=internships;port=3306;password=tereteamo12345");
+            conectar.Open();
+            MySqlCommand comando = new MySqlCommand();
+            MySqlConnection con = new MySqlConnection();
+            comando.Connection = conectar;
+            comando.CommandText = ("select * from usuarios where usuario= '"+txtUser.Text+"' and passwor=sha1('"+txtPassword.Text+"')");
+            MySqlDataReader leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                MessageBox.Show("hola");
+            }
+            else
+            {
+                MessageBox.Show("h");
+            }
+        }
+
     }
+    
 }
