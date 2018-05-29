@@ -45,5 +45,11 @@ namespace InternshipControlSystem.Front_End
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void btnSolicitud_Click(object sender, EventArgs e)
+        {
+            Request obje = new Request();
+            obje.Show();
+        }
     }
 }

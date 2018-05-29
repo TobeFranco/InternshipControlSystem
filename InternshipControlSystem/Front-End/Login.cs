@@ -61,15 +61,27 @@ namespace InternshipControlSystem.Front_End
             MySqlCommand comando = new MySqlCommand();
             MySqlConnection con = new MySqlConnection();
             comando.Connection = conectar;
-            comando.CommandText = ("select * from usuarios where usuario= '"+txtUser.Text+"' and passwor=sha1('"+txtPassword.Text+"')");
+            String contraseña = txtPassword.Text;
+            String usuario = txtUser.Text;
+            comando.CommandText = ("select * from usuarios where usuario= '"+usuario.Trim()+"' and passwor=sha1('"+contraseña.Trim()+"')");
             MySqlDataReader leer = comando.ExecuteReader();
             if (leer.Read())
             {
-                MessageBox.Show("hola");
+                Principal_Assessor obj = new Principal_Assessor();
+                obj.Show();
+                Login lo = new Login();
+                lo.Hide();
+                txtPassword.Text = "";
+                txtUser.Text = "";
+                
             }
             else
             {
-                MessageBox.Show("h");
+                MessageBox.Show("DATOS INCORRECTOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                contraseña = null;
+                usuario = null;
+                txtPassword.Text = "";
+                txtUser.Text = "";
             }
         }
 

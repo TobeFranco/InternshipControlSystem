@@ -120,6 +120,7 @@
             this.btnSolicitud.Text = "SOLICITUD";
             this.btnSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSolicitud.UseVisualStyleBackColor = true;
+            this.btnSolicitud.Click += new System.EventHandler(this.btnSolicitud_Click);
             // 
             // pictureBox2
             // 
