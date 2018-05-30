@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -81,6 +80,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -115,6 +115,10 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.SEMESTRE = new System.Windows.Forms.Label();
+            this.txtSemestre = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -189,50 +193,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Empresa";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.txtPhone);
-            this.tabPage2.Controls.Add(this.label53);
-            this.tabPage2.Controls.Add(this.txtphonehouse);
-            this.tabPage2.Controls.Add(this.label52);
-            this.tabPage2.Controls.Add(this.txtNumberInsurance);
-            this.tabPage2.Controls.Add(this.label51);
-            this.tabPage2.Controls.Add(this.cmbSocialSecurity);
-            this.tabPage2.Controls.Add(this.label50);
-            this.tabPage2.Controls.Add(this.txtCity);
-            this.tabPage2.Controls.Add(this.label49);
-            this.tabPage2.Controls.Add(this.txtEmail);
-            this.tabPage2.Controls.Add(this.label48);
-            this.tabPage2.Controls.Add(this.txtHome);
-            this.tabPage2.Controls.Add(this.label47);
-            this.tabPage2.Controls.Add(this.txtCareer);
-            this.tabPage2.Controls.Add(this.label46);
-            this.tabPage2.Controls.Add(this.txtNumberControl);
-            this.tabPage2.Controls.Add(this.label45);
-            this.tabPage2.Controls.Add(this.txtNameResident);
-            this.tabPage2.Controls.Add(this.label44);
-            this.tabPage2.Controls.Add(this.label43);
-            this.tabPage2.Controls.Add(this.label32);
-            this.tabPage2.Controls.Add(this.label33);
-            this.tabPage2.Controls.Add(this.label34);
-            this.tabPage2.Controls.Add(this.label35);
-            this.tabPage2.Controls.Add(this.lblTime2);
-            this.tabPage2.Controls.Add(this.label37);
-            this.tabPage2.Controls.Add(this.label38);
-            this.tabPage2.Controls.Add(this.label39);
-            this.tabPage2.Controls.Add(this.label40);
-            this.tabPage2.Controls.Add(this.label41);
-            this.tabPage2.Controls.Add(this.label42);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(811, 526);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Datos Alumno";
             // 
             // label31
             // 
@@ -669,19 +629,69 @@
             this.label2.TabIndex = 94;
             this.label2.Text = "DIVISIÓN DE ESTUDIOS PROFESIONALES";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.txtSemestre);
+            this.tabPage2.Controls.Add(this.SEMESTRE);
+            this.tabPage2.Controls.Add(this.txtApellidos);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.txtPhone);
+            this.tabPage2.Controls.Add(this.label53);
+            this.tabPage2.Controls.Add(this.txtphonehouse);
+            this.tabPage2.Controls.Add(this.label52);
+            this.tabPage2.Controls.Add(this.txtNumberInsurance);
+            this.tabPage2.Controls.Add(this.label51);
+            this.tabPage2.Controls.Add(this.cmbSocialSecurity);
+            this.tabPage2.Controls.Add(this.label50);
+            this.tabPage2.Controls.Add(this.txtCity);
+            this.tabPage2.Controls.Add(this.label49);
+            this.tabPage2.Controls.Add(this.txtEmail);
+            this.tabPage2.Controls.Add(this.label48);
+            this.tabPage2.Controls.Add(this.txtHome);
+            this.tabPage2.Controls.Add(this.label47);
+            this.tabPage2.Controls.Add(this.txtCareer);
+            this.tabPage2.Controls.Add(this.label46);
+            this.tabPage2.Controls.Add(this.txtNumberControl);
+            this.tabPage2.Controls.Add(this.label45);
+            this.tabPage2.Controls.Add(this.txtNameResident);
+            this.tabPage2.Controls.Add(this.label44);
+            this.tabPage2.Controls.Add(this.label43);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.label33);
+            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.lblTime2);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.label38);
+            this.tabPage2.Controls.Add(this.label39);
+            this.tabPage2.Controls.Add(this.label40);
+            this.tabPage2.Controls.Add(this.label41);
+            this.tabPage2.Controls.Add(this.label42);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(811, 526);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Datos Alumno";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(36, 466);
+            this.button2.Location = new System.Drawing.Point(32, 483);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(745, 37);
             this.button2.TabIndex = 161;
             this.button2.Text = "CANCELAR SOLICITUD DE RESIDENCIAS";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(36, 423);
+            this.button1.Location = new System.Drawing.Point(32, 440);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(745, 37);
             this.button1.TabIndex = 160;
@@ -691,7 +701,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(548, 362);
+            this.txtPhone.Location = new System.Drawing.Point(544, 398);
             this.txtPhone.MaxLength = 15;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(233, 20);
@@ -700,7 +710,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(446, 359);
+            this.label53.Location = new System.Drawing.Point(442, 395);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(68, 26);
             this.label53.TabIndex = 158;
@@ -708,7 +718,7 @@
             // 
             // txtphonehouse
             // 
-            this.txtphonehouse.Location = new System.Drawing.Point(548, 327);
+            this.txtphonehouse.Location = new System.Drawing.Point(544, 363);
             this.txtphonehouse.MaxLength = 12;
             this.txtphonehouse.Name = "txtphonehouse";
             this.txtphonehouse.Size = new System.Drawing.Size(233, 20);
@@ -717,7 +727,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(446, 321);
+            this.label52.Location = new System.Drawing.Point(442, 357);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(87, 26);
             this.label52.TabIndex = 156;
@@ -725,7 +735,7 @@
             // 
             // txtNumberInsurance
             // 
-            this.txtNumberInsurance.Location = new System.Drawing.Point(576, 282);
+            this.txtNumberInsurance.Location = new System.Drawing.Point(572, 318);
             this.txtNumberInsurance.Name = "txtNumberInsurance";
             this.txtNumberInsurance.Size = new System.Drawing.Size(205, 20);
             this.txtNumberInsurance.TabIndex = 155;
@@ -733,7 +743,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(436, 285);
+            this.label51.Location = new System.Drawing.Point(432, 321);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(134, 13);
             this.label51.TabIndex = 154;
@@ -746,7 +756,7 @@
             "IMSS",
             "ISSSTE",
             "OTROS"});
-            this.cmbSocialSecurity.Location = new System.Drawing.Point(559, 247);
+            this.cmbSocialSecurity.Location = new System.Drawing.Point(555, 275);
             this.cmbSocialSecurity.Name = "cmbSocialSecurity";
             this.cmbSocialSecurity.Size = new System.Drawing.Size(222, 21);
             this.cmbSocialSecurity.TabIndex = 153;
@@ -754,7 +764,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(446, 247);
+            this.label50.Location = new System.Drawing.Point(442, 275);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(106, 26);
             this.label50.TabIndex = 152;
@@ -762,7 +772,7 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(84, 365);
+            this.txtCity.Location = new System.Drawing.Point(80, 401);
             this.txtCity.MaxLength = 40;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(339, 20);
@@ -771,7 +781,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(33, 368);
+            this.label49.Location = new System.Drawing.Point(29, 404);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(54, 13);
             this.label49.TabIndex = 150;
@@ -779,7 +789,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(84, 324);
+            this.txtEmail.Location = new System.Drawing.Point(80, 360);
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(339, 20);
@@ -788,7 +798,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(33, 327);
+            this.label48.Location = new System.Drawing.Point(29, 363);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(45, 13);
             this.label48.TabIndex = 148;
@@ -796,7 +806,7 @@
             // 
             // txtHome
             // 
-            this.txtHome.Location = new System.Drawing.Point(104, 282);
+            this.txtHome.Location = new System.Drawing.Point(100, 318);
             this.txtHome.MaxLength = 40;
             this.txtHome.Name = "txtHome";
             this.txtHome.Size = new System.Drawing.Size(319, 20);
@@ -805,7 +815,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(30, 285);
+            this.label47.Location = new System.Drawing.Point(26, 321);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(68, 13);
             this.label47.TabIndex = 146;
@@ -829,16 +839,16 @@
             // 
             // txtNumberControl
             // 
-            this.txtNumberControl.Location = new System.Drawing.Point(548, 205);
+            this.txtNumberControl.Location = new System.Drawing.Point(133, 280);
             this.txtNumberControl.MaxLength = 9;
             this.txtNumberControl.Name = "txtNumberControl";
-            this.txtNumberControl.Size = new System.Drawing.Size(233, 20);
+            this.txtNumberControl.Size = new System.Drawing.Size(286, 20);
             this.txtNumberControl.TabIndex = 143;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(443, 208);
+            this.label45.Location = new System.Drawing.Point(25, 283);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(102, 13);
             this.label45.TabIndex = 142;
@@ -969,6 +979,38 @@
             this.label42.TabIndex = 128;
             this.label42.Text = "DIVISIÓN DE ESTUDIOS PROFESIONALES";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(445, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 162;
+            this.label1.Text = "APELLIDOS";
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(544, 205);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(233, 20);
+            this.txtApellidos.TabIndex = 163;
+            // 
+            // SEMESTRE
+            // 
+            this.SEMESTRE.AutoSize = true;
+            this.SEMESTRE.Location = new System.Drawing.Point(450, 243);
+            this.SEMESTRE.Name = "SEMESTRE";
+            this.SEMESTRE.Size = new System.Drawing.Size(66, 13);
+            this.SEMESTRE.TabIndex = 164;
+            this.SEMESTRE.Text = "SEMESTRE";
+            // 
+            // txtSemestre
+            // 
+            this.txtSemestre.Location = new System.Drawing.Point(555, 235);
+            this.txtSemestre.Name = "txtSemestre";
+            this.txtSemestre.Size = new System.Drawing.Size(222, 20);
+            this.txtSemestre.TabIndex = 165;
+            // 
             // Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1075,5 +1117,9 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtSemestre;
+        private System.Windows.Forms.Label SEMESTRE;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.Label label1;
     }
 }

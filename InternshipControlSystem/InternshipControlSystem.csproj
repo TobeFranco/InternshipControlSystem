@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Back-End\CompanyDao.cs" />
     <Compile Include="Back-End\Company_AssessorsDAO.cs" />
     <Compile Include="Back-End\Conection.cs" />
     <Compile Include="Back-End\AssessorsDAO.cs" />
