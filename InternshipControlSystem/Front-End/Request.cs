@@ -309,7 +309,7 @@ namespace InternshipControlSystem.Front_End
 
         private void txtNumberControl_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+            obj.soloNumeros_letras(e);
         }
 
         private void txtCareer_KeyPress(object sender, KeyPressEventArgs e)
