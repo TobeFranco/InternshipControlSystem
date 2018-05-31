@@ -57,7 +57,7 @@ namespace InternshipControlSystem.Front_End
                         {
                             contadorArroba++;
                         }
-                        MessageBox.Show(cortar);
+                        
 
                     }
                     if (contadorArroba>=2)
@@ -116,7 +116,7 @@ namespace InternshipControlSystem.Front_End
                             CompanyDao.CreateItem(compan);
                             // se crea el objeto de estudiante y se llena el constructor
                             Model.Student studen = new Model.Student(0,NumberControl,NameResident,txtApellidos.Text,Career,
-                                Convert.ToInt32(txtSemestre.Text),"sss",SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,1);
+                                Convert.ToInt32(txtSemestre.Text),"sss",1,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,1);
                             
                               StudentsDAO.CreateItem(studen);
                            
@@ -126,22 +126,6 @@ namespace InternshipControlSystem.Front_End
                             
                             Model.Proyect pro = new Model.Proyect(0, ProjectName, 1, 1, ProjectedPeriod, ChosenOption, NumberOfResidents);
                             ProyectsDAO.CreateItem(pro);
-
-
-
-
-
-                            for (int i=0;i<9;i++)
-                            {
-
-                            }
-
-
-
-
-                            
-
-
 
                             MessageBox.Show("LA SOLICITUD FUE AGREGADA CORRECTAMENTE");
                         }
@@ -159,6 +143,8 @@ namespace InternshipControlSystem.Front_End
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("ADIOS :v", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
 
         }
 
@@ -313,6 +299,16 @@ namespace InternshipControlSystem.Front_End
         }
 
         private void txtCareer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtSemestre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtCareer_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             obj.soloLetras(e);
         }

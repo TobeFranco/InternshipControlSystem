@@ -81,6 +81,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.SEMESTRE = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -97,7 +100,6 @@
             this.label48 = new System.Windows.Forms.Label();
             this.txtHome = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.txtCareer = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtNumberControl = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -115,10 +117,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.SEMESTRE = new System.Windows.Forms.Label();
-            this.txtSemestre = new System.Windows.Forms.TextBox();
+            this.txtCareer = new System.Windows.Forms.ComboBox();
+            this.txtSemestre = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -273,7 +273,7 @@
             this.txtAgreed.MaxLength = 40;
             this.txtAgreed.Name = "txtAgreed";
             this.txtAgreed.Size = new System.Drawing.Size(204, 20);
-            this.txtAgreed.TabIndex = 135;
+            this.txtAgreed.TabIndex = 19;
             this.txtAgreed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAgreed_KeyPress);
             // 
             // label23
@@ -291,7 +291,7 @@
             this.txtAgreedName.MaxLength = 40;
             this.txtAgreedName.Name = "txtAgreedName";
             this.txtAgreedName.Size = new System.Drawing.Size(283, 20);
-            this.txtAgreedName.TabIndex = 133;
+            this.txtAgreedName.TabIndex = 18;
             this.txtAgreedName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAgreedName_KeyPress);
             // 
             // label24
@@ -309,7 +309,7 @@
             this.txtAdvisoryPosition.MaxLength = 40;
             this.txtAdvisoryPosition.Name = "txtAdvisoryPosition";
             this.txtAdvisoryPosition.Size = new System.Drawing.Size(204, 20);
-            this.txtAdvisoryPosition.TabIndex = 131;
+            this.txtAdvisoryPosition.TabIndex = 17;
             this.txtAdvisoryPosition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdvisoryPosition_KeyPress);
             // 
             // label21
@@ -327,7 +327,7 @@
             this.txtAdvisoryName.MaxLength = 40;
             this.txtAdvisoryName.Name = "txtAdvisoryName";
             this.txtAdvisoryName.Size = new System.Drawing.Size(300, 20);
-            this.txtAdvisoryName.TabIndex = 129;
+            this.txtAdvisoryName.TabIndex = 16;
             this.txtAdvisoryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdvisoryName_KeyPress);
             // 
             // label22
@@ -345,7 +345,7 @@
             this.txtTitularPosition.MaxLength = 40;
             this.txtTitularPosition.Name = "txtTitularPosition";
             this.txtTitularPosition.Size = new System.Drawing.Size(204, 20);
-            this.txtTitularPosition.TabIndex = 127;
+            this.txtTitularPosition.TabIndex = 15;
             this.txtTitularPosition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitularPosition_KeyPress);
             // 
             // label20
@@ -363,7 +363,7 @@
             this.txtTitularName.MaxLength = 40;
             this.txtTitularName.Name = "txtTitularName";
             this.txtTitularName.Size = new System.Drawing.Size(300, 20);
-            this.txtTitularName.TabIndex = 125;
+            this.txtTitularName.TabIndex = 14;
             this.txtTitularName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitularName_KeyPress);
             // 
             // label19
@@ -381,7 +381,7 @@
             this.txtPhoneCompany.MaxLength = 12;
             this.txtPhoneCompany.Name = "txtPhoneCompany";
             this.txtPhoneCompany.Size = new System.Drawing.Size(191, 20);
-            this.txtPhoneCompany.TabIndex = 123;
+            this.txtPhoneCompany.TabIndex = 13;
             this.txtPhoneCompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneCompany_KeyPress);
             // 
             // label18
@@ -396,9 +396,10 @@
             // txtCompanyCity
             // 
             this.txtCompanyCity.Location = new System.Drawing.Point(73, 368);
+            this.txtCompanyCity.MaxLength = 30;
             this.txtCompanyCity.Name = "txtCompanyCity";
             this.txtCompanyCity.Size = new System.Drawing.Size(220, 20);
-            this.txtCompanyCity.TabIndex = 121;
+            this.txtCompanyCity.TabIndex = 12;
             this.txtCompanyCity.TextChanged += new System.EventHandler(this.txtCompanyCity_TextChanged);
             this.txtCompanyCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyCity_KeyPress);
             // 
@@ -414,9 +415,10 @@
             // txtFax
             // 
             this.txtFax.Location = new System.Drawing.Point(678, 330);
+            this.txtFax.MaxLength = 4;
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(102, 20);
-            this.txtFax.TabIndex = 119;
+            this.txtFax.TabIndex = 11;
             this.txtFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFax_KeyPress);
             // 
             // label16
@@ -434,7 +436,7 @@
             this.txtCp.MaxLength = 5;
             this.txtCp.Name = "txtCp";
             this.txtCp.Size = new System.Drawing.Size(113, 20);
-            this.txtCp.TabIndex = 117;
+            this.txtCp.TabIndex = 10;
             this.txtCp.TextChanged += new System.EventHandler(this.txtCp_TextChanged);
             this.txtCp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCp_KeyPress);
             // 
@@ -450,9 +452,10 @@
             // txtCompanyColony
             // 
             this.txtCompanyColony.Location = new System.Drawing.Point(73, 330);
+            this.txtCompanyColony.MaxLength = 30;
             this.txtCompanyColony.Name = "txtCompanyColony";
             this.txtCompanyColony.Size = new System.Drawing.Size(220, 20);
-            this.txtCompanyColony.TabIndex = 115;
+            this.txtCompanyColony.TabIndex = 9;
             this.txtCompanyColony.TextChanged += new System.EventHandler(this.txtCompanyColony_TextChanged);
             this.txtCompanyColony.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyColony_KeyPress);
             // 
@@ -468,9 +471,10 @@
             // txtCompanyHome
             // 
             this.txtCompanyHome.Location = new System.Drawing.Point(73, 285);
+            this.txtCompanyHome.MaxLength = 30;
             this.txtCompanyHome.Name = "txtCompanyHome";
             this.txtCompanyHome.Size = new System.Drawing.Size(220, 20);
-            this.txtCompanyHome.TabIndex = 113;
+            this.txtCompanyHome.TabIndex = 7;
             // 
             // label13
             // 
@@ -484,9 +488,10 @@
             // txtRFC
             // 
             this.txtRFC.Location = new System.Drawing.Point(518, 285);
+            this.txtRFC.MaxLength = 5;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Size = new System.Drawing.Size(191, 20);
-            this.txtRFC.TabIndex = 111;
+            this.txtRFC.TabIndex = 8;
             // 
             // label12
             // 
@@ -509,7 +514,7 @@
             this.cmbTurn.Location = new System.Drawing.Point(518, 248);
             this.cmbTurn.Name = "cmbTurn";
             this.cmbTurn.Size = new System.Drawing.Size(191, 21);
-            this.cmbTurn.TabIndex = 109;
+            this.cmbTurn.TabIndex = 6;
             this.cmbTurn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTurn_KeyPress);
             // 
             // label11
@@ -524,9 +529,10 @@
             // txtCompanyName
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(73, 248);
+            this.txtCompanyName.MaxLength = 1;
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(220, 20);
-            this.txtCompanyName.TabIndex = 107;
+            this.txtCompanyName.TabIndex = 5;
             this.txtCompanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyName_KeyPress);
             // 
             // label10
@@ -550,10 +556,10 @@
             // txtNumberOfResidents
             // 
             this.txtNumberOfResidents.Location = new System.Drawing.Point(561, 172);
-            this.txtNumberOfResidents.MaxLength = 10;
+            this.txtNumberOfResidents.MaxLength = 1;
             this.txtNumberOfResidents.Name = "txtNumberOfResidents";
             this.txtNumberOfResidents.Size = new System.Drawing.Size(171, 20);
-            this.txtNumberOfResidents.TabIndex = 104;
+            this.txtNumberOfResidents.TabIndex = 4;
             this.txtNumberOfResidents.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberOfResidents_KeyPress);
             // 
             // label8
@@ -571,7 +577,7 @@
             this.txtProjectedPeriod.MaxLength = 40;
             this.txtProjectedPeriod.Name = "txtProjectedPeriod";
             this.txtProjectedPeriod.Size = new System.Drawing.Size(214, 20);
-            this.txtProjectedPeriod.TabIndex = 102;
+            this.txtProjectedPeriod.TabIndex = 3;
             // 
             // label7
             // 
@@ -592,7 +598,7 @@
             this.cmbChosenOption.Location = new System.Drawing.Point(518, 131);
             this.cmbChosenOption.Name = "cmbChosenOption";
             this.cmbChosenOption.Size = new System.Drawing.Size(217, 21);
-            this.cmbChosenOption.TabIndex = 100;
+            this.cmbChosenOption.TabIndex = 2;
             // 
             // label6
             // 
@@ -609,7 +615,7 @@
             this.txtProjectName.MaxLength = 40;
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.Size = new System.Drawing.Size(214, 20);
-            this.txtProjectName.TabIndex = 98;
+            this.txtProjectName.TabIndex = 1;
             this.txtProjectName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProjectName_KeyPress);
             // 
             // label5
@@ -652,6 +658,7 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.txtSemestre);
+            this.tabPage2.Controls.Add(this.txtCareer);
             this.tabPage2.Controls.Add(this.SEMESTRE);
             this.tabPage2.Controls.Add(this.txtApellidos);
             this.tabPage2.Controls.Add(this.label1);
@@ -671,7 +678,6 @@
             this.tabPage2.Controls.Add(this.label48);
             this.tabPage2.Controls.Add(this.txtHome);
             this.tabPage2.Controls.Add(this.label47);
-            this.tabPage2.Controls.Add(this.txtCareer);
             this.tabPage2.Controls.Add(this.label46);
             this.tabPage2.Controls.Add(this.txtNumberControl);
             this.tabPage2.Controls.Add(this.label45);
@@ -697,12 +703,39 @@
             this.tabPage2.Text = "Datos Alumno";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // SEMESTRE
+            // 
+            this.SEMESTRE.AutoSize = true;
+            this.SEMESTRE.Location = new System.Drawing.Point(450, 243);
+            this.SEMESTRE.Name = "SEMESTRE";
+            this.SEMESTRE.Size = new System.Drawing.Size(66, 13);
+            this.SEMESTRE.TabIndex = 164;
+            this.SEMESTRE.Text = "SEMESTRE";
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(544, 205);
+            this.txtApellidos.MaxLength = 30;
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(233, 20);
+            this.txtApellidos.TabIndex = 21;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(445, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 162;
+            this.label1.Text = "APELLIDOS";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(32, 483);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(745, 37);
-            this.button2.TabIndex = 161;
+            this.button2.TabIndex = 33;
             this.button2.Text = "CANCELAR SOLICITUD DE RESIDENCIAS";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -713,7 +746,7 @@
             this.button1.Location = new System.Drawing.Point(32, 440);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(745, 37);
-            this.button1.TabIndex = 160;
+            this.button1.TabIndex = 32;
             this.button1.Text = "GUARDAR SOLICITUD DE RESIDENCIAS";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
@@ -724,7 +757,7 @@
             this.txtPhone.MaxLength = 15;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(233, 20);
-            this.txtPhone.TabIndex = 159;
+            this.txtPhone.TabIndex = 31;
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // label53
@@ -742,7 +775,7 @@
             this.txtphonehouse.MaxLength = 12;
             this.txtphonehouse.Name = "txtphonehouse";
             this.txtphonehouse.Size = new System.Drawing.Size(233, 20);
-            this.txtphonehouse.TabIndex = 157;
+            this.txtphonehouse.TabIndex = 29;
             this.txtphonehouse.TextChanged += new System.EventHandler(this.txtphonehouse_TextChanged);
             this.txtphonehouse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtphonehouse_KeyPress);
             // 
@@ -758,9 +791,10 @@
             // txtNumberInsurance
             // 
             this.txtNumberInsurance.Location = new System.Drawing.Point(572, 318);
+            this.txtNumberInsurance.MaxLength = 5;
             this.txtNumberInsurance.Name = "txtNumberInsurance";
             this.txtNumberInsurance.Size = new System.Drawing.Size(205, 20);
-            this.txtNumberInsurance.TabIndex = 155;
+            this.txtNumberInsurance.TabIndex = 27;
             this.txtNumberInsurance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberInsurance_KeyPress);
             // 
             // label51
@@ -782,7 +816,7 @@
             this.cmbSocialSecurity.Location = new System.Drawing.Point(555, 275);
             this.cmbSocialSecurity.Name = "cmbSocialSecurity";
             this.cmbSocialSecurity.Size = new System.Drawing.Size(222, 21);
-            this.cmbSocialSecurity.TabIndex = 153;
+            this.cmbSocialSecurity.TabIndex = 25;
             this.cmbSocialSecurity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbSocialSecurity_KeyPress);
             // 
             // label50
@@ -800,7 +834,7 @@
             this.txtCity.MaxLength = 40;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(339, 20);
-            this.txtCity.TabIndex = 151;
+            this.txtCity.TabIndex = 30;
             this.txtCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCity_KeyPress);
             // 
             // label49
@@ -815,10 +849,10 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(80, 360);
-            this.txtEmail.MaxLength = 40;
+            this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(339, 20);
-            this.txtEmail.TabIndex = 149;
+            this.txtEmail.TabIndex = 28;
             // 
             // label48
             // 
@@ -835,7 +869,7 @@
             this.txtHome.MaxLength = 40;
             this.txtHome.Name = "txtHome";
             this.txtHome.Size = new System.Drawing.Size(319, 20);
-            this.txtHome.TabIndex = 147;
+            this.txtHome.TabIndex = 26;
             this.txtHome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHome_KeyPress);
             // 
             // label47
@@ -846,14 +880,6 @@
             this.label47.Size = new System.Drawing.Size(68, 13);
             this.label47.TabIndex = 146;
             this.label47.Text = "DOMICILIO :";
-            // 
-            // txtCareer
-            // 
-            this.txtCareer.Location = new System.Drawing.Point(89, 241);
-            this.txtCareer.Name = "txtCareer";
-            this.txtCareer.Size = new System.Drawing.Size(334, 20);
-            this.txtCareer.TabIndex = 145;
-            this.txtCareer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCareer_KeyPress);
             // 
             // label46
             // 
@@ -870,7 +896,7 @@
             this.txtNumberControl.MaxLength = 9;
             this.txtNumberControl.Name = "txtNumberControl";
             this.txtNumberControl.Size = new System.Drawing.Size(286, 20);
-            this.txtNumberControl.TabIndex = 143;
+            this.txtNumberControl.TabIndex = 24;
             this.txtNumberControl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumberControl_KeyPress);
             // 
             // label45
@@ -888,7 +914,7 @@
             this.txtNameResident.MaxLength = 40;
             this.txtNameResident.Name = "txtNameResident";
             this.txtNameResident.Size = new System.Drawing.Size(331, 20);
-            this.txtNameResident.TabIndex = 141;
+            this.txtNameResident.TabIndex = 20;
             this.txtNameResident.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameResident_KeyPress);
             // 
             // label44
@@ -1008,39 +1034,45 @@
             this.label42.TabIndex = 128;
             this.label42.Text = "DIVISIÓN DE ESTUDIOS PROFESIONALES";
             // 
-            // label1
+            // txtCareer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(445, 207);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 162;
-            this.label1.Text = "APELLIDOS";
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(544, 205);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(233, 20);
-            this.txtApellidos.TabIndex = 163;
-            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
-            // 
-            // SEMESTRE
-            // 
-            this.SEMESTRE.AutoSize = true;
-            this.SEMESTRE.Location = new System.Drawing.Point(450, 243);
-            this.SEMESTRE.Name = "SEMESTRE";
-            this.SEMESTRE.Size = new System.Drawing.Size(66, 13);
-            this.SEMESTRE.TabIndex = 164;
-            this.SEMESTRE.Text = "SEMESTRE";
+            this.txtCareer.FormattingEnabled = true;
+            this.txtCareer.Items.AddRange(new object[] {
+            "Ing. Sistemas Computacionales",
+            "Ing. Ambiental",
+            "Ing. Electronica",
+            "Ing.Gestion Empresarial",
+            "Ing. Informatica",
+            "Ing. Gastronomia",
+            "Ing. Industrial"});
+            this.txtCareer.Location = new System.Drawing.Point(110, 243);
+            this.txtCareer.Name = "txtCareer";
+            this.txtCareer.Size = new System.Drawing.Size(310, 21);
+            this.txtCareer.TabIndex = 22;
+            this.txtCareer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCareer_KeyPress_1);
             // 
             // txtSemestre
             // 
-            this.txtSemestre.Location = new System.Drawing.Point(555, 235);
+            this.txtSemestre.FormattingEnabled = true;
+            this.txtSemestre.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13"});
+            this.txtSemestre.Location = new System.Drawing.Point(544, 240);
             this.txtSemestre.Name = "txtSemestre";
-            this.txtSemestre.Size = new System.Drawing.Size(222, 20);
-            this.txtSemestre.TabIndex = 165;
-            this.txtSemestre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSemestre_KeyPress);
+            this.txtSemestre.Size = new System.Drawing.Size(233, 21);
+            this.txtSemestre.TabIndex = 23;
+            this.txtSemestre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSemestre_KeyPress_1);
             // 
             // Request
             // 
@@ -1049,6 +1081,7 @@
             this.ClientSize = new System.Drawing.Size(825, 597);
             this.Controls.Add(this.tabControl1);
             this.Name = "Request";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1130,7 +1163,6 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox txtHome;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox txtCareer;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtNumberControl;
         private System.Windows.Forms.Label label45;
@@ -1148,9 +1180,10 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox txtSemestre;
         private System.Windows.Forms.Label SEMESTRE;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox txtCareer;
+        private System.Windows.Forms.ComboBox txtSemestre;
     }
 }

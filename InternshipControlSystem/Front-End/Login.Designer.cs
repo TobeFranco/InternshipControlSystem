@@ -66,7 +66,6 @@
             this.txtPassword.PasswordChar = '0';
             this.txtPassword.Size = new System.Drawing.Size(207, 23);
             this.txtPassword.TabIndex = 14;
-            this.txtPassword.Text = "e";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
