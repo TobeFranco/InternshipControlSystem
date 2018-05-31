@@ -49,7 +49,7 @@
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.Location = new System.Drawing.Point(0, 281);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(236, 34);
+            this.btnIngresar.Size = new System.Drawing.Size(240, 34);
             this.btnIngresar.TabIndex = 12;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;

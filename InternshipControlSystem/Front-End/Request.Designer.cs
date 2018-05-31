@@ -119,16 +119,23 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(5, 5);
+            this.tabControl1.Location = new System.Drawing.Point(-4, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(819, 552);
@@ -136,6 +143,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.label29);
@@ -186,13 +194,13 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.ForeColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(811, 526);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Empresa";
-            this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label31
@@ -269,6 +277,7 @@
             // 
             // txtAgreed
             // 
+            this.txtAgreed.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAgreed.Location = new System.Drawing.Point(547, 492);
             this.txtAgreed.MaxLength = 40;
             this.txtAgreed.Name = "txtAgreed";
@@ -287,6 +296,7 @@
             // 
             // txtAgreedName
             // 
+            this.txtAgreedName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAgreedName.Location = new System.Drawing.Point(169, 492);
             this.txtAgreedName.MaxLength = 40;
             this.txtAgreedName.Name = "txtAgreedName";
@@ -297,7 +307,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 489);
+            this.label24.Location = new System.Drawing.Point(18, 483);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(153, 39);
             this.label24.TabIndex = 132;
@@ -305,6 +315,7 @@
             // 
             // txtAdvisoryPosition
             // 
+            this.txtAdvisoryPosition.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAdvisoryPosition.Location = new System.Drawing.Point(547, 450);
             this.txtAdvisoryPosition.MaxLength = 40;
             this.txtAdvisoryPosition.Name = "txtAdvisoryPosition";
@@ -323,6 +334,7 @@
             // 
             // txtAdvisoryName
             // 
+            this.txtAdvisoryName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtAdvisoryName.Location = new System.Drawing.Point(152, 454);
             this.txtAdvisoryName.MaxLength = 40;
             this.txtAdvisoryName.Name = "txtAdvisoryName";
@@ -341,6 +353,7 @@
             // 
             // txtTitularPosition
             // 
+            this.txtTitularPosition.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTitularPosition.Location = new System.Drawing.Point(547, 411);
             this.txtTitularPosition.MaxLength = 40;
             this.txtTitularPosition.Name = "txtTitularPosition";
@@ -359,6 +372,7 @@
             // 
             // txtTitularName
             // 
+            this.txtTitularName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTitularName.Location = new System.Drawing.Point(152, 409);
             this.txtTitularName.MaxLength = 40;
             this.txtTitularName.Name = "txtTitularName";
@@ -377,6 +391,7 @@
             // 
             // txtPhoneCompany
             // 
+            this.txtPhoneCompany.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPhoneCompany.Location = new System.Drawing.Point(545, 364);
             this.txtPhoneCompany.MaxLength = 12;
             this.txtPhoneCompany.Name = "txtPhoneCompany";
@@ -395,6 +410,7 @@
             // 
             // txtCompanyCity
             // 
+            this.txtCompanyCity.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCompanyCity.Location = new System.Drawing.Point(73, 368);
             this.txtCompanyCity.MaxLength = 30;
             this.txtCompanyCity.Name = "txtCompanyCity";
@@ -414,6 +430,7 @@
             // 
             // txtFax
             // 
+            this.txtFax.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtFax.Location = new System.Drawing.Point(678, 330);
             this.txtFax.MaxLength = 4;
             this.txtFax.Name = "txtFax";
@@ -432,6 +449,7 @@
             // 
             // txtCp
             // 
+            this.txtCp.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCp.Location = new System.Drawing.Point(518, 330);
             this.txtCp.MaxLength = 5;
             this.txtCp.Name = "txtCp";
@@ -451,6 +469,7 @@
             // 
             // txtCompanyColony
             // 
+            this.txtCompanyColony.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCompanyColony.Location = new System.Drawing.Point(73, 330);
             this.txtCompanyColony.MaxLength = 30;
             this.txtCompanyColony.Name = "txtCompanyColony";
@@ -470,6 +489,7 @@
             // 
             // txtCompanyHome
             // 
+            this.txtCompanyHome.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCompanyHome.Location = new System.Drawing.Point(73, 285);
             this.txtCompanyHome.MaxLength = 30;
             this.txtCompanyHome.Name = "txtCompanyHome";
@@ -487,6 +507,7 @@
             // 
             // txtRFC
             // 
+            this.txtRFC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtRFC.Location = new System.Drawing.Point(518, 285);
             this.txtRFC.MaxLength = 5;
             this.txtRFC.Name = "txtRFC";
@@ -504,6 +525,7 @@
             // 
             // cmbTurn
             // 
+            this.cmbTurn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbTurn.FormattingEnabled = true;
             this.cmbTurn.Items.AddRange(new object[] {
             "Industrial",
@@ -528,6 +550,7 @@
             // 
             // txtCompanyName
             // 
+            this.txtCompanyName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCompanyName.Location = new System.Drawing.Point(73, 248);
             this.txtCompanyName.MaxLength = 1;
             this.txtCompanyName.Name = "txtCompanyName";
@@ -555,6 +578,7 @@
             // 
             // txtNumberOfResidents
             // 
+            this.txtNumberOfResidents.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNumberOfResidents.Location = new System.Drawing.Point(561, 172);
             this.txtNumberOfResidents.MaxLength = 1;
             this.txtNumberOfResidents.Name = "txtNumberOfResidents";
@@ -573,6 +597,7 @@
             // 
             // txtProjectedPeriod
             // 
+            this.txtProjectedPeriod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtProjectedPeriod.Location = new System.Drawing.Point(152, 175);
             this.txtProjectedPeriod.MaxLength = 40;
             this.txtProjectedPeriod.Name = "txtProjectedPeriod";
@@ -590,6 +615,7 @@
             // 
             // cmbChosenOption
             // 
+            this.cmbChosenOption.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbChosenOption.FormattingEnabled = true;
             this.cmbChosenOption.Items.AddRange(new object[] {
             "Banco de Proyectos",
@@ -611,6 +637,7 @@
             // 
             // txtProjectName
             // 
+            this.txtProjectName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtProjectName.Location = new System.Drawing.Point(152, 131);
             this.txtProjectName.MaxLength = 40;
             this.txtProjectName.Name = "txtProjectName";
@@ -656,7 +683,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabPage2.Controls.Add(this.txtSemestre);
             this.tabPage2.Controls.Add(this.txtCareer);
             this.tabPage2.Controls.Add(this.SEMESTRE);
@@ -695,16 +723,19 @@
             this.tabPage2.Controls.Add(this.label40);
             this.tabPage2.Controls.Add(this.label41);
             this.tabPage2.Controls.Add(this.label42);
+            this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(811, 526);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos Alumno";
+            this.tabPage2.ToolTipText = "Datos del alumno";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // txtSemestre
             // 
+            this.txtSemestre.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSemestre.FormattingEnabled = true;
             this.txtSemestre.Items.AddRange(new object[] {
             "1",
@@ -728,6 +759,7 @@
             // 
             // txtCareer
             // 
+            this.txtCareer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCareer.FormattingEnabled = true;
             this.txtCareer.Items.AddRange(new object[] {
             "Ing. Sistemas Computacionales",
@@ -754,6 +786,7 @@
             // 
             // txtApellidos
             // 
+            this.txtApellidos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtApellidos.Location = new System.Drawing.Point(544, 205);
             this.txtApellidos.MaxLength = 30;
             this.txtApellidos.Name = "txtApellidos";
@@ -772,17 +805,24 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(32, 483);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(745, 37);
             this.button2.TabIndex = 33;
             this.button2.Text = "CANCELAR SOLICITUD DE RESIDENCIAS";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(32, 440);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(745, 37);
@@ -793,6 +833,7 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPhone.Location = new System.Drawing.Point(544, 398);
             this.txtPhone.MaxLength = 15;
             this.txtPhone.Name = "txtPhone";
@@ -811,6 +852,7 @@
             // 
             // txtphonehouse
             // 
+            this.txtphonehouse.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtphonehouse.Location = new System.Drawing.Point(544, 363);
             this.txtphonehouse.MaxLength = 12;
             this.txtphonehouse.Name = "txtphonehouse";
@@ -830,6 +872,7 @@
             // 
             // txtNumberInsurance
             // 
+            this.txtNumberInsurance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNumberInsurance.Location = new System.Drawing.Point(572, 318);
             this.txtNumberInsurance.MaxLength = 5;
             this.txtNumberInsurance.Name = "txtNumberInsurance";
@@ -848,6 +891,7 @@
             // 
             // cmbSocialSecurity
             // 
+            this.cmbSocialSecurity.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbSocialSecurity.FormattingEnabled = true;
             this.cmbSocialSecurity.Items.AddRange(new object[] {
             "IMSS",
@@ -870,6 +914,7 @@
             // 
             // txtCity
             // 
+            this.txtCity.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCity.Location = new System.Drawing.Point(80, 401);
             this.txtCity.MaxLength = 40;
             this.txtCity.Name = "txtCity";
@@ -888,6 +933,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmail.Location = new System.Drawing.Point(80, 360);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
@@ -905,6 +951,7 @@
             // 
             // txtHome
             // 
+            this.txtHome.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtHome.Location = new System.Drawing.Point(100, 318);
             this.txtHome.MaxLength = 40;
             this.txtHome.Name = "txtHome";
@@ -932,6 +979,7 @@
             // 
             // txtNumberControl
             // 
+            this.txtNumberControl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNumberControl.Location = new System.Drawing.Point(133, 280);
             this.txtNumberControl.MaxLength = 9;
             this.txtNumberControl.Name = "txtNumberControl";
@@ -950,6 +998,7 @@
             // 
             // txtNameResident
             // 
+            this.txtNameResident.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNameResident.Location = new System.Drawing.Point(89, 205);
             this.txtNameResident.MaxLength = 40;
             this.txtNameResident.Name = "txtNameResident";
@@ -1074,20 +1123,70 @@
             this.label42.TabIndex = 128;
             this.label42.Text = "DIVISIÓN DE ESTUDIOS PROFESIONALES";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(781, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
+            this.pictureBox1.Location = new System.Drawing.Point(752, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.label36);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 30);
+            this.panel1.TabIndex = 20;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label36.Location = new System.Drawing.Point(395, 9);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(45, 13);
+            this.label36.TabIndex = 134;
+            this.label36.Text = "Solictud";
+            // 
             // Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 597);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(810, 575);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Request";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Request";
+            this.Text = "v";
+            this.Load += new System.EventHandler(this.Request_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1185,5 +1284,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox txtCareer;
         private System.Windows.Forms.ComboBox txtSemestre;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label36;
     }
 }

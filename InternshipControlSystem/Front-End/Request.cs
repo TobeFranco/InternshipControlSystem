@@ -8,14 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternshipControlSystem.Back_End;
+using System.Runtime.InteropServices;
 
 namespace InternshipControlSystem.Front_End
 {
     public partial class Request : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+(
+    int nLeftRect, // x-coordinate of upper-left corner
+    int nTopRect, // y-coordinate of upper-left corner
+    int nRightRect, // x-coordinate of lower-right corner
+    int nBottomRect, // y-coordinate of lower-right corner
+    int nWidthEllipse, // height of ellipse
+    int nHeightEllipse // width of ellipse
+            );
         public Request()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -311,6 +324,21 @@ namespace InternshipControlSystem.Front_End
         private void txtCareer_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             obj.soloLetras(e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void Request_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
