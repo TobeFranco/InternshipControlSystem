@@ -81,6 +81,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtSemestre = new System.Windows.Forms.ComboBox();
+            this.txtCareer = new System.Windows.Forms.ComboBox();
             this.SEMESTRE = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -117,8 +119,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.txtCareer = new System.Windows.Forms.ComboBox();
-            this.txtSemestre = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -703,6 +703,46 @@
             this.tabPage2.Text = "Datos Alumno";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // txtSemestre
+            // 
+            this.txtSemestre.FormattingEnabled = true;
+            this.txtSemestre.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13"});
+            this.txtSemestre.Location = new System.Drawing.Point(544, 240);
+            this.txtSemestre.Name = "txtSemestre";
+            this.txtSemestre.Size = new System.Drawing.Size(233, 21);
+            this.txtSemestre.TabIndex = 23;
+            this.txtSemestre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSemestre_KeyPress_1);
+            // 
+            // txtCareer
+            // 
+            this.txtCareer.FormattingEnabled = true;
+            this.txtCareer.Items.AddRange(new object[] {
+            "Ing. Sistemas Computacionales",
+            "Ing. Ambiental",
+            "Ing. Electronica",
+            "Ing.Gestion Empresarial",
+            "Ing. Informatica",
+            "Ing. Gastronomia",
+            "Ing. Industrial"});
+            this.txtCareer.Location = new System.Drawing.Point(110, 243);
+            this.txtCareer.Name = "txtCareer";
+            this.txtCareer.Size = new System.Drawing.Size(310, 21);
+            this.txtCareer.TabIndex = 22;
+            this.txtCareer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCareer_KeyPress_1);
+            // 
             // SEMESTRE
             // 
             this.SEMESTRE.AutoSize = true;
@@ -1033,46 +1073,6 @@
             this.label42.Size = new System.Drawing.Size(222, 13);
             this.label42.TabIndex = 128;
             this.label42.Text = "DIVISIÓN DE ESTUDIOS PROFESIONALES";
-            // 
-            // txtCareer
-            // 
-            this.txtCareer.FormattingEnabled = true;
-            this.txtCareer.Items.AddRange(new object[] {
-            "Ing. Sistemas Computacionales",
-            "Ing. Ambiental",
-            "Ing. Electronica",
-            "Ing.Gestion Empresarial",
-            "Ing. Informatica",
-            "Ing. Gastronomia",
-            "Ing. Industrial"});
-            this.txtCareer.Location = new System.Drawing.Point(110, 243);
-            this.txtCareer.Name = "txtCareer";
-            this.txtCareer.Size = new System.Drawing.Size(310, 21);
-            this.txtCareer.TabIndex = 22;
-            this.txtCareer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCareer_KeyPress_1);
-            // 
-            // txtSemestre
-            // 
-            this.txtSemestre.FormattingEnabled = true;
-            this.txtSemestre.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13"});
-            this.txtSemestre.Location = new System.Drawing.Point(544, 240);
-            this.txtSemestre.Name = "txtSemestre";
-            this.txtSemestre.Size = new System.Drawing.Size(233, 21);
-            this.txtSemestre.TabIndex = 23;
-            this.txtSemestre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSemestre_KeyPress_1);
             // 
             // Request
             // 

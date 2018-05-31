@@ -113,18 +113,18 @@ namespace InternshipControlSystem.Front_End
                             Model.Company compan = new Model.Company(0, companyName, RFC, Turn, CompanyHome, CompanyColony,
                                Cp, Fax, PhoneCompany, CompanyCity, TitularName, TitularPosition, AdvisoryName, AdvisoryPosition, AgreedName
                                , Agreed);
-                            CompanyDao.CreateItem(compan);
+                            int lastIDCompany = CompanyDao.CreateItem(compan);
                             // se crea el objeto de estudiante y se llena el constructor
                             Model.Student studen = new Model.Student(0,NumberControl,NameResident,txtApellidos.Text,Career,
-                                Convert.ToInt32(txtSemestre.Text),"sss",1,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,1);
+                                Convert.ToInt32(txtSemestre.Text),"sss",1,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,lastIDCompany);
                             
-                              StudentsDAO.CreateItem(studen);
+                             int lastIDstudent = StudentsDAO.CreateItem(studen);
                            
                              // se crea el objeto de empresea
 
                            
                             
-                            Model.Proyect pro = new Model.Proyect(0, ProjectName, 1, 1, ProjectedPeriod, ChosenOption, NumberOfResidents);
+                            Model.Proyect pro = new Model.Proyect(0, ProjectName, lastIDCompany, lastIDstudent, ProjectedPeriod, ChosenOption, NumberOfResidents);
                             ProyectsDAO.CreateItem(pro);
 
                             MessageBox.Show("LA SOLICITUD FUE AGREGADA CORRECTAMENTE");
