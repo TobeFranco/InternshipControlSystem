@@ -49,7 +49,7 @@
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.Location = new System.Drawing.Point(0, 281);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(236, 34);
+            this.btnIngresar.Size = new System.Drawing.Size(240, 34);
             this.btnIngresar.TabIndex = 12;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -66,7 +66,6 @@
             this.txtPassword.PasswordChar = '0';
             this.txtPassword.Size = new System.Drawing.Size(207, 23);
             this.txtPassword.TabIndex = 14;
-            this.txtPassword.Text = "e";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 

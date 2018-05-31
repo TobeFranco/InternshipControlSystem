@@ -46,7 +46,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "INSERT INTO revisors VALUES(null, @pro_name, @company_id, @student_id, @period, @ChosenOption, @NumberOfResidents)";
+                string sqlStatement = "INSERT INTO projects VALUES(null, @pro_name, @company_id, @student_id, @period, @ChosenOption, @NumberOfResidents)";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@pro_name", item.Name);
                 cmd.Parameters.AddWithValue("@company_id", item.Company_Id);
@@ -73,7 +73,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "DELETE FROM proyects WHERE id = @id";
+                string sqlStatement = "DELETE FROM projects WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
@@ -94,7 +94,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "UPDATE proyects set pro_name=@pro_name, company_id=@company_id, student_id=@student_id" +
+                string sqlStatement = "UPDATE projects set pro_name=@pro_name, company_id=@company_id, student_id=@student_id" +
                     "period=@period WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@id", item.Id);
@@ -122,7 +122,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "SELECT * FROM proyects WHERE id = @id";
+                string sqlStatement = "SELECT * FROM projects WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -151,7 +151,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "SELECT * FROM proyects WHERE student_id = @student_id";
+                string sqlStatement = "SELECT * FROM projects WHERE student_id = @student_id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@student_id", student.Id);
                 MySqlDataReader reader = cmd.ExecuteReader();

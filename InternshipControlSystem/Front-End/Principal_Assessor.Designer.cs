@@ -49,7 +49,7 @@
             this.panel1.Controls.Add(this.btnCatalogosAlumnos);
             this.panel1.Controls.Add(this.btnSeguimiento);
             this.panel1.Controls.Add(this.btnSolicitud);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(194, 661);
             this.panel1.TabIndex = 1;

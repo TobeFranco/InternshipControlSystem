@@ -55,11 +55,11 @@ namespace InternshipControlSystem.Back_End
             return students;
         }
 
-        public static void CreateItem(Student student){
+        public static int CreateItem(Student student){
             MySqlConnection conn = Conection.getConnection();
             try{
                 conn.Open();
-                string sqlStatement = "INSERT INTO students VALUES(null, @controlId, @firstName, @lastName, @career, @semester, @coordinator, @Tutor_id, @SocialSecurity, @Home, @Email, @City, @Phonehouse, @NumberInsurance, @Phone,@company_id)";
+                string sqlStatement = "INSERT INTO students VALUES(null, @controlId, @firstName, @lastName, @career, @semester, @coordinator, @Tutor_id, @SocialSecurity, @Home, @Email, @City, @Phonehouse, @NumberInsurance, @Phone,@company_id); SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@controlId", student.Control_id);
                 cmd.Parameters.AddWithValue("@firstName", student.First_name);
@@ -76,11 +76,12 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@NumberInsurance", student.NumberInsuranceDao);
                 cmd.Parameters.AddWithValue("@Phone", student.PhoneDao);
                 cmd.Parameters.AddWithValue("@company_id", student.company_idDao);
-                cmd.ExecuteNonQuery();
+                return cmd.ExecuteNonQuery();
             }catch (Exception ex){
                 Console.WriteLine(ex.ToString());
                 Console.WriteLine(ex.Message);
-            }finally{
+                return -1;
+            } finally{
                 conn.Close();
             }
         }

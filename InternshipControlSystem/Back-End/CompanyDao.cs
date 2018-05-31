@@ -42,13 +42,13 @@ namespace InternshipControlSystem.Back_End
             return items;
         }
 
-        public static void CreateItem(Company student)
+        public static int CreateItem(Company student)
         {
             MySqlConnection conn = Conection.getConnection();
             try
             {
                 conn.Open();
-                string sqlStatement = "INSERT INTO companies VALUES(null, @comp_name, @RFC, @Turn, @CompanyHome, @CompanyColony, @Cp, @Fax, @PhoneCompany, @CompanyCity, @TitularName, @TitularPosition, @AdvisoryName, @AdvisoryPosition, @AgreedName, @Agreed)";
+                string sqlStatement = "INSERT INTO companies VALUES(null, @comp_name, @RFC, @Turn, @CompanyHome, @CompanyColony, @Cp, @Fax, @PhoneCompany, @CompanyCity, @TitularName, @TitularPosition, @AdvisoryName, @AdvisoryPosition, @AgreedName, @Agreed); SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@comp_name", student.Name);
                 cmd.Parameters.AddWithValue("@RFC", student.RFC);              
@@ -66,12 +66,13 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@AgreedName", student.AgreedNameDao);
                 cmd.Parameters.AddWithValue("@Agreed", student.AgreedDao);
                 cmd.Parameters.AddWithValue("@company_id", student.AgreedDao);
-                cmd.ExecuteNonQuery();
+                return cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 Console.WriteLine(ex.Message);
+                return -1;
             }
             finally
             {

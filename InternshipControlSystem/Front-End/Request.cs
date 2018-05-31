@@ -8,14 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternshipControlSystem.Back_End;
+using System.Runtime.InteropServices;
 
 namespace InternshipControlSystem.Front_End
 {
     public partial class Request : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+(
+    int nLeftRect, // x-coordinate of upper-left corner
+    int nTopRect, // y-coordinate of upper-left corner
+    int nRightRect, // x-coordinate of lower-right corner
+    int nBottomRect, // y-coordinate of lower-right corner
+    int nWidthEllipse, // height of ellipse
+    int nHeightEllipse // width of ellipse
+            );
         public Request()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,7 +70,7 @@ namespace InternshipControlSystem.Front_End
                         {
                             contadorArroba++;
                         }
-                        MessageBox.Show(cortar);
+                        
 
                     }
                     if (contadorArroba>=2)
@@ -113,35 +126,19 @@ namespace InternshipControlSystem.Front_End
                             Model.Company compan = new Model.Company(0, companyName, RFC, Turn, CompanyHome, CompanyColony,
                                Cp, Fax, PhoneCompany, CompanyCity, TitularName, TitularPosition, AdvisoryName, AdvisoryPosition, AgreedName
                                , Agreed);
-                            CompanyDao.CreateItem(compan);
+                            int lastIDCompany = CompanyDao.CreateItem(compan);
                             // se crea el objeto de estudiante y se llena el constructor
                             Model.Student studen = new Model.Student(0,NumberControl,NameResident,txtApellidos.Text,Career,
-                                Convert.ToInt32(txtSemestre.Text),"sss",SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,1);
+                                Convert.ToInt32(txtSemestre.Text),"sss",1,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,lastIDCompany);
                             
-                              StudentsDAO.CreateItem(studen);
+                             int lastIDstudent = StudentsDAO.CreateItem(studen);
                            
                              // se crea el objeto de empresea
 
                            
                             
-                            Model.Proyect pro = new Model.Proyect(0, ProjectName, 1, 1, ProjectedPeriod, ChosenOption, NumberOfResidents);
+                            Model.Proyect pro = new Model.Proyect(0, ProjectName, lastIDCompany, lastIDstudent, ProjectedPeriod, ChosenOption, NumberOfResidents);
                             ProyectsDAO.CreateItem(pro);
-
-
-
-
-
-                            for (int i=0;i<9;i++)
-                            {
-
-                            }
-
-
-
-
-                            
-
-
 
                             MessageBox.Show("LA SOLICITUD FUE AGREGADA CORRECTAMENTE");
                         }
@@ -159,6 +156,8 @@ namespace InternshipControlSystem.Front_End
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("ADIOS :v", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
 
         }
 
@@ -315,6 +314,31 @@ namespace InternshipControlSystem.Front_End
         private void txtCareer_KeyPress(object sender, KeyPressEventArgs e)
         {
             obj.soloLetras(e);
+        }
+
+        private void txtSemestre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtCareer_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void Request_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

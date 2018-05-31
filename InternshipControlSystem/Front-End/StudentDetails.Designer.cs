@@ -58,102 +58,142 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblTutorHolder = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 19);
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(18, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.Size = new System.Drawing.Size(125, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del Proyecto:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 43);
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(18, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(94, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Opcion Elegida:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 71);
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(18, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.Size = new System.Drawing.Size(117, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Periodo Proyectado:";
             // 
             // lblProyectNameHolder
             // 
             this.lblProyectNameHolder.AutoSize = true;
-            this.lblProyectNameHolder.Location = new System.Drawing.Point(173, 18);
+            this.lblProyectNameHolder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblProyectNameHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblProyectNameHolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblProyectNameHolder.Location = new System.Drawing.Point(166, 60);
             this.lblProyectNameHolder.Name = "lblProyectNameHolder";
-            this.lblProyectNameHolder.Size = new System.Drawing.Size(19, 13);
+            this.lblProyectNameHolder.Size = new System.Drawing.Size(23, 15);
             this.lblProyectNameHolder.TabIndex = 4;
             this.lblProyectNameHolder.Text = "----";
             // 
             // lblOptionHolder
             // 
             this.lblOptionHolder.AutoSize = true;
-            this.lblOptionHolder.Location = new System.Drawing.Point(173, 43);
+            this.lblOptionHolder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblOptionHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblOptionHolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblOptionHolder.Location = new System.Drawing.Point(166, 85);
             this.lblOptionHolder.Name = "lblOptionHolder";
-            this.lblOptionHolder.Size = new System.Drawing.Size(19, 13);
+            this.lblOptionHolder.Size = new System.Drawing.Size(23, 15);
             this.lblOptionHolder.TabIndex = 5;
             this.lblOptionHolder.Text = "----";
             // 
             // lblPeriodHolder
             // 
             this.lblPeriodHolder.AutoSize = true;
-            this.lblPeriodHolder.Location = new System.Drawing.Point(173, 71);
+            this.lblPeriodHolder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblPeriodHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblPeriodHolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPeriodHolder.Location = new System.Drawing.Point(166, 113);
             this.lblPeriodHolder.Name = "lblPeriodHolder";
-            this.lblPeriodHolder.Size = new System.Drawing.Size(19, 13);
+            this.lblPeriodHolder.Size = new System.Drawing.Size(23, 15);
             this.lblPeriodHolder.TabIndex = 6;
             this.lblPeriodHolder.Text = "----";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(406, 19);
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(18, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.Size = new System.Drawing.Size(78, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Coordinador:";
             // 
             // lblCoordinatorHolder
             // 
             this.lblCoordinatorHolder.AutoSize = true;
-            this.lblCoordinatorHolder.Location = new System.Drawing.Point(499, 19);
+            this.lblCoordinatorHolder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCoordinatorHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblCoordinatorHolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCoordinatorHolder.Location = new System.Drawing.Point(111, 278);
             this.lblCoordinatorHolder.Name = "lblCoordinatorHolder";
-            this.lblCoordinatorHolder.Size = new System.Drawing.Size(19, 13);
+            this.lblCoordinatorHolder.Size = new System.Drawing.Size(23, 15);
             this.lblCoordinatorHolder.TabIndex = 8;
             this.lblCoordinatorHolder.Text = "----";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(406, 43);
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(18, 302);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(51, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Carrera:";
             // 
             // lblCareerHolder
             // 
             this.lblCareerHolder.AutoSize = true;
-            this.lblCareerHolder.Location = new System.Drawing.Point(499, 43);
+            this.lblCareerHolder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCareerHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblCareerHolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCareerHolder.Location = new System.Drawing.Point(111, 302);
             this.lblCareerHolder.Name = "lblCareerHolder";
-            this.lblCareerHolder.Size = new System.Drawing.Size(19, 13);
+            this.lblCareerHolder.Size = new System.Drawing.Size(23, 15);
             this.lblCareerHolder.TabIndex = 10;
             this.lblCareerHolder.Text = "----";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel1.Controls.Add(this.lblStudentSemesterHolder);
             this.panel1.Controls.Add(this.lblStudentCareerHolder);
             this.panel1.Controls.Add(this.lblStudentNoControlHolder);
@@ -163,10 +203,12 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(28, 118);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(364, 267);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 192);
+            this.panel1.Size = new System.Drawing.Size(456, 192);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblStudentSemesterHolder
             // 
@@ -252,6 +294,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel2.Controls.Add(this.lblAssessorHolder);
             this.panel2.Controls.Add(this.lblRFCHolder);
             this.panel2.Controls.Add(this.lblNameHolder);
@@ -259,9 +302,10 @@
             this.panel2.Controls.Add(this.lblRFC);
             this.panel2.Controls.Add(this.lblName);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(460, 118);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(364, 52);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(409, 192);
+            this.panel2.Size = new System.Drawing.Size(456, 192);
             this.panel2.TabIndex = 12;
             // 
             // lblAssessorHolder
@@ -331,48 +375,114 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(406, 71);
+            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(18, 330);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.Size = new System.Drawing.Size(38, 15);
             this.label12.TabIndex = 13;
             this.label12.Text = "Tutor:";
             // 
             // lblTutorHolder
             // 
             this.lblTutorHolder.AutoSize = true;
-            this.lblTutorHolder.Location = new System.Drawing.Point(499, 71);
+            this.lblTutorHolder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTutorHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblTutorHolder.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTutorHolder.Location = new System.Drawing.Point(111, 330);
             this.lblTutorHolder.Name = "lblTutorHolder";
-            this.lblTutorHolder.Size = new System.Drawing.Size(19, 13);
+            this.lblTutorHolder.Size = new System.Drawing.Size(23, 15);
             this.lblTutorHolder.TabIndex = 14;
             this.lblTutorHolder.Text = "----";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.Controls.Add(this.label36);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Location = new System.Drawing.Point(1, 1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(839, 30);
+            this.panel3.TabIndex = 21;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label36.Location = new System.Drawing.Point(395, 9);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(108, 13);
+            this.label36.TabIndex = 134;
+            this.label36.Text = "Detalles del estudiant";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
+            this.pictureBox1.Location = new System.Drawing.Point(780, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(809, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.lblTutorHolder);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.lblProyectNameHolder);
+            this.panel4.Controls.Add(this.lblOptionHolder);
+            this.panel4.Controls.Add(this.lblPeriodHolder);
+            this.panel4.Controls.Add(this.lblCareerHolder);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.lblCoordinatorHolder);
+            this.panel4.Location = new System.Drawing.Point(-6, 29);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(352, 466);
+            this.panel4.TabIndex = 135;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // StudentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 344);
-            this.Controls.Add(this.lblTutorHolder);
-            this.Controls.Add(this.label12);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(840, 490);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblCareerHolder);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblCoordinatorHolder);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblPeriodHolder);
-            this.Controls.Add(this.lblOptionHolder);
-            this.Controls.Add(this.lblProyectNameHolder);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "StudentDetails";
             this.Text = "StudentDetails";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -408,5 +518,10 @@
         private System.Windows.Forms.Label lblAssessorHolder;
         private System.Windows.Forms.Label lblRFCHolder;
         private System.Windows.Forms.Label lblNameHolder;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel4;
     }
 }
