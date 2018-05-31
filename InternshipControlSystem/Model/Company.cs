@@ -30,14 +30,14 @@ namespace InternshipControlSystem.Model
         public String AgreedDao;
 
         // Constructor de la Clase
-        public Company(int Id, String Name, String RFC, int Company_Assessor_Id, String Turn, String CompanyHome,String CompanyColoni,
+        public Company(int Id, String Name, String RFC, String Turn, String CompanyHome,String CompanyColoni,
             String CP, String FAX, String PhoneCompany, String CompanyCity, String TitularName, string TitularPosition, String AdvisoryName,
             String AdvisoryPosition, String AgreedName, String Agreed)
         {
             this.Id = Id;
             this.Name = Name;
             this.RFC = RFC;
-            this.Company_Assessor_Id = Company_Assessor_Id;
+            
             this.TurnDao = Turn;
             this.CompanyHomeDao = CompanyHome;
            this.CompanyColonyDao = CompanyColoni;

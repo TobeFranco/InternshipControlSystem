@@ -22,7 +22,7 @@ namespace InternshipControlSystem.Back_End
                 while (reader.Read())
                 {
                     Company item = new Company(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
-                        Convert.ToString(reader["RFC"]), Convert.ToInt32(reader["company_assessor_id"]), Convert.ToString(reader["Turn"]),
+                        Convert.ToString(reader["RFC"]), Convert.ToString(reader["Turn"]),
                          Convert.ToString(reader["CompanyHome"]), Convert.ToString(reader["CompanyColony"]), Convert.ToString(reader["Cp"])
                          , Convert.ToString(reader["Fax"]), Convert.ToString(reader["PhoneCompany"]), Convert.ToString(reader["CompanyCity"]), Convert.ToString(reader["TitularName"])
                          , Convert.ToString(reader["TitularPosition"]), Convert.ToString(reader["AdvisoryName"]), Convert.ToString(reader["AdvisoryPosition"])
@@ -48,11 +48,10 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "INSERT INTO revisors VALUES(null, @first_name, @RFC, @company_assessor_id, @Turn, @CompanyHome ,@CompanyColony, @Cp, @Fax, @PhoneCompany, @CompanyCity, @TitularName, @TitularPosition, @AdvisoryName, @AdvisoryPosition, @AgreedName, @Agreed)";
+                string sqlStatement = "INSERT INTO companies VALUES(null, @comp_name, @RFC, @Turn, @CompanyHome, @CompanyColony, @Cp, @Fax, @PhoneCompany, @CompanyCity, @TitularName, @TitularPosition, @AdvisoryName, @AdvisoryPosition, @AgreedName, @Agreed)";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
-                cmd.Parameters.AddWithValue("@first_name", student.Name);
-                cmd.Parameters.AddWithValue("@RFC", student.RFC);
-                cmd.Parameters.AddWithValue("@company_assessor_id",student.Company_Assessor_Id);
+                cmd.Parameters.AddWithValue("@comp_name", student.Name);
+                cmd.Parameters.AddWithValue("@RFC", student.RFC);              
                 cmd.Parameters.AddWithValue("@Turn", student.TurnDao);
                 cmd.Parameters.AddWithValue("@CompanyHome", student.CompanyHomeDao);            
                 cmd.Parameters.AddWithValue("@CompanyColony", student.CompanyColonyDao);
@@ -66,6 +65,7 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@AdvisoryPosition", student.AdvisoryPositionDao);
                 cmd.Parameters.AddWithValue("@AgreedName", student.AgreedNameDao);
                 cmd.Parameters.AddWithValue("@Agreed", student.AgreedDao);
+                cmd.Parameters.AddWithValue("@company_id", student.AgreedDao);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

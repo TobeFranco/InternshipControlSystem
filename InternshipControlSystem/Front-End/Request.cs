@@ -109,18 +109,20 @@ namespace InternshipControlSystem.Front_End
                                 NameResident, NumberControl, Career, SocialSecurity, Home, NumberInsurance, Email, Phonehouse, City, Phone);
                             Back_End.DaoSolicitud obj = new Back_End.DaoSolicitud();
                             obj.CreateItem(nueva);
+
+                            Model.Company compan = new Model.Company(0, companyName, RFC, Turn, CompanyHome, CompanyColony,
+                               Cp, Fax, PhoneCompany, CompanyCity, TitularName, TitularPosition, AdvisoryName, AdvisoryPosition, AgreedName
+                               , Agreed);
+                            CompanyDao.CreateItem(compan);
                             // se crea el objeto de estudiante y se llena el constructor
                             Model.Student studen = new Model.Student(0,NumberControl,NameResident,txtApellidos.Text,Career,
-                                Convert.ToInt32(txtSemestre.Text),"sss",1,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone);
+                                Convert.ToInt32(txtSemestre.Text),"sss",SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,1);
                             
                               StudentsDAO.CreateItem(studen);
                            
                              // se crea el objeto de empresea
 
-                             Model.Company compan = new Model.Company(0,companyName,RFC,1,Turn,CompanyHome,CompanyColony,
-                                 Cp,Fax,PhoneCompany,CompanyCity,TitularName,TitularPosition,AdvisoryName,AdvisoryPosition,AgreedName
-                                 ,Agreed);
-                            CompanyDao.CreateItem(compan);
+                           
                             
                             Model.Proyect pro = new Model.Proyect(0, ProjectName, 1, 1, ProjectedPeriod, ChosenOption, NumberOfResidents);
                             ProyectsDAO.CreateItem(pro);
@@ -158,6 +160,161 @@ namespace InternshipControlSystem.Front_End
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+        Back_End.Validacion obj = new Back_End.Validacion();
+        private void txtNameResident_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtProjectName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtNumberOfResidents_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtCompanyName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void cmbTurn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtCompanyColony_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txtCompanyColony_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtCompanyCity_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtCp_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txtCompanyCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtCp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtFax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtPhoneCompany_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtTitularName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtAdvisoryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtAgreedName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtTitularPosition_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtAdvisoryPosition_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtAgreed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtSemestre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void cmbSocialSecurity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtNumberInsurance_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtHome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtphonehouse_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtphonehouse_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloNumeros(e);
+        }
+
+        private void txtCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
+        }
+
+        private void txtNumberControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void txtCareer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            obj.soloLetras(e);
         }
     }
 }

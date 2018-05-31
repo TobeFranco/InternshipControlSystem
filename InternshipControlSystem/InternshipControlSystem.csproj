@@ -63,6 +63,7 @@
     <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
     <Compile Include="Back-End\solicitud.cs" />
+    <Compile Include="Back-End\Validacion.cs" />
     <Compile Include="Front-End\Login.cs">
       <SubType>Form</SubType>
     </Compile>

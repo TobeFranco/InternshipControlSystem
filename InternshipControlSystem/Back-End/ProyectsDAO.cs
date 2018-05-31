@@ -22,8 +22,9 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Proyect item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
-                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]));
+                    Proyect item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
+                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
+                         Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]));
                     items.Add(item);
                 }
                 reader.Close();
@@ -45,12 +46,14 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "INSERT INTO revisors VALUES(null, @pro_name, @company_id, @student_id, @period)";
+                string sqlStatement = "INSERT INTO revisors VALUES(null, @pro_name, @company_id, @student_id, @period, @ChosenOption, @NumberOfResidents)";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@pro_name", item.Name);
                 cmd.Parameters.AddWithValue("@company_id", item.Company_Id);
                 cmd.Parameters.AddWithValue("@student_id", item.Student_Id);
                 cmd.Parameters.AddWithValue("@period", item.Period);
+                cmd.Parameters.AddWithValue("@ChosenOption", item.ChosenOptionDao);
+                cmd.Parameters.AddWithValue("@NumberOfResidents", item.NumberOfResidentsDao);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -126,7 +129,8 @@ namespace InternshipControlSystem.Back_End
                 if (reader.Read())
                 {
                     item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
-                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]));
+                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]),
+                        Convert.ToString(reader["period"]), Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]));
                 }
             }
             catch (Exception ex)
@@ -154,7 +158,8 @@ namespace InternshipControlSystem.Back_End
                 if (reader.Read())
                 {
                     item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
-                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]));
+                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
+                        Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]));
                 }
             }
             catch (Exception ex)

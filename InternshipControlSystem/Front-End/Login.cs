@@ -63,7 +63,7 @@ namespace InternshipControlSystem.Front_End
             comando.Connection = conectar;
             String contraseña = txtPassword.Text;
             String usuario = txtUser.Text;
-            comando.CommandText = ("select * from usuarios where usuario= '"+usuario.Trim()+"' and passwor=sha1('"+contraseña.Trim()+"')");
+            comando.CommandText = ("select * from users where username= '" + usuario.Trim()+ "' and password_key=sha1('" + contraseña.Trim()+"')");
             MySqlDataReader leer = comando.ExecuteReader();
             if (leer.Read())
             {

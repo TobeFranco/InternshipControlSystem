@@ -24,13 +24,14 @@ namespace InternshipControlSystem.Model
         public String PhonehouseDao;
         public String CityDao;
         public String PhoneDao;
-
+        public int company_idDao;
 
 
 
         // Constructor de la clase
         public Student(int Id, String Control_id, String First_name, String Last_name, String Career,
-                        int Semester, String Cordinator, int Tutor_id, String social,String home,String Email,String city,String PhoneHouse, int numeri,String Phone)
+                        int Semester, String Cordinator, String social,String home,String Email,String city,String PhoneHouse, int numeri,String Phone
+            ,int idcompany)
         {
             this.Id = Id;
             this.Control_id = Control_id;
@@ -39,7 +40,7 @@ namespace InternshipControlSystem.Model
             this.Career = Career;
             this.Semester = Semester;
             this.Cordinator = Cordinator;
-            this.Tutor_id = Tutor_id;
+           
             this.SocialSecurityDao = social;
             this.HomeDao = home;
             this.EmailDao = Email;
@@ -47,6 +48,7 @@ namespace InternshipControlSystem.Model
             this.PhonehouseDao = Phone;
             this.NumberInsuranceDao = numeri;
             this.PhoneDao = Phone;
+            this.company_idDao = idcompany;
     }
     }
 }
