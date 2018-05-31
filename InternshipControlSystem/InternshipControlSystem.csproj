@@ -59,7 +59,7 @@
     <Compile Include="Back-End\Conection.cs" />
     <Compile Include="Back-End\AssessorsDAO.cs" />
     <Compile Include="Back-End\DaoSolicitud.cs" />
-    <Compile Include="Back-End\DaoUsuario.cs" />
+    <Compile Include="Back-End\UserDAO.cs" />
     <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
     <Compile Include="Back-End\solicitud.cs" />
@@ -70,11 +70,11 @@
     <Compile Include="Front-End\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Front-End\Principal_Assessor.cs">
+    <Compile Include="Front-End\Principal_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Front-End\Principal_Assessor.Designer.cs">
-      <DependentUpon>Principal_Assessor.cs</DependentUpon>
+    <Compile Include="Front-End\Principal_Administrator.Designer.cs">
+      <DependentUpon>Principal_Administrator.cs</DependentUpon>
     </Compile>
     <Compile Include="Front-End\Request.cs">
       <SubType>Form</SubType>
@@ -112,7 +112,6 @@
     <Compile Include="Front-End\Tracing.Designer.cs">
       <DependentUpon>Tracing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Assessor.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Company_Assessor.cs" />
     <Compile Include="Model\Revisor.cs" />
@@ -127,8 +126,8 @@
     <EmbeddedResource Include="Front-End\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Front-End\Principal_Assessor.resx">
-      <DependentUpon>Principal_Assessor.cs</DependentUpon>
+    <EmbeddedResource Include="Front-End\Principal_Administrator.resx">
+      <DependentUpon>Principal_Administrator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Request.resx">
       <DependentUpon>Request.cs</DependentUpon>

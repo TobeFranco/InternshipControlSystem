@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace InternshipControlSystem.Front_End
 {
-    public partial class Principal_Assessor : Form
+    public partial class Principal_Administrator : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -23,7 +23,7 @@ namespace InternshipControlSystem.Front_End
     int nWidthEllipse, // height of ellipse
     int nHeightEllipse // width of ellipse
 );
-        public Principal_Assessor()
+        public Principal_Administrator()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

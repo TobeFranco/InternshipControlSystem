@@ -67,13 +67,17 @@ namespace InternshipControlSystem.Front_End
             MySqlDataReader leer = comando.ExecuteReader();
             if (leer.Read())
             {
-                Principal_Assessor obj = new Principal_Assessor();
-                obj.Show();
-                Login lo = new Login();
-                lo.Hide();
-                txtPassword.Text = "";
-                txtUser.Text = "";
-                
+                int ID = Back_End.UserDAO.GetID(Convert.ToInt32(leer["UserID"]),Convert.ToString(leer["Type"]));
+                switch (leer["Type"])
+                {
+                    case "Administrators":
+                    break;
+                    case "Tutors":
+                    break;
+                    case "Revisors":
+                    break;
+                }
+                  
             }
             else
             {

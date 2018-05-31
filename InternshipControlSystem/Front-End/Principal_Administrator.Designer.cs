@@ -1,6 +1,6 @@
 ﻿namespace InternshipControlSystem.Front_End
 {
-    partial class Principal_Assessor
+    partial class Principal_Administrator
     {
         /// <summary>
         /// Required designer variable.
