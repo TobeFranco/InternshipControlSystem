@@ -75,8 +75,12 @@ namespace InternshipControlSystem.Front_End
                         PA.Show();
                     break;
                     case "Tutors":
+                        Studen_Catalog_asessor SCA = new Studen_Catalog_asessor(ID);
+                        SCA.Show();
                     break;
                     case "Revisors":
+                        Student_Catalog_Revisor SCR = new Student_Catalog_Revisor(ID);
+                        SCR.Show();
                     break;
                 }
                 this.Hide();

@@ -32,14 +32,51 @@ namespace InternshipControlSystem.Front_End
     int nWidthEllipse, // height of ellipse
     int nHeightEllipse // width of ellipse
 );
-        public Student_Catalog_Revisor()
+        public Student_Catalog_Revisor(int IDrevisor)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             students = new List<Student>();
-            students = StudentsDAO.GetAllItems();
+            students = StudentsDAO.GetAllItemsInTutor(IDrevisor);
             displayStudents = new List<Student>(students);
+            fillTable();
+        }
+
+
+        private void fillTable()
+        {
+            dgvStudents.ClearSelection();
+            dgvStudents.Rows.Clear();
+            foreach (Student stud in displayStudents)
+            {
+               
+            }
+            btnStudentDetails.Enabled = false;
+        }
+        private void Studen_Catalog_asessor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvStudents_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = dgvStudents.CurrentRow.Index;
+            selectedStudent = students.ElementAt(index);
+            // Update overview display
+            lblStudentNameHolder.Text = selectedStudent.First_name + selectedStudent.Last_name;
+            lblNoControlHolder.Text = selectedStudent.Control_id;
+            // Proyect info
+            Proyect proyect = ProyectsDAO.GetItem(selectedStudent);
+            if (proyect != null)
+            {
+                lblProyectNameHolder.Text = proyect.Name;
+                lblPeriodHolder.Text = proyect.Period;
+            }
         }
     }
 }

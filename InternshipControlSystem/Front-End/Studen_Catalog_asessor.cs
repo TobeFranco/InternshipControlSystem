@@ -19,13 +19,12 @@ namespace InternshipControlSystem.Front_End
         private Student selectedStudent;
 
         
-        public Studen_Catalog_asessor()
+        public Studen_Catalog_asessor(int IDtutor)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-      
             students = new List<Student>();
-            students = StudentsDAO.GetAllItemsInTutor(1);
+            students = StudentsDAO.GetAllItemsInTutor(IDtutor);
             displayStudents = new List<Student>(students);
             fillTable();
         }
