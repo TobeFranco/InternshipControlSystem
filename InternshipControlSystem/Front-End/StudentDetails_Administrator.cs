@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternshipControlSystem.Model;
 using System.Runtime.InteropServices;
+using InternshipControlSystem.Back_End;
 
 namespace InternshipControlSystem.Front_End
 {
-    public partial class StudentDetails : Form
+    public partial class StudentDetails_Administrator : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -24,12 +25,29 @@ namespace InternshipControlSystem.Front_End
        int nWidthEllipse, // height of ellipse
        int nHeightEllipse // width of ellipse
    );
-        public StudentDetails(Student student)
+        public StudentDetails_Administrator(Student student)
         {
             InitializeComponent();
-            // TODO: Load student info.
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            Proyect proyect = ProyectsDAO.GetItem(student);
+            Tutor tutor = TutorDAO.GetItem(student.Tutor_id);
+            Company company = CompanyDao.GetItem(student.company_idDao);
+            Company_Assessor assessor = Company_AssessorsDAO.GetItem(company);
+
+            // Fill in fields.
+            txtProyectName.Text = proyect.Name;
+            txtChosenOption.Text = proyect.ChosenOptionDao;
+            txtPeriod.Text = proyect.Period;
+
+            txtCoordinator.Text = student.Cordinator;
+            txtCareer.Text = student.Career;
+            txtTutor.Text = tutor.FirstName + " " + tutor.LastName;
+
+            txtCompanyName.Text = company.Name;
+            txtRFC.Text = company.RFC;
+            txtCompanyAssessor.Text = "";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

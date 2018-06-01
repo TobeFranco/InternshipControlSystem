@@ -1,6 +1,6 @@
 ﻿namespace InternshipControlSystem.Front_End
 {
-    partial class Student_Catalog
+    partial class Student_Catalog_Administrator
     {
         /// <summary>
         /// Required designer variable.

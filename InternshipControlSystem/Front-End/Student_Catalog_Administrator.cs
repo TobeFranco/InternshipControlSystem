@@ -13,7 +13,7 @@ using InternshipControlSystem.Back_End;
 
 namespace InternshipControlSystem.Front_End
 {
-    public partial class Student_Catalog : Form
+    public partial class Student_Catalog_Administrator : Form
     {
         private List<Student> students;
         private List<Student> displayStudents;
@@ -30,7 +30,7 @@ namespace InternshipControlSystem.Front_End
     int nHeightEllipse // width of ellipse
 );
 
-        public Student_Catalog()
+        public Student_Catalog_Administrator()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -58,7 +58,7 @@ namespace InternshipControlSystem.Front_End
 
         private void btnStudentDetails_Click(object sender, EventArgs e)
         {
-            StudentDetails det = new StudentDetails(selectedStudent);
+            StudentDetails_Administrator det = new StudentDetails_Administrator(selectedStudent);
             det.Show();
         }
 
@@ -100,7 +100,7 @@ namespace InternshipControlSystem.Front_End
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentDetails det = new StudentDetails(selectedStudent);
+            StudentDetails_Administrator det = new StudentDetails_Administrator(selectedStudent);
             det.Show();
         }
 
