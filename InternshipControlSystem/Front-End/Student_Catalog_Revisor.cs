@@ -49,15 +49,7 @@ namespace InternshipControlSystem.Front_End
             dgvStudents.Rows.Clear();
             foreach (Student stud in displayStudents)
             {
-                dgvStudents.ClearSelection();
-                dgvStudents.Rows.Clear();
-                foreach (Student stud in displayStudents)
-                {
-                    Tutor tutor = TutorDAO.GetItem(stud.Tutor_id);
-                    String[] row = { stud.Control_id, stud.First_name + " " + stud.Last_name, stud.Career,
-                    tutor.FirstName + " " + tutor.LastName};
-                    dgvStudents.Rows.Add(row);
-                }
+              
             }
         }
         private void Studen_Catalog_asessor_Load(object sender, EventArgs e)

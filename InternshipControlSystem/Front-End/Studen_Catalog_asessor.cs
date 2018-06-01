@@ -41,7 +41,7 @@ namespace InternshipControlSystem.Front_End
                     tutor.FirstName + " " + tutor.LastName};
                 dgvStudents.Rows.Add(row);
             }
-            btnStudentDetails.Enabled = false;
+
         }
         private void Studen_Catalog_asessor_Load(object sender, EventArgs e)
         {

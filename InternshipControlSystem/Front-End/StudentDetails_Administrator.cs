@@ -34,7 +34,7 @@ namespace InternshipControlSystem.Front_End
             Proyect proyect = ProyectsDAO.GetItem(student);
             Tutor tutor = TutorDAO.GetItem(student.Tutor_id);
             Company company = CompanyDao.GetItem(student.company_idDao);
-            Company_Assessor assessor = Company_AssessorsDAO.GetItem(company);
+            //Company_Assessor assessor = Company_AssessorsDAO.GetItem(company);
 
             // Fill in fields.
             txtProyectName.Text = proyect.Name;
@@ -49,6 +49,7 @@ namespace InternshipControlSystem.Front_End
             txtRFC.Text = company.RFC;
             txtCompanyAssessor.Text = "";
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

@@ -132,8 +132,8 @@ namespace InternshipControlSystem.Front_End
 
                            
                             
-                            Model.Proyect pro = new Model.Proyect(0, ProjectName, lastIDCompany, lastIDstudent, ProjectedPeriod, ChosenOption, NumberOfResidents);
-                            ProyectsDAO.CreateItem(pro);
+                            //Model.Proyect pro = new Model.Proyect(0, ProjectName, lastIDCompany, lastIDstudent, ProjectedPeriod, ChosenOption, NumberOfResidents);
+                            //ProyectsDAO.CreateItem(pro);
 
                             MessageBox.Show("LA SOLICITUD FUE AGREGADA CORRECTAMENTE");
                         }
