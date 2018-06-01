@@ -57,8 +57,6 @@
     <Compile Include="Back-End\CompanyDao.cs" />
     <Compile Include="Back-End\Company_AssessorsDAO.cs" />
     <Compile Include="Back-End\Conection.cs" />
-    <Compile Include="Back-End\AssessorsDAO.cs" />
-    <Compile Include="Back-End\DaoSolicitud.cs" />
     <Compile Include="Back-End\UserDAO.cs" />
     <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
@@ -88,17 +86,17 @@
     <Compile Include="Front-End\studentFollow-up.Designer.cs">
       <DependentUpon>studentFollow-up.cs</DependentUpon>
     </Compile>
-    <Compile Include="Front-End\StudentDetails.cs">
+    <Compile Include="Front-End\StudentDetails_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Front-End\StudentDetails.Designer.cs">
-      <DependentUpon>StudentDetails.cs</DependentUpon>
+    <Compile Include="Front-End\StudentDetails_Administrator.Designer.cs">
+      <DependentUpon>StudentDetails_Administrator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Front-End\Student_Catalog.cs">
+    <Compile Include="Front-End\Student_Catalog_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Front-End\Student_Catalog.Designer.cs">
-      <DependentUpon>Student_Catalog.cs</DependentUpon>
+    <Compile Include="Front-End\Student_Catalog_Administrator.Designer.cs">
+      <DependentUpon>Student_Catalog_Administrator.cs</DependentUpon>
     </Compile>
     <Compile Include="Front-End\Studen_Catalog_asessor.cs">
       <SubType>Form</SubType>
@@ -141,8 +139,8 @@
     <EmbeddedResource Include="Front-End\studentFollow-up.resx">
       <DependentUpon>studentFollow-up.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Front-End\Student_Catalog.resx">
-      <DependentUpon>Student_Catalog.cs</DependentUpon>
+    <EmbeddedResource Include="Front-End\Student_Catalog_Administrator.resx">
+      <DependentUpon>Student_Catalog_Administrator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Studen_Catalog_asessor.resx">
       <DependentUpon>Studen_Catalog_asessor.cs</DependentUpon>
@@ -150,8 +148,8 @@
     <EmbeddedResource Include="Front-End\TakeData.resx">
       <DependentUpon>TakeData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Front-End\StudentDetails.resx">
-      <DependentUpon>StudentDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Front-End\StudentDetails_Administrator.resx">
+      <DependentUpon>StudentDetails_Administrator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
