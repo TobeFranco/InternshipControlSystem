@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlStudentOverview = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblProyectName = new System.Windows.Forms.Label();
             this.lblNoControlHolder = new System.Windows.Forms.Label();
             this.lblProyectNameHolder = new System.Windows.Forms.Label();
@@ -40,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPeriod = new System.Windows.Forms.Label();
             this.lblStudentNameHolder = new System.Windows.Forms.Label();
-            this.btnStudentDetails = new System.Windows.Forms.Button();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblPnlHeader = new System.Windows.Forms.Label();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
@@ -51,31 +47,14 @@
             this.lblStudentId = new System.Windows.Forms.Label();
             this.txtNoControlFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlStudentOverview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(913, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
-            this.pictureBox1.Location = new System.Drawing.Point(884, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlStudentOverview
             // 
@@ -90,7 +69,6 @@
             this.pnlStudentOverview.Controls.Add(this.label1);
             this.pnlStudentOverview.Controls.Add(this.lblPeriod);
             this.pnlStudentOverview.Controls.Add(this.lblStudentNameHolder);
-            this.pnlStudentOverview.Controls.Add(this.btnStudentDetails);
             this.pnlStudentOverview.Controls.Add(this.lblStudentName);
             this.pnlStudentOverview.Controls.Add(this.lblPnlHeader);
             this.pnlStudentOverview.ForeColor = System.Drawing.Color.White;
@@ -98,15 +76,6 @@
             this.pnlStudentOverview.Name = "pnlStudentOverview";
             this.pnlStudentOverview.Size = new System.Drawing.Size(218, 470);
             this.pnlStudentOverview.TabIndex = 22;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(63, 363);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblProyectName
             // 
@@ -186,19 +155,6 @@
             this.lblStudentNameHolder.Size = new System.Drawing.Size(37, 13);
             this.lblStudentNameHolder.TabIndex = 1;
             this.lblStudentNameHolder.Text = "----------";
-            // 
-            // btnStudentDetails
-            // 
-            this.btnStudentDetails.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnStudentDetails.FlatAppearance.BorderSize = 0;
-            this.btnStudentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnStudentDetails.Location = new System.Drawing.Point(-1, 392);
-            this.btnStudentDetails.Name = "btnStudentDetails";
-            this.btnStudentDetails.Size = new System.Drawing.Size(218, 31);
-            this.btnStudentDetails.TabIndex = 7;
-            this.btnStudentDetails.Text = "Detalles de Alumno";
-            this.btnStudentDetails.UseVisualStyleBackColor = false;
             // 
             // lblStudentName
             // 
@@ -280,6 +236,7 @@
             this.txtNoControlFilter.Name = "txtNoControlFilter";
             this.txtNoControlFilter.Size = new System.Drawing.Size(169, 20);
             this.txtNoControlFilter.TabIndex = 24;
+            this.txtNoControlFilter.TextChanged += new System.EventHandler(this.txtNoControlFilter_TextChanged);
             // 
             // label2
             // 
@@ -291,6 +248,41 @@
             this.label2.Size = new System.Drawing.Size(217, 25);
             this.label2.TabIndex = 23;
             this.label2.Text = "Catalogo de Alumnos";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.button1.Location = new System.Drawing.Point(3, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(207, 33);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Detalles del alumno";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(913, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
+            this.pictureBox1.Location = new System.Drawing.Point(884, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Student_Catalog_Revisor
             // 
@@ -306,11 +298,11 @@
             this.Controls.Add(this.label2);
             this.Name = "Student_Catalog_Revisor";
             this.Text = "Student_Catalog_Revisor";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlStudentOverview.ResumeLayout(false);
             this.pnlStudentOverview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +313,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlStudentOverview;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblProyectName;
         private System.Windows.Forms.Label lblNoControlHolder;
         private System.Windows.Forms.Label lblProyectNameHolder;
@@ -330,7 +321,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPeriod;
         private System.Windows.Forms.Label lblStudentNameHolder;
-        private System.Windows.Forms.Button btnStudentDetails;
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblPnlHeader;
         private System.Windows.Forms.DataGridView dgvStudents;
@@ -341,5 +331,6 @@
         private System.Windows.Forms.Label lblStudentId;
         private System.Windows.Forms.TextBox txtNoControlFilter;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

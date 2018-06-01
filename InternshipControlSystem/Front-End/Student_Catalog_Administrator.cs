@@ -53,7 +53,6 @@ namespace InternshipControlSystem.Front_End
                     tutor.FirstName + " " + tutor.LastName};
                 dgvStudents.Rows.Add(row);
             }
-            btnStudentDetails.Enabled = false;
         }
 
         private void btnStudentDetails_Click(object sender, EventArgs e)

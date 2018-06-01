@@ -30,9 +30,8 @@ namespace InternshipControlSystem.Front_End
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             ToolTip tool = new ToolTip();
             tool.SetToolTip(btnSolicitud, "Crea una nueva solicitud");
-            tool.SetToolTip(btnSeguimiento, "Seguimiento del alumno");
             tool.SetToolTip(btnCatalogosAlumnos, "Mueestra la lista de los alumnos");
-            tool.SetToolTip(btnAdmiDatosAlumnos, "Administra los datos de los alumnos");
+           
 
         }
 
@@ -50,6 +49,12 @@ namespace InternshipControlSystem.Front_End
         {
             Request obje = new Request();
             obje.Show();
+        }
+
+        private void btnCatalogosAlumnos_Click(object sender, EventArgs e)
+        {
+            Student_Catalog_Administrator SCA = new Student_Catalog_Administrator();
+            SCA.Show();
         }
     }
 }

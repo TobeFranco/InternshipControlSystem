@@ -84,7 +84,11 @@ namespace InternshipControlSystem.Front_End
                     break;
                 }
                 this.Hide();
-                  
+                contraseña = null;
+                usuario = null;
+                txtPassword.Text = "";
+                txtUser.Text = "";
+
             }
             else
             {

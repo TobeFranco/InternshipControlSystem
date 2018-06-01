@@ -37,7 +37,7 @@ namespace InternshipControlSystem.Front_End
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             students = new List<Student>();
-            students = StudentsDAO.GetAllItemsInTutor(IDrevisor);
+            students = StudentsDAO.GetAllItemsInRevisor(IDrevisor);
             displayStudents = new List<Student>(students);
             fillTable();
         }
@@ -49,9 +49,16 @@ namespace InternshipControlSystem.Front_End
             dgvStudents.Rows.Clear();
             foreach (Student stud in displayStudents)
             {
-               
+                dgvStudents.ClearSelection();
+                dgvStudents.Rows.Clear();
+                foreach (Student stud in displayStudents)
+                {
+                    Tutor tutor = TutorDAO.GetItem(stud.Tutor_id);
+                    String[] row = { stud.Control_id, stud.First_name + " " + stud.Last_name, stud.Career,
+                    tutor.FirstName + " " + tutor.LastName};
+                    dgvStudents.Rows.Add(row);
+                }
             }
-            btnStudentDetails.Enabled = false;
         }
         private void Studen_Catalog_asessor_Load(object sender, EventArgs e)
         {
@@ -77,6 +84,38 @@ namespace InternshipControlSystem.Front_End
                 lblProyectNameHolder.Text = proyect.Name;
                 lblPeriodHolder.Text = proyect.Period;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentDetails_Revisor det = new StudentDetails_Revisor();
+            det.Show();
+        }
+
+        private void txtNoControlFilter_TextChanged(object sender, EventArgs e)
+        {
+            // Filter by No. Control
+
+            string filterParam = txtNoControlFilter.Text;
+            displayStudents.Clear();
+            foreach (Student stud in students)
+            {
+                if (stud.Control_id.StartsWith(filterParam))
+                {
+                    displayStudents.Add(stud);
+                }
+            }
+            fillTable();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

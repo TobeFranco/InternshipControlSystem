@@ -94,28 +94,24 @@ namespace InternshipControlSystem.Back_End
             return students;
         }
 
-        public static List<Student> GetAllItemsInAssessor(int id)
+        public static List<Student> GetAllItemsInRevisor(int id)
         {
             MySqlConnection conn = Conection.getConnection();
             List<Student> students = new List<Student>();
+            List<int> studentsID = new List<int>();
             try
             {
                 conn.Open();
-                string sqlStatement = "SELECT * FROM students where tutor_id=@tutor_id";
+                string sqlStatement = "SELECT student_ID FROM students_revisors where revisor_id=@revisor_id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
-                cmd.Parameters.AddWithValue("@tutor_id", id);
+                cmd.Parameters.AddWithValue("@revisor_id", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
-                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
-                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
-                         Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
-                         , Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
-                         , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
-                    students.Add(student);
+                    studentsID.Add(Convert.ToInt32(reader["student_ID"]));
                 }
                 reader.Close();
+                students = GetAllItemsInRevisor_Continue(studentsID);
             }
             catch (Exception ex)
             {
@@ -128,14 +124,42 @@ namespace InternshipControlSystem.Back_End
             return students;
         }
 
-
-
-
-
-
-
-
-
+        public static List<Student> GetAllItemsInRevisor_Continue(List<int> students)
+        {
+            MySqlConnection conn = Conection.getConnection();
+            List<Student> studentsDetils = new List<Student>();
+            try
+            {
+                conn.Open();
+                foreach (var id in students)
+                {
+                    string sqlStatement = "SELECT * FROM students where revisor_id=@revisor_id";
+                    MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                    cmd.Parameters.AddWithValue("@revisor_id", id);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
+                            Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
+                            Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
+                             Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
+                             , Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
+                             , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
+                        studentsDetils.Add(student);
+                    }
+                }
+                return studentsDetils;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return studentsDetils;
+        }
 
         public static int CreateItem(Student student){
             MySqlConnection conn = Conection.getConnection();
