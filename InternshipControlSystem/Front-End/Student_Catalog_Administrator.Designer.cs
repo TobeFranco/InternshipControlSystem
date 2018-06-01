@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPeriod = new System.Windows.Forms.Label();
             this.lblStudentNameHolder = new System.Windows.Forms.Label();
-            this.btnStudentDetails = new System.Windows.Forms.Button();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblPnlHeader = new System.Windows.Forms.Label();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
@@ -70,7 +69,6 @@
             this.pnlStudentOverview.Controls.Add(this.label1);
             this.pnlStudentOverview.Controls.Add(this.lblPeriod);
             this.pnlStudentOverview.Controls.Add(this.lblStudentNameHolder);
-            this.pnlStudentOverview.Controls.Add(this.btnStudentDetails);
             this.pnlStudentOverview.Controls.Add(this.lblStudentName);
             this.pnlStudentOverview.Controls.Add(this.lblPnlHeader);
             this.pnlStudentOverview.ForeColor = System.Drawing.Color.White;
@@ -82,12 +80,15 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(63, 363);
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.button1.Location = new System.Drawing.Point(6, 432);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(207, 33);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Detalles del alumno";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblProyectName
@@ -168,20 +169,6 @@
             this.lblStudentNameHolder.Size = new System.Drawing.Size(37, 13);
             this.lblStudentNameHolder.TabIndex = 1;
             this.lblStudentNameHolder.Text = "----------";
-            // 
-            // btnStudentDetails
-            // 
-            this.btnStudentDetails.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnStudentDetails.FlatAppearance.BorderSize = 0;
-            this.btnStudentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnStudentDetails.Location = new System.Drawing.Point(-1, 392);
-            this.btnStudentDetails.Name = "btnStudentDetails";
-            this.btnStudentDetails.Size = new System.Drawing.Size(218, 31);
-            this.btnStudentDetails.TabIndex = 7;
-            this.btnStudentDetails.Text = "Detalles de Alumno";
-            this.btnStudentDetails.UseVisualStyleBackColor = false;
-            this.btnStudentDetails.Click += new System.EventHandler(this.btnStudentDetails_Click);
             // 
             // lblStudentName
             // 
@@ -302,7 +289,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Student_Catalog
+            // Student_Catalog_Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,7 +301,7 @@
             this.Controls.Add(this.lblStudentId);
             this.Controls.Add(this.txtNoControlFilter);
             this.Controls.Add(this.label2);
-            this.Name = "Student_Catalog";
+            this.Name = "Student_Catalog_Administrator";
             this.Text = "Student_Catalog";
             this.pnlStudentOverview.ResumeLayout(false);
             this.pnlStudentOverview.PerformLayout();
@@ -329,7 +316,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlStudentOverview;
-        private System.Windows.Forms.Button btnStudentDetails;
         private System.Windows.Forms.Label lblPeriodHolder;
         private System.Windows.Forms.Label lblPeriod;
         private System.Windows.Forms.Label lblProyectNameHolder;

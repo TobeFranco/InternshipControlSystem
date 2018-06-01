@@ -78,6 +78,8 @@ namespace InternshipControlSystem.Front_End
             }
         }
 
+
+
         private void txtNoControlFilter_TextChanged(object sender, EventArgs e)
         {
             // Filter by No. Control
