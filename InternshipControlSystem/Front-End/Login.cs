@@ -56,7 +56,7 @@ namespace InternshipControlSystem.Front_End
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;database=internships;port=3306;password=tereteamo12345");
+            MySqlConnection conectar = new MySqlConnection("server=localhost;user=root;database=internships;port=3306;password=root");
             conectar.Open();
             MySqlCommand comando = new MySqlCommand();
             MySqlConnection con = new MySqlConnection();
@@ -71,12 +71,19 @@ namespace InternshipControlSystem.Front_End
                 switch (leer["Type"])
                 {
                     case "Administrators":
+                        Principal_Administrator PA = new Principal_Administrator();
+                        PA.Show();
                     break;
                     case "Tutors":
+                        Studen_Catalog_asessor SCA = new Studen_Catalog_asessor(ID);
+                        SCA.Show();
                     break;
                     case "Revisors":
+                        Student_Catalog_Revisor SCR = new Student_Catalog_Revisor(ID);
+                        SCR.Show();
                     break;
                 }
+                this.Hide();
                   
             }
             else

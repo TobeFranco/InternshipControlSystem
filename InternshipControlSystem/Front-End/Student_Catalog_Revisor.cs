@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,7 +16,7 @@ using InternshipControlSystem.Back_End;
 
 namespace InternshipControlSystem.Front_End
 {
-    public partial class Student_Catalog_Administrator : Form
+    public partial class Student_Catalog_Revisor : Form
     {
         private List<Student> students;
         private List<Student> displayStudents;
@@ -29,18 +32,16 @@ namespace InternshipControlSystem.Front_End
     int nWidthEllipse, // height of ellipse
     int nHeightEllipse // width of ellipse
 );
-
-        public Student_Catalog_Administrator()
+        public Student_Catalog_Revisor(int IDrevisor)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             students = new List<Student>();
-            students = StudentsDAO.GetAllItems();
+            students = StudentsDAO.GetAllItemsInTutor(IDrevisor);
             displayStudents = new List<Student>(students);
-
             fillTable();
         }
+
 
         private void fillTable()
         {
@@ -48,18 +49,18 @@ namespace InternshipControlSystem.Front_End
             dgvStudents.Rows.Clear();
             foreach (Student stud in displayStudents)
             {
-                Tutor tutor = TutorDAO.GetItem(stud.Tutor_id);
-                String[] row = { stud.Control_id, stud.First_name + " " + stud.Last_name, stud.Career,
-                    tutor.FirstName + " " + tutor.LastName};
-                dgvStudents.Rows.Add(row);
+               
             }
             btnStudentDetails.Enabled = false;
         }
-
-        private void btnStudentDetails_Click(object sender, EventArgs e)
+        private void Studen_Catalog_asessor_Load(object sender, EventArgs e)
         {
-            StudentDetails_Administrator det = new StudentDetails_Administrator(selectedStudent);
-            det.Show();
+
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void dgvStudents_SelectionChanged(object sender, EventArgs e)
@@ -71,64 +72,11 @@ namespace InternshipControlSystem.Front_End
             lblNoControlHolder.Text = selectedStudent.Control_id;
             // Proyect info
             Proyect proyect = ProyectsDAO.GetItem(selectedStudent);
-            if(proyect != null)
+            if (proyect != null)
             {
                 lblProyectNameHolder.Text = proyect.Name;
                 lblPeriodHolder.Text = proyect.Period;
             }
-        }
-
-
-
-        private void txtNoControlFilter_TextChanged(object sender, EventArgs e)
-        {
-            // Filter by No. Control
-            
-            string filterParam = txtNoControlFilter.Text;
-            displayStudents.Clear();
-            foreach (Student stud in students)
-            {
-                if(stud.Control_id.StartsWith(filterParam)){
-                    displayStudents.Add(stud);
-                }
-            }
-            fillTable();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            StudentDetails_Administrator det = new StudentDetails_Administrator(selectedStudent);
-            det.Show();
-        }
-
-        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pnlStudentOverview_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblStudentId_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

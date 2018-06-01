@@ -117,11 +117,6 @@ namespace InternshipControlSystem.Front_End
                             String Phonehouse = txtphonehouse.Text;
                             String City = txtCity.Text;
                             String Phone = txtPhone.Text;
-                            Back_End.solicitud nueva = new Back_End.solicitud(0, ProjectName, ChosenOption, ProjectedPeriod, NumberOfResidents, companyName, Turn, CompanyHome,
-                                RFC, CompanyColony, Cp, Fax, PhoneCompany, CompanyCity, TitularName, TitularPosition, AdvisoryName, AdvisoryPosition, AgreedName, Agreed,
-                                NameResident, NumberControl, Career, SocialSecurity, Home, NumberInsurance, Email, Phonehouse, City, Phone);
-                            Back_End.DaoSolicitud obj = new Back_End.DaoSolicitud();
-                            obj.CreateItem(nueva);
 
                             Model.Company compan = new Model.Company(0, companyName, RFC, Turn, CompanyHome, CompanyColony,
                                Cp, Fax, PhoneCompany, CompanyCity, TitularName, TitularPosition, AdvisoryName, AdvisoryPosition, AgreedName

@@ -98,6 +98,12 @@
     <Compile Include="Front-End\Student_Catalog_Administrator.Designer.cs">
       <DependentUpon>Student_Catalog_Administrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Front-End\Student_Catalog_Revisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-End\Student_Catalog_Revisor.Designer.cs">
+      <DependentUpon>Student_Catalog_Revisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Front-End\Studen_Catalog_asessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Student_Catalog_Administrator.resx">
       <DependentUpon>Student_Catalog_Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\Student_Catalog_Revisor.resx">
+      <DependentUpon>Student_Catalog_Revisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Studen_Catalog_asessor.resx">
       <DependentUpon>Studen_Catalog_asessor.cs</DependentUpon>
