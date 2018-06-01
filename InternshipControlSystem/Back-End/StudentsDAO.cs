@@ -22,12 +22,25 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
-                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]), 
-                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32("tutor_id"),
-                         Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
-                         ,Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
-                         , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
+                    int id = Convert.ToInt32(reader["id"]);
+                    string control = Convert.ToString(reader["control_id"]);
+                    string first_name = Convert.ToString(reader["first_name"]);
+                    string last_name = Convert.ToString(reader["last_name"]);
+                    string career = Convert.ToString(reader["career"]);
+                    int semester = Convert.ToInt32(reader["semester"]);
+                    string coordinator = Convert.ToString(reader["cordinator"]);
+                    int tutor_id = Convert.ToInt32(reader["tutor_id"]);
+                    string socialSecurity = Convert.ToString(reader["socialSecurity"]);
+                    string home = Convert.ToString(reader["home"]);
+                    string email = Convert.ToString(reader["email"]);
+                    string city = Convert.ToString(reader["city"]);
+                    string phonehouse = Convert.ToString(reader["phonehouse"]);
+                    int numberInsurance = Convert.ToInt32(reader["numberInsurance"]);
+                    string phone = Convert.ToString(reader["phone"]);
+                    int company_id = Convert.ToInt32(reader["company_id"]);
+                    Student student = new Student(id, control, first_name, last_name, career, semester, coordinator, tutor_id,
+                         socialSecurity, home, email, city, phonehouse, numberInsurance
+                         , phone, company_id);
                     students.Add(student);
                 }
                 reader.Close();
