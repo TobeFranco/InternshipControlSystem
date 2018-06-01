@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPeriod = new System.Windows.Forms.Label();
             this.lblStudentNameHolder = new System.Windows.Forms.Label();
-            this.btnStudentDetails = new System.Windows.Forms.Button();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblPnlHeader = new System.Windows.Forms.Label();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
@@ -70,7 +69,6 @@
             this.pnlStudentOverview.Controls.Add(this.label1);
             this.pnlStudentOverview.Controls.Add(this.lblPeriod);
             this.pnlStudentOverview.Controls.Add(this.lblStudentNameHolder);
-            this.pnlStudentOverview.Controls.Add(this.btnStudentDetails);
             this.pnlStudentOverview.Controls.Add(this.lblStudentName);
             this.pnlStudentOverview.Controls.Add(this.lblPnlHeader);
             this.pnlStudentOverview.ForeColor = System.Drawing.Color.White;
@@ -81,12 +79,16 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(63, 363);
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.button1.Location = new System.Drawing.Point(3, 423);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(210, 33);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Detalles del Alumno";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // lblProyectName
             // 
@@ -166,19 +168,6 @@
             this.lblStudentNameHolder.Size = new System.Drawing.Size(37, 13);
             this.lblStudentNameHolder.TabIndex = 1;
             this.lblStudentNameHolder.Text = "----------";
-            // 
-            // btnStudentDetails
-            // 
-            this.btnStudentDetails.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnStudentDetails.FlatAppearance.BorderSize = 0;
-            this.btnStudentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnStudentDetails.Location = new System.Drawing.Point(-1, 392);
-            this.btnStudentDetails.Name = "btnStudentDetails";
-            this.btnStudentDetails.Size = new System.Drawing.Size(218, 31);
-            this.btnStudentDetails.TabIndex = 7;
-            this.btnStudentDetails.Text = "Detalles de Alumno";
-            this.btnStudentDetails.UseVisualStyleBackColor = false;
             // 
             // lblStudentName
             // 
@@ -333,7 +322,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPeriod;
         private System.Windows.Forms.Label lblStudentNameHolder;
-        private System.Windows.Forms.Button btnStudentDetails;
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblPnlHeader;
         private System.Windows.Forms.DataGridView dgvStudents;
