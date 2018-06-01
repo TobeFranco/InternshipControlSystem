@@ -16,8 +16,9 @@ namespace InternshipControlSystem.Model
         public string Period;
         public String ChosenOptionDao;
         public int NumberOfResidentsDao;
+        public int companyAssesorId;
         // Constructor de la clase
-        public Proyect(int Id, String Name, int Company_Id, int Student_Id, string Period,String Chosen,int Number)
+        public Proyect(int Id, String Name, int Company_Id, int Student_Id, string Period,String Chosen,int Number, int companyAssessorId)
         {
             this.Id = Id;
             this.Name = Name;
@@ -26,6 +27,7 @@ namespace InternshipControlSystem.Model
             this.Period = Period;
             this.ChosenOptionDao = Chosen;
             this.NumberOfResidentsDao = Number;
+            this.companyAssesorId = companyAssessorId;
         }
     }
 }

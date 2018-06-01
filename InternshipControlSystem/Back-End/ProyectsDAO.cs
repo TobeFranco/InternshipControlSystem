@@ -24,7 +24,7 @@ namespace InternshipControlSystem.Back_End
                 {
                     Proyect item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
                         Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
-                         Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]));
+                         Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]), Convert.ToInt32(reader["company_assessor_id"]));
                     items.Add(item);
                 }
                 reader.Close();
@@ -46,7 +46,8 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "INSERT INTO projects VALUES(null, @pro_name, @company_id, @student_id, @period, @ChosenOption, @NumberOfResidents)";
+                string sqlStatement = "INSERT INTO projects VALUES(null, @pro_name, @company_id, @student_id, @period, @ChosenOption, @NumberOfResidents," +
+                    "@CompanyAssessorId)";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@pro_name", item.Name);
                 cmd.Parameters.AddWithValue("@company_id", item.Company_Id);
@@ -54,6 +55,7 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@period", item.Period);
                 cmd.Parameters.AddWithValue("@ChosenOption", item.ChosenOptionDao);
                 cmd.Parameters.AddWithValue("@NumberOfResidents", item.NumberOfResidentsDao);
+                cmd.Parameters.AddWithValue("@CompanyAssessorId", item.companyAssesorId);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -95,13 +97,15 @@ namespace InternshipControlSystem.Back_End
             {
                 conn.Open();
                 string sqlStatement = "UPDATE projects set pro_name=@pro_name, company_id=@company_id, student_id=@student_id" +
-                    "period=@period WHERE id=@id";
+                    "period=@period  WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
-                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@pro_name", item.Name);
                 cmd.Parameters.AddWithValue("@company_id", item.Company_Id);
                 cmd.Parameters.AddWithValue("@student_id", item.Student_Id);
                 cmd.Parameters.AddWithValue("@period", item.Period);
+                cmd.Parameters.AddWithValue("@ChosenOption", item.ChosenOptionDao);
+                cmd.Parameters.AddWithValue("@NumberOfResidents", item.NumberOfResidentsDao);
+                cmd.Parameters.AddWithValue("@CompanyAssessorId", item.companyAssesorId);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -128,9 +132,9 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
-                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]),
-                        Convert.ToString(reader["period"]), Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]));
+                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
+                       Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
+                        Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]), Convert.ToInt32(reader["company_assessor_id"]));
                 }
             }
             catch (Exception ex)
@@ -157,9 +161,9 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
-                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
-                        Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]));
+                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
+                       Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
+                        Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]), Convert.ToInt32(reader["company_assessor_id"]));
                 }
             }
             catch (Exception ex)
