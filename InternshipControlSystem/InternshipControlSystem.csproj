@@ -57,8 +57,6 @@
     <Compile Include="Back-End\CompanyDao.cs" />
     <Compile Include="Back-End\Company_AssessorsDAO.cs" />
     <Compile Include="Back-End\Conection.cs" />
-    <Compile Include="Back-End\AssessorsDAO.cs" />
-    <Compile Include="Back-End\DaoSolicitud.cs" />
     <Compile Include="Back-End\UserDAO.cs" />
     <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
@@ -99,6 +97,12 @@
     </Compile>
     <Compile Include="Front-End\Student_Catalog.Designer.cs">
       <DependentUpon>Student_Catalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Front-End\Student_Catalog_Revisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-End\Student_Catalog_Revisor.Designer.cs">
+      <DependentUpon>Student_Catalog_Revisor.cs</DependentUpon>
     </Compile>
     <Compile Include="Front-End\Studen_Catalog_asessor.cs">
       <SubType>Form</SubType>
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Student_Catalog.resx">
       <DependentUpon>Student_Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\Student_Catalog_Revisor.resx">
+      <DependentUpon>Student_Catalog_Revisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Studen_Catalog_asessor.resx">
       <DependentUpon>Studen_Catalog_asessor.cs</DependentUpon>

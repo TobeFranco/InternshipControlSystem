@@ -16,7 +16,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "SELECT UserID FROM @Type WHERE id = @id";
+                string sqlStatement = "SELECT UserID FROM @Type WHERE UserID = @id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@Type", Type);
                 cmd.Parameters.AddWithValue("@id", IdUser);
