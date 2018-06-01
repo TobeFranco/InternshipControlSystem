@@ -38,6 +38,7 @@ namespace InternshipControlSystem.Front_End
             students = new List<Student>();
             students = StudentsDAO.GetAllItems();
             displayStudents = new List<Student>(students);
+
             fillTable();
         }
 
@@ -101,6 +102,31 @@ namespace InternshipControlSystem.Front_End
         {
             StudentDetails det = new StudentDetails(selectedStudent);
             det.Show();
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnlStudentOverview_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblStudentId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

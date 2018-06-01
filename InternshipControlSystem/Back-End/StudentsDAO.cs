@@ -42,6 +42,56 @@ namespace InternshipControlSystem.Back_End
             return students;
         }
 
+
+
+
+
+
+        public static List<Student> GetAllItemsInTutor(int id)
+        {
+            MySqlConnection conn = Conection.getConnection();
+            List<Student> students = new List<Student>();
+            try
+            {
+                conn.Open();
+                string sqlStatement = "SELECT * FROM students where tutor_id=@tutor_id";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@tutor_id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
+                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
+                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
+                         Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
+                         , Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
+                         , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
+                    students.Add(student);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return students;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         public static int CreateItem(Student student){
             MySqlConnection conn = Conection.getConnection();
             try{
@@ -143,5 +193,6 @@ namespace InternshipControlSystem.Back_End
             }
             return student;
         }
+
     }
 }
