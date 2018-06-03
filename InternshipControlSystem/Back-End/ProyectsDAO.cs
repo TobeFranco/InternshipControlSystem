@@ -96,9 +96,10 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "UPDATE projects set pro_name=@pro_name, company_id=@company_id, student_id=@student_id" +
+                string sqlStatement = "UPDATE projects set pro_name=@pro_name, company_id=@company_id, student_id=@student_id, " +
                     "period=@period, chosen_Option=@ChosenOption, number_Of_Residents=@NumberOfResidents, company_assessor_id=@CompanyAssessorId WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@pro_name", item.Name);
                 cmd.Parameters.AddWithValue("@company_id", item.Company_Id);
                 cmd.Parameters.AddWithValue("@student_id", item.Student_Id);
