@@ -22,25 +22,14 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    int id = Convert.ToInt32(reader["id"]);
-                    string control = Convert.ToString(reader["control_id"]);
-                    string first_name = Convert.ToString(reader["first_name"]);
-                    string last_name = Convert.ToString(reader["last_name"]);
-                    string career = Convert.ToString(reader["career"]);
-                    int semester = Convert.ToInt32(reader["semester"]);
-                    string coordinator = Convert.ToString(reader["cordinator"]);
-                    int tutor_id = Convert.ToInt32(reader["tutor_id"]);
-                    string socialSecurity = Convert.ToString(reader["socialSecurity"]);
-                    string home = Convert.ToString(reader["home"]);
-                    string email = Convert.ToString(reader["email"]);
-                    string city = Convert.ToString(reader["city"]);
-                    string phonehouse = Convert.ToString(reader["phonehouse"]);
-                    int numberInsurance = Convert.ToInt32(reader["numberInsurance"]);
-                    string phone = Convert.ToString(reader["phone"]);
-                    int company_id = Convert.ToInt32(reader["company_id"]);
-                    Student student = new Student(id, control, first_name, last_name, career, semester, coordinator, tutor_id,
-                         socialSecurity, home, email, city, phonehouse, numberInsurance
-                         , phone, company_id);
+                    Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
+                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
+                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
+                         Convert.ToString(reader["socialSecurity"]), Convert.ToString(reader["home"]), Convert.ToString(reader["email"])
+                         , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
+                         , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
+                         Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
                     students.Add(student);
                 }
                 reader.Close();
@@ -76,9 +65,11 @@ namespace InternshipControlSystem.Back_End
                     Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
                         Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
                         Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
-                         Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
-                         , Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
-                         , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
+                         Convert.ToString(reader["socialSecurity"]), Convert.ToString(reader["home"]), Convert.ToString(reader["email"])
+                         , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
+                         , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]),  Convert.ToInt32(reader["revisor1_id"]),
+                         Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
                     students.Add(student);
                 }
                 reader.Close();
@@ -140,11 +131,13 @@ namespace InternshipControlSystem.Back_End
                     while (reader.Read())
                     {
                         Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
-                            Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
-                            Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
-                             Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
-                             , Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
-                             , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
+                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
+                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
+                         Convert.ToString(reader["socialSecurity"]), Convert.ToString(reader["home"]), Convert.ToString(reader["email"])
+                         , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
+                         , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
+                         Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
                         studentsDetils.Add(student);
                     }
                 }
@@ -165,7 +158,10 @@ namespace InternshipControlSystem.Back_End
             MySqlConnection conn = Conection.getConnection();
             try{
                 conn.Open();
-                string sqlStatement = "INSERT INTO students VALUES(null, @controlId, @firstName, @lastName, @career, @semester, @coordinator, @Tutor_id, @SocialSecurity, @Home, @Email, @City, @Phonehouse, @NumberInsurance, @Phone,@company_id); SELECT LAST_INSERT_ID()";
+                string sqlStatement = "INSERT INTO students VALUES(null, @controlId, @firstName, @lastName, @career, " +
+                    "@semester, @coordinator, @Tutor_id, @SocialSecurity, @Home, @Email, @City, @Phonehouse, @NumberInsurance, " +
+                    "@Phone,@company_id, @revisor1, @revisor2, @rev1_approval, @rev2_approval, @tutos_approval, @titulation_approval); " +
+                    "SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@controlId", student.Control_id);
                 cmd.Parameters.AddWithValue("@firstName", student.First_name);
@@ -182,6 +178,12 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@NumberInsurance", student.NumberInsuranceDao);
                 cmd.Parameters.AddWithValue("@Phone", student.PhoneDao);
                 cmd.Parameters.AddWithValue("@company_id", student.company_idDao);
+                cmd.Parameters.AddWithValue("@revisor1", student.Revisor1_id);
+                cmd.Parameters.AddWithValue("@revisor2", student.Revisor2_id);
+                cmd.Parameters.AddWithValue("@rev1_approval", student.Revisor1_Approval);
+                cmd.Parameters.AddWithValue("@rev2_approval", student.Revisor2_Approval);
+                cmd.Parameters.AddWithValue("@tutor_approval", student.Tutor_Approval);
+                cmd.Parameters.AddWithValue("@titulation_approval", student.Titulation_Approval);
                 return cmd.ExecuteNonQuery();
             }catch (Exception ex){
                 Console.WriteLine(ex.ToString());
@@ -207,13 +209,15 @@ namespace InternshipControlSystem.Back_End
             }
         }
 
-        // TODO: Hacer esto.
         public static void UpdateItem(Student student){
             MySqlConnection conn = Conection.getConnection();
             try{
                 conn.Open();
                 string sqlStatement = "UPDATE students set control_id=@controlId, first_name=@firstName, last_name=@lastName," +
-                    "career=@career, semester=@semester, cordinator=@coordinator, tutor_id=@tutorId WHERE id=@id";
+                    "career=@career, semester=@semester, cordinator=@coordinator, tutor_id=@tutor_id, socialSecurity=@socialSecurity, " +
+                    "home=@home, email=@email, city=@city, phonehouse=@phonehouse, numberInsurance=@numberInsurance, phone=@phone," +
+                    "company_id=@company_id, revisor1_id=@revisor1, revisor2_id=@revisor2, revisor1_approval=@rev1_approval, " +
+                    "revisor2_approval=@rev2_approval, tutor_approval=@tutor_approval, titulation_approval=@titulation_approval WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@id", student.Id);
                 cmd.Parameters.AddWithValue("@controlId", student.Control_id);
@@ -222,7 +226,21 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@career", student.Career);
                 cmd.Parameters.AddWithValue("@semester", student.Semester);
                 cmd.Parameters.AddWithValue("@coordinator", student.Cordinator);
-                cmd.Parameters.AddWithValue("@tutorId", student.Tutor_id);
+                cmd.Parameters.AddWithValue("tutor_id", student.Tutor_id);
+                cmd.Parameters.AddWithValue("@socialSecurity", student.SocialSecurityDao);
+                cmd.Parameters.AddWithValue("@home", student.HomeDao);
+                cmd.Parameters.AddWithValue("@email", student.EmailDao);
+                cmd.Parameters.AddWithValue("@city", student.CityDao);
+                cmd.Parameters.AddWithValue("@phonehouse", student.PhonehouseDao);
+                cmd.Parameters.AddWithValue("@numberInsurance", student.NumberInsuranceDao);
+                cmd.Parameters.AddWithValue("@phone", student.PhoneDao);
+                cmd.Parameters.AddWithValue("@company_id", student.company_idDao);
+                cmd.Parameters.AddWithValue("@revisor1", student.Revisor1_id);
+                cmd.Parameters.AddWithValue("@revisor2", student.Revisor2_id);
+                cmd.Parameters.AddWithValue("@rev1_approval", student.Revisor1_Approval);
+                cmd.Parameters.AddWithValue("@rev2_approval", student.Revisor2_Approval);
+                cmd.Parameters.AddWithValue("@tutor_approval", student.Tutor_Approval);
+                cmd.Parameters.AddWithValue("@titulation_approval", student.Titulation_Approval);
                 cmd.ExecuteNonQuery();
             }catch (Exception ex){
                 Console.WriteLine(ex.ToString());
@@ -247,10 +265,12 @@ namespace InternshipControlSystem.Back_End
                 {
                     student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
                         Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
-                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32("tutor_id"),
-                         Convert.ToString(reader["SocialSecurity"]), Convert.ToString(reader["Home"]), Convert.ToString(reader["Email"])
-                         , Convert.ToString(reader["City"]), Convert.ToString(reader["Phonehouse"]), Convert.ToInt32(reader["NumberInsurance"])
-                         , Convert.ToString(reader["Phone"]), Convert.ToInt32(reader["company_id"]));
+                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
+                         Convert.ToString(reader["socialSecurity"]), Convert.ToString(reader["home"]), Convert.ToString(reader["email"])
+                         , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
+                         , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
+                         Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
                 }
             } catch (Exception ex)
             {
