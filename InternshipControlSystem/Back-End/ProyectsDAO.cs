@@ -22,9 +22,9 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Proyect item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
-                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
-                         Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]), Convert.ToInt32(reader["company_assessor_id"]));
+                    Proyect item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
+                       Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
+                        Convert.ToString(reader["chosen_Option"]), Convert.ToInt32(reader["number_Of_Residents"]), Convert.ToInt32(reader["company_assessor_id"]));
                     items.Add(item);
                 }
                 reader.Close();
@@ -97,7 +97,7 @@ namespace InternshipControlSystem.Back_End
             {
                 conn.Open();
                 string sqlStatement = "UPDATE projects set pro_name=@pro_name, company_id=@company_id, student_id=@student_id" +
-                    "period=@period  WHERE id=@id";
+                    "period=@period, chosen_Option=@ChosenOption, number_Of_Residents=@NumberOfResidents, company_assessor_id=@CompanyAssessorId WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@pro_name", item.Name);
                 cmd.Parameters.AddWithValue("@company_id", item.Company_Id);
@@ -132,9 +132,9 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
+                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
-                        Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]), Convert.ToInt32(reader["company_assessor_id"]));
+                        Convert.ToString(reader["chosen_Option"]), Convert.ToInt32(reader["number_Of_Residents"]), Convert.ToInt32(reader["company_assessor_id"]));
                 }
             }
             catch (Exception ex)
@@ -161,9 +161,9 @@ namespace InternshipControlSystem.Back_End
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["first_name"]),
+                    item = new Proyect(Convert.ToInt32(reader["id"]), Convert.ToString(reader["pro_name"]),
                        Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["student_id"]), Convert.ToString(reader["period"]),
-                        Convert.ToString(reader["ChosenOption"]), Convert.ToInt32(reader["NumberOfResidents"]), Convert.ToInt32(reader["company_assessor_id"]));
+                        Convert.ToString(reader["chosen_Option"]), Convert.ToInt32(reader["number_Of_Residents"]), Convert.ToInt32(reader["company_assessor_id"]));
                 }
             }
             catch (Exception ex)
