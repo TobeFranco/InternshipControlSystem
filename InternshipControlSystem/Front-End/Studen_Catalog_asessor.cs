@@ -110,7 +110,8 @@ namespace InternshipControlSystem.Front_End
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            StudentDetails_Assessor SDA = new StudentDetails_Assessor(selectedStudent);
+            SDA.Show();
         }
     }
 }
