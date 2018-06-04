@@ -50,6 +50,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
+            this.btnExportDictamen = new System.Windows.Forms.Button();
             this.pnlStudentOverview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -74,7 +76,7 @@
             this.pnlStudentOverview.ForeColor = System.Drawing.Color.White;
             this.pnlStudentOverview.Location = new System.Drawing.Point(0, 0);
             this.pnlStudentOverview.Name = "pnlStudentOverview";
-            this.pnlStudentOverview.Size = new System.Drawing.Size(218, 470);
+            this.pnlStudentOverview.Size = new System.Drawing.Size(218, 476);
             this.pnlStudentOverview.TabIndex = 5;
             this.pnlStudentOverview.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlStudentOverview_Paint);
             // 
@@ -203,7 +205,7 @@
             this.dgvStudents.Location = new System.Drawing.Point(224, 44);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.ReadOnly = true;
-            this.dgvStudents.Size = new System.Drawing.Size(709, 413);
+            this.dgvStudents.Size = new System.Drawing.Size(709, 386);
             this.dgvStudents.TabIndex = 9;
             this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             this.dgvStudents.SelectionChanged += new System.EventHandler(this.dgvStudents_SelectionChanged);
@@ -289,11 +291,33 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Location = new System.Drawing.Point(777, 436);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(147, 30);
+            this.btnExportToExcel.TabIndex = 22;
+            this.btnExportToExcel.Text = "Exportar Informe General";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
+            // btnExportDictamen
+            // 
+            this.btnExportDictamen.Location = new System.Drawing.Point(598, 437);
+            this.btnExportDictamen.Name = "btnExportDictamen";
+            this.btnExportDictamen.Size = new System.Drawing.Size(163, 29);
+            this.btnExportDictamen.TabIndex = 23;
+            this.btnExportDictamen.Text = "Exportar Informe de Dictamen";
+            this.btnExportDictamen.UseVisualStyleBackColor = true;
+            this.btnExportDictamen.Click += new System.EventHandler(this.btnExportDictamen_Click);
+            // 
             // Student_Catalog_Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 469);
+            this.ClientSize = new System.Drawing.Size(936, 475);
+            this.Controls.Add(this.btnExportDictamen);
+            this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlStudentOverview);
@@ -337,5 +361,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Career;
         private System.Windows.Forms.DataGridViewTextBoxColumn Assessor;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExportToExcel;
+        private System.Windows.Forms.Button btnExportDictamen;
     }
 }
