@@ -57,6 +57,7 @@
     <Compile Include="Back-End\CompanyDao.cs" />
     <Compile Include="Back-End\Company_AssessorsDAO.cs" />
     <Compile Include="Back-End\Conection.cs" />
+    <Compile Include="Back-End\DeliveryDAO.cs" />
     <Compile Include="Back-End\UserDAO.cs" />
     <Compile Include="Back-End\ProyectsDAO.cs" />
     <Compile Include="Back-End\RevisorsDAO.cs" />
@@ -130,6 +131,7 @@
     </Compile>
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Company_Assessor.cs" />
+    <Compile Include="Model\Delivery.cs" />
     <Compile Include="Model\Revisor.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Proyect.cs" />
