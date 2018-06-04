@@ -34,6 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtStudLasName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@
             this.txtStudentCareer = new System.Windows.Forms.TextBox();
             this.txtControlNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.txtStudFirstName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAssessor = new System.Windows.Forms.Label();
             this.lblRFC = new System.Windows.Forms.Label();
@@ -57,6 +58,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.gpDeliveries = new System.Windows.Forms.GroupBox();
+            this.btnUpdateDeliveries = new System.Windows.Forms.Button();
+            this.cbkFinalProyect = new System.Windows.Forms.CheckBox();
+            this.cbkKardex = new System.Windows.Forms.CheckBox();
+            this.cbkAnteproyecto = new System.Windows.Forms.CheckBox();
             this.txtTutor = new System.Windows.Forms.TextBox();
             this.txtCareer = new System.Windows.Forms.TextBox();
             this.txtCoordinator = new System.Windows.Forms.TextBox();
@@ -66,25 +72,21 @@
             this.btnRejectStudent = new System.Windows.Forms.Button();
             this.btnFreeStudent = new System.Windows.Forms.Button();
             this.gpRevision = new System.Windows.Forms.GroupBox();
-            this.btnAssignRevisor2 = new System.Windows.Forms.Button();
-            this.btnAssignRevisor1 = new System.Windows.Forms.Button();
-            this.btnAssignTutor = new System.Windows.Forms.Button();
+            this.cboRevisor2 = new System.Windows.Forms.ComboBox();
+            this.cboRevisor1 = new System.Windows.Forms.ComboBox();
+            this.cboTutor = new System.Windows.Forms.ComboBox();
             this.ckbRevisor1 = new System.Windows.Forms.CheckBox();
-            this.ckbRevisor3 = new System.Windows.Forms.CheckBox();
+            this.ckbRevisor2 = new System.Windows.Forms.CheckBox();
             this.ckbTutor = new System.Windows.Forms.CheckBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.gpDeliveries = new System.Windows.Forms.GroupBox();
-            this.cbkAnteproyecto = new System.Windows.Forms.CheckBox();
-            this.cbkKardex = new System.Windows.Forms.CheckBox();
-            this.cbkFinalProyect = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
-            this.gpRevision.SuspendLayout();
             this.gpDeliveries.SuspendLayout();
+            this.gpRevision.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -150,6 +152,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel1.Controls.Add(this.txtStudLasName);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
@@ -158,13 +161,21 @@
             this.panel1.Controls.Add(this.txtStudentCareer);
             this.panel1.Controls.Add(this.txtControlNo);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtStudentName);
+            this.panel1.Controls.Add(this.txtStudFirstName);
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(525, 263);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 192);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtStudLasName
+            // 
+            this.txtStudLasName.Enabled = false;
+            this.txtStudLasName.Location = new System.Drawing.Point(269, 57);
+            this.txtStudLasName.Name = "txtStudLasName";
+            this.txtStudLasName.Size = new System.Drawing.Size(184, 20);
+            this.txtStudLasName.TabIndex = 20;
             // 
             // label11
             // 
@@ -236,13 +247,13 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Datos del Alumno";
             // 
-            // txtStudentName
+            // txtStudFirstName
             // 
-            this.txtStudentName.Enabled = false;
-            this.txtStudentName.Location = new System.Drawing.Point(105, 57);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(348, 20);
-            this.txtStudentName.TabIndex = 19;
+            this.txtStudFirstName.Enabled = false;
+            this.txtStudFirstName.Location = new System.Drawing.Point(105, 57);
+            this.txtStudFirstName.Name = "txtStudFirstName";
+            this.txtStudFirstName.Size = new System.Drawing.Size(158, 20);
+            this.txtStudFirstName.TabIndex = 19;
             // 
             // panel2
             // 
@@ -399,7 +410,59 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(516, 487);
             this.panel4.TabIndex = 135;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // gpDeliveries
+            // 
+            this.gpDeliveries.Controls.Add(this.btnUpdateDeliveries);
+            this.gpDeliveries.Controls.Add(this.cbkFinalProyect);
+            this.gpDeliveries.Controls.Add(this.cbkKardex);
+            this.gpDeliveries.Controls.Add(this.cbkAnteproyecto);
+            this.gpDeliveries.Location = new System.Drawing.Point(309, 271);
+            this.gpDeliveries.Name = "gpDeliveries";
+            this.gpDeliveries.Size = new System.Drawing.Size(200, 130);
+            this.gpDeliveries.TabIndex = 20;
+            this.gpDeliveries.TabStop = false;
+            this.gpDeliveries.Text = "Entregas";
+            // 
+            // btnUpdateDeliveries
+            // 
+            this.btnUpdateDeliveries.Location = new System.Drawing.Point(28, 91);
+            this.btnUpdateDeliveries.Name = "btnUpdateDeliveries";
+            this.btnUpdateDeliveries.Size = new System.Drawing.Size(106, 23);
+            this.btnUpdateDeliveries.TabIndex = 1;
+            this.btnUpdateDeliveries.Text = "Actualizar Entregas";
+            this.btnUpdateDeliveries.UseVisualStyleBackColor = true;
+            this.btnUpdateDeliveries.Click += new System.EventHandler(this.btnUpdateDeliveries_Click);
+            // 
+            // cbkFinalProyect
+            // 
+            this.cbkFinalProyect.AutoSize = true;
+            this.cbkFinalProyect.Location = new System.Drawing.Point(28, 68);
+            this.cbkFinalProyect.Name = "cbkFinalProyect";
+            this.cbkFinalProyect.Size = new System.Drawing.Size(93, 17);
+            this.cbkFinalProyect.TabIndex = 0;
+            this.cbkFinalProyect.Text = "Proyecto Final";
+            this.cbkFinalProyect.UseVisualStyleBackColor = true;
+            // 
+            // cbkKardex
+            // 
+            this.cbkKardex.AutoSize = true;
+            this.cbkKardex.Location = new System.Drawing.Point(28, 45);
+            this.cbkKardex.Name = "cbkKardex";
+            this.cbkKardex.Size = new System.Drawing.Size(59, 17);
+            this.cbkKardex.TabIndex = 0;
+            this.cbkKardex.Text = "Kardex";
+            this.cbkKardex.UseVisualStyleBackColor = true;
+            // 
+            // cbkAnteproyecto
+            // 
+            this.cbkAnteproyecto.AutoSize = true;
+            this.cbkAnteproyecto.Location = new System.Drawing.Point(28, 22);
+            this.cbkAnteproyecto.Name = "cbkAnteproyecto";
+            this.cbkAnteproyecto.Size = new System.Drawing.Size(89, 17);
+            this.cbkAnteproyecto.TabIndex = 0;
+            this.cbkAnteproyecto.Text = "Anteproyecto";
+            this.cbkAnteproyecto.UseVisualStyleBackColor = true;
             // 
             // txtTutor
             // 
@@ -457,6 +520,7 @@
             this.btnRejectStudent.TabIndex = 18;
             this.btnRejectStudent.Text = "Rechazar";
             this.btnRejectStudent.UseVisualStyleBackColor = true;
+            this.btnRejectStudent.Click += new System.EventHandler(this.btnRejectStudent_Click);
             // 
             // btnFreeStudent
             // 
@@ -466,15 +530,17 @@
             this.btnFreeStudent.TabIndex = 17;
             this.btnFreeStudent.Text = "Liberar";
             this.btnFreeStudent.UseVisualStyleBackColor = true;
+            this.btnFreeStudent.Click += new System.EventHandler(this.btnFreeStudent_Click);
             // 
             // gpRevision
             // 
-            this.gpRevision.Controls.Add(this.btnAssignRevisor2);
-            this.gpRevision.Controls.Add(this.btnAssignRevisor1);
-            this.gpRevision.Controls.Add(this.btnAssignTutor);
+            this.gpRevision.Controls.Add(this.cboRevisor2);
+            this.gpRevision.Controls.Add(this.cboRevisor1);
+            this.gpRevision.Controls.Add(this.cboTutor);
             this.gpRevision.Controls.Add(this.ckbRevisor1);
-            this.gpRevision.Controls.Add(this.ckbRevisor3);
+            this.gpRevision.Controls.Add(this.ckbRevisor2);
             this.gpRevision.Controls.Add(this.ckbTutor);
+            this.gpRevision.Enabled = false;
             this.gpRevision.Location = new System.Drawing.Point(21, 271);
             this.gpRevision.Name = "gpRevision";
             this.gpRevision.Size = new System.Drawing.Size(261, 130);
@@ -482,64 +548,58 @@
             this.gpRevision.TabStop = false;
             this.gpRevision.Text = "Progreso de Revision";
             // 
-            // btnAssignRevisor2
+            // cboRevisor2
             // 
-            this.btnAssignRevisor2.Location = new System.Drawing.Point(6, 87);
-            this.btnAssignRevisor2.Name = "btnAssignRevisor2";
-            this.btnAssignRevisor2.Size = new System.Drawing.Size(75, 23);
-            this.btnAssignRevisor2.TabIndex = 17;
-            this.btnAssignRevisor2.Text = "Asignar";
-            this.btnAssignRevisor2.UseVisualStyleBackColor = true;
+            this.cboRevisor2.FormattingEnabled = true;
+            this.cboRevisor2.Location = new System.Drawing.Point(27, 80);
+            this.cboRevisor2.Name = "cboRevisor2";
+            this.cboRevisor2.Size = new System.Drawing.Size(228, 21);
+            this.cboRevisor2.TabIndex = 16;
             // 
-            // btnAssignRevisor1
+            // cboRevisor1
             // 
-            this.btnAssignRevisor1.Location = new System.Drawing.Point(6, 53);
-            this.btnAssignRevisor1.Name = "btnAssignRevisor1";
-            this.btnAssignRevisor1.Size = new System.Drawing.Size(75, 23);
-            this.btnAssignRevisor1.TabIndex = 17;
-            this.btnAssignRevisor1.Text = "Asignar";
-            this.btnAssignRevisor1.UseVisualStyleBackColor = true;
+            this.cboRevisor1.FormattingEnabled = true;
+            this.cboRevisor1.Location = new System.Drawing.Point(27, 50);
+            this.cboRevisor1.Name = "cboRevisor1";
+            this.cboRevisor1.Size = new System.Drawing.Size(228, 21);
+            this.cboRevisor1.TabIndex = 16;
             // 
-            // btnAssignTutor
+            // cboTutor
             // 
-            this.btnAssignTutor.Location = new System.Drawing.Point(6, 22);
-            this.btnAssignTutor.Name = "btnAssignTutor";
-            this.btnAssignTutor.Size = new System.Drawing.Size(75, 23);
-            this.btnAssignTutor.TabIndex = 17;
-            this.btnAssignTutor.Text = "Asignar";
-            this.btnAssignTutor.UseVisualStyleBackColor = true;
+            this.cboTutor.FormattingEnabled = true;
+            this.cboTutor.Location = new System.Drawing.Point(27, 20);
+            this.cboTutor.Name = "cboTutor";
+            this.cboTutor.Size = new System.Drawing.Size(228, 21);
+            this.cboTutor.TabIndex = 16;
             // 
             // ckbRevisor1
             // 
             this.ckbRevisor1.AutoSize = true;
             this.ckbRevisor1.Enabled = false;
-            this.ckbRevisor1.Location = new System.Drawing.Point(87, 57);
+            this.ckbRevisor1.Location = new System.Drawing.Point(6, 53);
             this.ckbRevisor1.Name = "ckbRevisor1";
-            this.ckbRevisor1.Size = new System.Drawing.Size(71, 17);
+            this.ckbRevisor1.Size = new System.Drawing.Size(15, 14);
             this.ckbRevisor1.TabIndex = 15;
-            this.ckbRevisor1.Text = "Revisor 1";
             this.ckbRevisor1.UseVisualStyleBackColor = true;
             // 
-            // ckbRevisor3
+            // ckbRevisor2
             // 
-            this.ckbRevisor3.AutoSize = true;
-            this.ckbRevisor3.Enabled = false;
-            this.ckbRevisor3.Location = new System.Drawing.Point(87, 91);
-            this.ckbRevisor3.Name = "ckbRevisor3";
-            this.ckbRevisor3.Size = new System.Drawing.Size(71, 17);
-            this.ckbRevisor3.TabIndex = 15;
-            this.ckbRevisor3.Text = "Revisor 2";
-            this.ckbRevisor3.UseVisualStyleBackColor = true;
+            this.ckbRevisor2.AutoSize = true;
+            this.ckbRevisor2.Enabled = false;
+            this.ckbRevisor2.Location = new System.Drawing.Point(6, 83);
+            this.ckbRevisor2.Name = "ckbRevisor2";
+            this.ckbRevisor2.Size = new System.Drawing.Size(15, 14);
+            this.ckbRevisor2.TabIndex = 15;
+            this.ckbRevisor2.UseVisualStyleBackColor = true;
             // 
             // ckbTutor
             // 
             this.ckbTutor.AutoSize = true;
             this.ckbTutor.Enabled = false;
-            this.ckbTutor.Location = new System.Drawing.Point(87, 26);
+            this.ckbTutor.Location = new System.Drawing.Point(6, 23);
             this.ckbTutor.Name = "ckbTutor";
-            this.ckbTutor.Size = new System.Drawing.Size(51, 17);
+            this.ckbTutor.Size = new System.Drawing.Size(15, 14);
             this.ckbTutor.TabIndex = 15;
-            this.ckbTutor.Text = "Tutor";
             this.ckbTutor.UseVisualStyleBackColor = true;
             // 
             // btnEdit
@@ -550,48 +610,7 @@
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = "Modificar Datos";
             this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // gpDeliveries
-            // 
-            this.gpDeliveries.Controls.Add(this.cbkFinalProyect);
-            this.gpDeliveries.Controls.Add(this.cbkKardex);
-            this.gpDeliveries.Controls.Add(this.cbkAnteproyecto);
-            this.gpDeliveries.Location = new System.Drawing.Point(309, 271);
-            this.gpDeliveries.Name = "gpDeliveries";
-            this.gpDeliveries.Size = new System.Drawing.Size(200, 130);
-            this.gpDeliveries.TabIndex = 20;
-            this.gpDeliveries.TabStop = false;
-            this.gpDeliveries.Text = "Entregas";
-            // 
-            // cbkAnteproyecto
-            // 
-            this.cbkAnteproyecto.AutoSize = true;
-            this.cbkAnteproyecto.Location = new System.Drawing.Point(28, 22);
-            this.cbkAnteproyecto.Name = "cbkAnteproyecto";
-            this.cbkAnteproyecto.Size = new System.Drawing.Size(89, 17);
-            this.cbkAnteproyecto.TabIndex = 0;
-            this.cbkAnteproyecto.Text = "Anteproyecto";
-            this.cbkAnteproyecto.UseVisualStyleBackColor = true;
-            // 
-            // cbkKardex
-            // 
-            this.cbkKardex.AutoSize = true;
-            this.cbkKardex.Location = new System.Drawing.Point(28, 45);
-            this.cbkKardex.Name = "cbkKardex";
-            this.cbkKardex.Size = new System.Drawing.Size(59, 17);
-            this.cbkKardex.TabIndex = 0;
-            this.cbkKardex.Text = "Kardex";
-            this.cbkKardex.UseVisualStyleBackColor = true;
-            // 
-            // cbkFinalProyect
-            // 
-            this.cbkFinalProyect.AutoSize = true;
-            this.cbkFinalProyect.Location = new System.Drawing.Point(28, 68);
-            this.cbkFinalProyect.Name = "cbkFinalProyect";
-            this.cbkFinalProyect.Size = new System.Drawing.Size(93, 17);
-            this.cbkFinalProyect.TabIndex = 0;
-            this.cbkFinalProyect.Text = "Proyecto Final";
-            this.cbkFinalProyect.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // StudentDetails_Administrator
             // 
@@ -616,10 +635,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.gpRevision.ResumeLayout(false);
-            this.gpRevision.PerformLayout();
             this.gpDeliveries.ResumeLayout(false);
             this.gpDeliveries.PerformLayout();
+            this.gpRevision.ResumeLayout(false);
+            this.gpRevision.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -651,16 +670,13 @@
         private System.Windows.Forms.Button btnRejectStudent;
         private System.Windows.Forms.Button btnFreeStudent;
         private System.Windows.Forms.GroupBox gpRevision;
-        private System.Windows.Forms.Button btnAssignRevisor2;
-        private System.Windows.Forms.Button btnAssignRevisor1;
-        private System.Windows.Forms.Button btnAssignTutor;
         private System.Windows.Forms.CheckBox ckbRevisor1;
-        private System.Windows.Forms.CheckBox ckbRevisor3;
+        private System.Windows.Forms.CheckBox ckbRevisor2;
         private System.Windows.Forms.CheckBox ckbTutor;
         private System.Windows.Forms.TextBox txtSemesterStudent;
         private System.Windows.Forms.TextBox txtStudentCareer;
         private System.Windows.Forms.TextBox txtControlNo;
-        private System.Windows.Forms.TextBox txtStudentName;
+        private System.Windows.Forms.TextBox txtStudFirstName;
         private System.Windows.Forms.TextBox txtCompanyAssessor;
         private System.Windows.Forms.TextBox txtRFC;
         private System.Windows.Forms.TextBox txtCompanyName;
@@ -675,5 +691,10 @@
         private System.Windows.Forms.CheckBox cbkFinalProyect;
         private System.Windows.Forms.CheckBox cbkKardex;
         private System.Windows.Forms.CheckBox cbkAnteproyecto;
+        private System.Windows.Forms.TextBox txtStudLasName;
+        private System.Windows.Forms.ComboBox cboRevisor2;
+        private System.Windows.Forms.ComboBox cboRevisor1;
+        private System.Windows.Forms.ComboBox cboTutor;
+        private System.Windows.Forms.Button btnUpdateDeliveries;
     }
 }
