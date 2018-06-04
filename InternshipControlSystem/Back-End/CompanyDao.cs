@@ -41,7 +41,7 @@ namespace InternshipControlSystem.Back_End
             }
             return items;
         }
-
+        
         public static int CreateItem(Company item)
         {
             MySqlConnection conn = Conection.getConnection();
@@ -106,7 +106,7 @@ namespace InternshipControlSystem.Back_End
             try
             {
                 conn.Open();
-                string sqlStatement = "UPDATE proyects set comp_name=@comp_name, RFC=@RFC, turn=@turn, companyHome=@CompanyHome, companyColony=@companyColony," +
+                string sqlStatement = "UPDATE companies set comp_name=@comp_name, RFC=@RFC, turn=@turn, companyHome=@CompanyHome, companyColony=@companyColony," +
                     "cp=@Cp, fax=@Fax, phoneCompany=@PhoneCompany, companyCity=@CompanyCity, titularName=@TitularName, titularPosition=@TitularPosition, " +
                     "advisoryName=@AdvisoryName, advisoryPosition=@AdvisoryPosition, agreedName=@AgreedName, agreed=@Agreed WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
