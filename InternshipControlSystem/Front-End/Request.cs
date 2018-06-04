@@ -126,14 +126,19 @@ namespace InternshipControlSystem.Front_End
                             Model.Student studen = new Model.Student(0,NumberControl,NameResident,txtApellidos.Text,Career,
                                 Convert.ToInt32(txtSemestre.Text),"sss",2,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,lastIDCompany,0,0,false,false,false,false,0);
                             
-                             int lastIDstudent = StudentsDAO.CreateItem(studen);
+                            int lastIDstudent = StudentsDAO.CreateItem(studen);
                            
-                             // se crea el objeto de empresea
-
-                           
+                             // se crea el objeto de empresa
                             
                             Model.Proyect pro = new Model.Proyect(0, ProjectName, lastIDCompany, lastIDstudent, ProjectedPeriod, ChosenOption, NumberOfResidents,0);
                             ProyectsDAO.CreateItem(pro);
+
+                            Model.Delivery del = new Model.Delivery(0, lastIDstudent, "Anteproyecto", false);
+                            DeliveryDAO.CreateItem(del);
+                            Model.Delivery del2 = new Model.Delivery(0, lastIDstudent, "Kardex", false);
+                            DeliveryDAO.CreateItem(del2);
+                            Model.Delivery del3 = new Model.Delivery(0, lastIDstudent, "Proyecto Final", false);
+                            DeliveryDAO.CreateItem(del3);
 
                             MessageBox.Show("LA SOLICITUD FUE AGREGADA CORRECTAMENTE");
                         }
