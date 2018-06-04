@@ -129,5 +129,115 @@ namespace InternshipControlSystem.Front_End
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void exportStudentsToExcel()
+        {
+            SaveFileDialog fichero = new SaveFileDialog();
+            fichero.Filter = "Excel (*.xls)|*.xls";
+
+            if (fichero.ShowDialog() == DialogResult.OK)
+            {
+                Microsoft.Office.Interop.Excel.Application aplicacion;
+                Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
+                Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
+                aplicacion = new Microsoft.Office.Interop.Excel.Application();
+                libros_trabajo = aplicacion.Workbooks.Add();
+                hoja_trabajo =
+                    (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
+                hoja_trabajo.Cells[1, 1] = "No.";
+                hoja_trabajo.Cells[1, 2] = "Empresa";
+                hoja_trabajo.Cells[1, 3] = "Proyecto";
+                hoja_trabajo.Cells[1, 4] = "Tel-Empresa";
+                hoja_trabajo.Cells[1, 5] = "Tel-Alumno";
+                hoja_trabajo.Cells[1, 6] = "E-mail";
+                hoja_trabajo.UsedRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+
+                int index = 1;
+                foreach (Student student in displayStudents) { 
+                    Company company = CompanyDao.GetItem(student.company_idDao);
+                    Proyect proyect = ProyectsDAO.GetItem(student);
+                    hoja_trabajo.Cells[index + 1, 1] = index;
+                    hoja_trabajo.Cells[index + 1, 2] = company.Name ;
+                    hoja_trabajo.Cells[index + 1, 3] = proyect.Name;
+                    hoja_trabajo.Cells[index + 1, 4] = company.PhoneCompanyDao;
+                    hoja_trabajo.Cells[index + 1, 5] = student.PhoneDao;
+                    hoja_trabajo.Cells[index + 1, 6] = student.EmailDao;
+                    index++;
+                }
+                
+                hoja_trabajo.UsedRange.Columns.AutoFit();
+                libros_trabajo.SaveAs(fichero.FileName,
+                    Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                libros_trabajo.Close(true);
+                aplicacion.Quit();
+            }
+        }
+
+        private void exportVeredictToExcel()
+        {
+            SaveFileDialog fichero = new SaveFileDialog();
+            fichero.Filter = "Excel (*.xls)|*.xls";
+
+            if (fichero.ShowDialog() == DialogResult.OK)
+            {
+                Microsoft.Office.Interop.Excel.Application aplicacion;
+                Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
+                Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
+                aplicacion = new Microsoft.Office.Interop.Excel.Application();
+                libros_trabajo = aplicacion.Workbooks.Add();
+                hoja_trabajo =
+                    (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
+                hoja_trabajo.Cells[1, 1] = "No.";
+                hoja_trabajo.Cells[1, 2] = "Control";
+                hoja_trabajo.Cells[1, 3] = "Nombre";
+                hoja_trabajo.Cells[1, 4] = "Dictamen General";
+                hoja_trabajo.Cells[1, 5] = "Asesor";
+                hoja_trabajo.Cells[1, 6] = "Dictamen";
+                hoja_trabajo.Cells[1, 7] = "Revisor1";
+                hoja_trabajo.Cells[1, 8] = "Dictamen";
+                hoja_trabajo.Cells[1, 9] = "Revisor2";
+                hoja_trabajo.Cells[1, 10] = "Dictamen";
+                hoja_trabajo.Cells[1, 11] = "Proyecto";
+                hoja_trabajo.Cells[1, 12] = "Empresa";
+                hoja_trabajo.UsedRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+
+                int index = 1;
+                foreach (Student student in displayStudents)
+                {
+                    Tutor tutor = TutorDAO.GetItem(student.Tutor_id);
+                    Revisor revisor1 = RevisorsDAO.GetItem(student.Revisor1_id);
+                    Revisor revisor2 = RevisorsDAO.GetItem(student.Revisor2_id);
+                    hoja_trabajo.Cells[index + 1, 1] = index;
+                    hoja_trabajo.Cells[index + 1, 2] = student.Control_id;
+                    hoja_trabajo.Cells[index + 1, 3] = student.First_name + " " + student.Last_name;
+                    hoja_trabajo.Cells[index + 1, 4] = (student.Titulation_Approval)?"Si":"No";
+                    hoja_trabajo.Cells[index + 1, 5] = tutor.FirstName + " " + tutor.LastName;
+                    hoja_trabajo.Cells[index + 1, 6] = (student.Tutor_Approval) ? "Si" : "No";
+                    hoja_trabajo.Cells[index + 1, 7] = revisor1.FirstName + " " + revisor1.LastName;
+                    hoja_trabajo.Cells[index + 1, 8] = (student.Revisor1_Approval) ? "Si" : "No";
+                    hoja_trabajo.Cells[index + 1, 9] = revisor2.FirstName + " " + revisor2.LastName;
+                    hoja_trabajo.Cells[index + 1, 10] = (student.Revisor2_Approval) ? "Si" : "No";
+                    hoja_trabajo.Cells[index + 1, 11] = ProyectsDAO.GetItem(student).Name;
+                    hoja_trabajo.Cells[index + 1, 12] = CompanyDao.GetItem(student.company_idDao).Name;
+                    index++;
+                }
+
+                hoja_trabajo.UsedRange.Columns.AutoFit();
+                libros_trabajo.SaveAs(fichero.FileName,
+                    Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                libros_trabajo.Close(true);
+                aplicacion.Quit();
+            }
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            exportStudentsToExcel();
+        }
+
+        private void btnExportDictamen_Click(object sender, EventArgs e)
+        {
+            exportVeredictToExcel();
+        }
     }
 }
