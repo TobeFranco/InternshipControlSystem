@@ -124,7 +124,7 @@ namespace InternshipControlSystem.Front_End
                             int lastIDCompany = CompanyDao.CreateItem(compan);
                             // se crea el objeto de estudiante y se llena el constructor
                             Model.Student studen = new Model.Student(0,NumberControl,NameResident,txtApellidos.Text,Career,
-                                Convert.ToInt32(txtSemestre.Text),"sss",2,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,lastIDCompany,0,0,false,false,false,false);
+                                Convert.ToInt32(txtSemestre.Text),"sss",2,SocialSecurity,Home,Email,City,Phonehouse,NumberInsurance,Phone,lastIDCompany,0,0,false,false,false,false,0);
                             
                              int lastIDstudent = StudentsDAO.CreateItem(studen);
                            

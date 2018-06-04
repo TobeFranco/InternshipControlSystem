@@ -4,11 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using InternshipControlSystem.Back_End;
 using InternshipControlSystem.Model;
+using InternshipControlSystem.Back_End;
 
 namespace InternshipControlSystem.Front_End
 {
@@ -18,11 +19,22 @@ namespace InternshipControlSystem.Front_End
         private List<Student> displayStudents;
         private Student selectedStudent;
 
-        
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+(
+    int nLeftRect, // x-coordinate of upper-left corner
+    int nTopRect, // y-coordinate of upper-left corner
+    int nRightRect, // x-coordinate of lower-right corner
+    int nBottomRect, // y-coordinate of lower-right corner
+    int nWidthEllipse, // height of ellipse
+    int nHeightEllipse // width of ellipse
+);
+
         public Studen_Catalog_asessor(int IDtutor)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             students = new List<Student>();
             students = StudentsDAO.GetAllItemsInTutor(IDtutor);
             displayStudents = new List<Student>(students);
@@ -67,6 +79,38 @@ namespace InternshipControlSystem.Front_End
                 lblProyectNameHolder.Text = proyect.Name;
                 lblPeriodHolder.Text = proyect.Period;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtNoControlFilter_TextChanged(object sender, EventArgs e)
+        {
+            // Filter by No. Control
+
+            string filterParam = txtNoControlFilter.Text;
+            displayStudents.Clear();
+            foreach (Student stud in students)
+            {
+                if (stud.Control_id.StartsWith(filterParam))
+                {
+                    displayStudents.Add(stud);
+                }
+            }
+            fillTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

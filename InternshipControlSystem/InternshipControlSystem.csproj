@@ -81,6 +81,12 @@
     <Compile Include="Front-End\Request.Designer.cs">
       <DependentUpon>Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="Front-End\StudentDetails_Assessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front-End\StudentDetails_Assessor.Designer.cs">
+      <DependentUpon>StudentDetails_Assessor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Front-End\StudentDetails_Revisor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Request.resx">
       <DependentUpon>Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front-End\StudentDetails_Assessor.resx">
+      <DependentUpon>StudentDetails_Assessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\StudentDetails_Revisor.resx">
       <DependentUpon>StudentDetails_Revisor.cs</DependentUpon>

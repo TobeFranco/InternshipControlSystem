@@ -89,6 +89,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Detalles del Alumno";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblProyectName
             // 
@@ -251,6 +252,7 @@
             this.txtNoControlFilter.Name = "txtNoControlFilter";
             this.txtNoControlFilter.Size = new System.Drawing.Size(169, 20);
             this.txtNoControlFilter.TabIndex = 24;
+            this.txtNoControlFilter.TextChanged += new System.EventHandler(this.txtNoControlFilter_TextChanged);
             // 
             // label2
             // 
@@ -272,6 +274,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -282,6 +285,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Studen_Catalog_asessor
             // 

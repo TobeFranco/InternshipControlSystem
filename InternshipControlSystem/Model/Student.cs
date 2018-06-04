@@ -31,13 +31,14 @@ namespace InternshipControlSystem.Model
         public bool Revisor2_Approval;
         public bool Tutor_Approval;
         public bool Titulation_Approval;
+        public int Qualification;
 
 
 
         // Constructor de la clase
         public Student(int Id, String Control_id, String First_name, String Last_name, String Career,
                         int Semester, String Cordinator, int tutor, String social,String home, String Email,String city,String PhoneHouse, int numeri,String Phone
-            ,int idcompany, int revisor1_id, int revisor2_id, bool rev1_approval, bool rev2_approval, bool tutor_approval, bool titulation_approval)
+            ,int idcompany, int revisor1_id, int revisor2_id, bool rev1_approval, bool rev2_approval, bool tutor_approval, bool titulation_approval, int Qualification)
         {
             this.Id = Id;
             this.Control_id = Control_id;
@@ -61,6 +62,7 @@ namespace InternshipControlSystem.Model
             this.Revisor2_Approval = rev2_approval;
             this.Tutor_Approval = tutor_approval;
             this.Titulation_Approval = titulation_approval;
+            this.Qualification = Qualification;
         }
     }
 }

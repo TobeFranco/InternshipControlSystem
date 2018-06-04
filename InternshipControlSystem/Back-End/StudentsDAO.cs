@@ -29,7 +29,7 @@ namespace InternshipControlSystem.Back_End
                          , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
                          , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
                          Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
-                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]), Convert.ToInt32(reader["qualification"]));
                     students.Add(student);
                 }
                 reader.Close();
@@ -43,9 +43,6 @@ namespace InternshipControlSystem.Back_End
             }
             return students;
         }
-
-
-
 
 
 
@@ -69,7 +66,7 @@ namespace InternshipControlSystem.Back_End
                          , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
                          , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]),  Convert.ToInt32(reader["revisor1_id"]),
                          Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
-                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]), Convert.ToInt32(reader["qualification"]));
                     students.Add(student);
                 }
                 reader.Close();
@@ -105,7 +102,7 @@ namespace InternshipControlSystem.Back_End
                          , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
                          , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
                          Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
-                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]), Convert.ToInt32(reader["qualification"]));
                     students.Add(student);
                 }
                 reader.Close();
@@ -128,7 +125,8 @@ namespace InternshipControlSystem.Back_End
                 conn.Open();
                 string sqlStatement = "INSERT INTO students VALUES(null, @controlId, @firstName, @lastName, @career, " +
                     "@semester, @coordinator, @Tutor_id, @SocialSecurity, @Home, @Email, @City, @Phonehouse, @NumberInsurance, " +
-                    "@Phone,@company_id, @revisor1, @revisor2, @rev1_approval, @rev2_approval, @tutos_approval, @titulation_approval); " +
+                    "@Phone,@company_id, @revisor1, @revisor2, @rev1_approval, @rev2_approval, @tutos_approval, @titulation_approval, " +
+                    "@qualification); " +
                     "SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@controlId", student.Control_id);
@@ -152,6 +150,7 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@rev2_approval", student.Revisor2_Approval);
                 cmd.Parameters.AddWithValue("@tutor_approval", student.Tutor_Approval);
                 cmd.Parameters.AddWithValue("@titulation_approval", student.Titulation_Approval);
+                cmd.Parameters.AddWithValue("@qualification", student.Qualification);
                 return cmd.ExecuteNonQuery();
             }catch (Exception ex){
                 Console.WriteLine(ex.ToString());
@@ -185,7 +184,8 @@ namespace InternshipControlSystem.Back_End
                     "career=@career, semester=@semester, cordinator=@coordinator, tutor_id=@tutor_id, socialSecurity=@socialSecurity, " +
                     "home=@home, email=@email, city=@city, phonehouse=@phonehouse, numberInsurance=@numberInsurance, phone=@phone," +
                     "company_id=@company_id, revisor1_id=@revisor1, revisor2_id=@revisor2, revisor1_approval=@rev1_approval, " +
-                    "revisor2_approval=@rev2_approval, tutor_approval=@tutor_approval, titulation_approval=@titulation_approval WHERE id=@id";
+                    "revisor2_approval=@rev2_approval, tutor_approval=@tutor_approval, titulation_approval=@titulation_approval, " +
+                    "qualification = @Qualification WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@id", student.Id);
                 cmd.Parameters.AddWithValue("@controlId", student.Control_id);
@@ -209,6 +209,7 @@ namespace InternshipControlSystem.Back_End
                 cmd.Parameters.AddWithValue("@rev2_approval", student.Revisor2_Approval);
                 cmd.Parameters.AddWithValue("@tutor_approval", student.Tutor_Approval);
                 cmd.Parameters.AddWithValue("@titulation_approval", student.Titulation_Approval);
+                cmd.Parameters.AddWithValue("@qualification", student.Qualification);
                 cmd.ExecuteNonQuery();
             }catch (Exception ex){
                 Console.WriteLine(ex.ToString());
@@ -238,7 +239,7 @@ namespace InternshipControlSystem.Back_End
                          , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
                          , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
                          Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
-                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]), Convert.ToInt32(reader["qualification"]));
                 }
             } catch (Exception ex)
             {
@@ -249,6 +250,52 @@ namespace InternshipControlSystem.Back_End
                 conn.Close();
             }
             return student;
+        }
+
+        public static void UpdateTutorApproval(int student_id, bool tutor_Approval)
+        {
+            MySqlConnection conn = Conection.getConnection();
+            try
+            {
+                conn.Open();
+
+                string sqlStatement = "UPDATE students set tutor_approval = @tutor_approval WHERE id=@id;";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", student_id);
+                cmd.Parameters.AddWithValue("@tutor_approval", tutor_Approval);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void UpdateQualification(int student_id, int qualification)
+        {
+            MySqlConnection conn = Conection.getConnection();
+            try
+            {
+                conn.Open();
+
+                string sqlStatement = "UPDATE students set qualification = @qualification WHERE id=@id;";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", student_id);
+                cmd.Parameters.AddWithValue("@qualification", qualification);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public static void UpdateRevision1(int student_id, bool rev1_Approval)

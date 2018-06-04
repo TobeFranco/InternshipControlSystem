@@ -1,6 +1,6 @@
 ﻿namespace InternshipControlSystem.Front_End
 {
-    partial class StudentDetails_Revisor
+    partial class StudentDetails_Assessor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtQualification = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.chbLiberar = new System.Windows.Forms.CheckBox();
             this.lblTutor = new System.Windows.Forms.Label();
             this.lblCareer = new System.Windows.Forms.Label();
@@ -44,6 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAsesor = new System.Windows.Forms.Label();
             this.lblrfc2 = new System.Windows.Forms.Label();
@@ -62,19 +66,21 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCalificar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.btnCalificar);
+            this.panel4.Controls.Add(this.txtQualification);
+            this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.chbLiberar);
             this.panel4.Controls.Add(this.lblTutor);
             this.panel4.Controls.Add(this.lblCareer);
@@ -88,10 +94,30 @@
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(11, 45);
+            this.panel4.Location = new System.Drawing.Point(5, 40);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(351, 430);
-            this.panel4.TabIndex = 140;
+            this.panel4.TabIndex = 144;
+            // 
+            // txtQualification
+            // 
+            this.txtQualification.Location = new System.Drawing.Point(109, 346);
+            this.txtQualification.Name = "txtQualification";
+            this.txtQualification.Size = new System.Drawing.Size(100, 20);
+            this.txtQualification.TabIndex = 28;
+            this.txtQualification.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQualification_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(30, 347);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 15);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Calificación:";
             // 
             // chbLiberar
             // 
@@ -254,10 +280,10 @@
             this.panel3.Controls.Add(this.label36);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(18, 17);
+            this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(839, 30);
-            this.panel3.TabIndex = 139;
+            this.panel3.TabIndex = 143;
             // 
             // label36
             // 
@@ -268,6 +294,26 @@
             this.label36.Size = new System.Drawing.Size(114, 13);
             this.label36.TabIndex = 134;
             this.label36.Text = "Detalles del estudiante";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
+            this.pictureBox1.Location = new System.Drawing.Point(780, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(809, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
             // 
             // panel2
             // 
@@ -280,10 +326,10 @@
             this.panel2.Controls.Add(this.lblName);
             this.panel2.Controls.Add(this.label7);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(381, 68);
+            this.panel2.Location = new System.Drawing.Point(375, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 192);
-            this.panel2.TabIndex = 137;
+            this.panel2.TabIndex = 142;
             // 
             // lblAsesor
             // 
@@ -362,10 +408,10 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label6);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(381, 283);
+            this.panel1.Location = new System.Drawing.Point(375, 278);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 192);
-            this.panel1.TabIndex = 136;
+            this.panel1.TabIndex = 141;
             // 
             // lblSemesterStudent
             // 
@@ -449,54 +495,51 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Datos del Alumno";
             // 
-            // pictureBox1
+            // btnCalificar
             // 
-            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
-            this.pictureBox1.Location = new System.Drawing.Point(780, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnCalificar.Location = new System.Drawing.Point(215, 345);
+            this.btnCalificar.Name = "btnCalificar";
+            this.btnCalificar.Size = new System.Drawing.Size(75, 23);
+            this.btnCalificar.TabIndex = 29;
+            this.btnCalificar.Text = "Calificar";
+            this.btnCalificar.UseVisualStyleBackColor = true;
+            this.btnCalificar.Click += new System.EventHandler(this.btnCalificar_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(809, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // StudentDetails_Revisor
+            // StudentDetails_Assessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 488);
+            this.ClientSize = new System.Drawing.Size(843, 479);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "StudentDetails_Revisor";
-            this.Text = "StudentDetails_Revisor";
+            this.Name = "StudentDetails_Assessor";
+            this.Text = "StudentDetails_Assessor";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.CheckBox chbLiberar;
+        private System.Windows.Forms.Label lblTutor;
+        private System.Windows.Forms.Label lblCareer;
+        private System.Windows.Forms.Label lblCoordinator;
+        private System.Windows.Forms.Label lblPeriod;
+        private System.Windows.Forms.Label lblChosenOption;
+        private System.Windows.Forms.Label lblProyectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -508,29 +551,25 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblAsesor;
+        private System.Windows.Forms.Label lblrfc2;
+        private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblAssessor;
         private System.Windows.Forms.Label lblRFC;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblSemesterStudent;
+        private System.Windows.Forms.Label lblStudentCareer;
+        private System.Windows.Forms.Label lblNoControl;
+        private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox chbLiberar;
-        private System.Windows.Forms.Label lblTutor;
-        private System.Windows.Forms.Label lblCareer;
-        private System.Windows.Forms.Label lblCoordinator;
-        private System.Windows.Forms.Label lblPeriod;
-        private System.Windows.Forms.Label lblChosenOption;
-        private System.Windows.Forms.Label lblProyectName;
-        private System.Windows.Forms.Label lblAsesor;
-        private System.Windows.Forms.Label lblrfc2;
-        private System.Windows.Forms.Label lblCompanyName;
-        private System.Windows.Forms.Label lblSemesterStudent;
-        private System.Windows.Forms.Label lblStudentCareer;
-        private System.Windows.Forms.Label lblNoControl;
-        private System.Windows.Forms.Label lblStudentName;
+        private System.Windows.Forms.TextBox txtQualification;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnCalificar;
     }
 }

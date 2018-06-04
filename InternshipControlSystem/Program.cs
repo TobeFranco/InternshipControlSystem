@@ -16,7 +16,9 @@ namespace InternshipControlSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Front_End.Login());
+            Front_End.Login lg = new Front_End.Login();
+            lg.Show();
+            Application.Run();
         }
     }
 }

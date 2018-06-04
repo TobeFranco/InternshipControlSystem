@@ -31,13 +31,13 @@ namespace InternshipControlSystem.Front_End
             ToolTip tool = new ToolTip();
             tool.SetToolTip(btnSolicitud, "Crea una nueva solicitud");
             tool.SetToolTip(btnCatalogosAlumnos, "Mueestra la lista de los alumnos");
-           
 
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -55,6 +55,11 @@ namespace InternshipControlSystem.Front_End
         {
             Student_Catalog_Administrator SCA = new Student_Catalog_Administrator();
             SCA.Show();
+        }
+
+        private void Principal_Administrator_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

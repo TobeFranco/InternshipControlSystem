@@ -52,6 +52,7 @@ namespace InternshipControlSystem.Front_End
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace InternshipControlSystem.Front_End
                         SCR.Show();
                     break;
                 }
-                this.Hide();
+                this.Close();
                 contraseña = null;
                 usuario = null;
                 txtPassword.Text = "";
