@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chbLiberar = new System.Windows.Forms.CheckBox();
+            this.lblTutor = new System.Windows.Forms.Label();
+            this.lblCareer = new System.Windows.Forms.Label();
+            this.lblCoordinator = new System.Windows.Forms.Label();
+            this.lblPeriod = new System.Windows.Forms.Label();
+            this.lblChosenOption = new System.Windows.Forms.Label();
+            this.lblProyectName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,39 +44,32 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblAsesor = new System.Windows.Forms.Label();
+            this.lblrfc2 = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblAssessor = new System.Windows.Forms.Label();
             this.lblRFC = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSemesterStudent = new System.Windows.Forms.Label();
+            this.lblStudentCareer = new System.Windows.Forms.Label();
+            this.lblNoControl = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblCompanyName = new System.Windows.Forms.Label();
-            this.lblrfc2 = new System.Windows.Forms.Label();
-            this.lblAsesor = new System.Windows.Forms.Label();
-            this.lblStudentName = new System.Windows.Forms.Label();
-            this.lblNoControl = new System.Windows.Forms.Label();
-            this.lblStudentCarrer = new System.Windows.Forms.Label();
-            this.lblSemesterStudent = new System.Windows.Forms.Label();
-            this.lblProyectName = new System.Windows.Forms.Label();
-            this.lblChosenOption = new System.Windows.Forms.Label();
-            this.lblPeriod = new System.Windows.Forms.Label();
-            this.lblCoordinator = new System.Windows.Forms.Label();
-            this.lblCarrer = new System.Windows.Forms.Label();
-            this.lblTutor = new System.Windows.Forms.Label();
-            this.chbLiberar = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -77,7 +77,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel4.Controls.Add(this.chbLiberar);
             this.panel4.Controls.Add(this.lblTutor);
-            this.panel4.Controls.Add(this.lblCarrer);
+            this.panel4.Controls.Add(this.lblCareer);
             this.panel4.Controls.Add(this.lblCoordinator);
             this.panel4.Controls.Add(this.lblPeriod);
             this.panel4.Controls.Add(this.lblChosenOption);
@@ -92,6 +92,89 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(351, 430);
             this.panel4.TabIndex = 140;
+            // 
+            // chbLiberar
+            // 
+            this.chbLiberar.AutoSize = true;
+            this.chbLiberar.Location = new System.Drawing.Point(33, 308);
+            this.chbLiberar.Name = "chbLiberar";
+            this.chbLiberar.Size = new System.Drawing.Size(103, 17);
+            this.chbLiberar.TabIndex = 26;
+            this.chbLiberar.Text = "Liberar Proyecto";
+            this.chbLiberar.UseVisualStyleBackColor = true;
+            this.chbLiberar.CheckedChanged += new System.EventHandler(this.chbLiberar_CheckedChanged);
+            // 
+            // lblTutor
+            // 
+            this.lblTutor.AutoSize = true;
+            this.lblTutor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblTutor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTutor.Location = new System.Drawing.Point(172, 252);
+            this.lblTutor.Name = "lblTutor";
+            this.lblTutor.Size = new System.Drawing.Size(16, 15);
+            this.lblTutor.TabIndex = 25;
+            this.lblTutor.Text = "...";
+            // 
+            // lblCareer
+            // 
+            this.lblCareer.AutoSize = true;
+            this.lblCareer.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCareer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblCareer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCareer.Location = new System.Drawing.Point(172, 226);
+            this.lblCareer.Name = "lblCareer";
+            this.lblCareer.Size = new System.Drawing.Size(16, 15);
+            this.lblCareer.TabIndex = 24;
+            this.lblCareer.Text = "...";
+            // 
+            // lblCoordinator
+            // 
+            this.lblCoordinator.AutoSize = true;
+            this.lblCoordinator.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCoordinator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblCoordinator.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCoordinator.Location = new System.Drawing.Point(172, 200);
+            this.lblCoordinator.Name = "lblCoordinator";
+            this.lblCoordinator.Size = new System.Drawing.Size(16, 15);
+            this.lblCoordinator.TabIndex = 23;
+            this.lblCoordinator.Text = "...";
+            // 
+            // lblPeriod
+            // 
+            this.lblPeriod.AutoSize = true;
+            this.lblPeriod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblPeriod.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPeriod.Location = new System.Drawing.Point(172, 151);
+            this.lblPeriod.Name = "lblPeriod";
+            this.lblPeriod.Size = new System.Drawing.Size(16, 15);
+            this.lblPeriod.TabIndex = 22;
+            this.lblPeriod.Text = "...";
+            // 
+            // lblChosenOption
+            // 
+            this.lblChosenOption.AutoSize = true;
+            this.lblChosenOption.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblChosenOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblChosenOption.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblChosenOption.Location = new System.Drawing.Point(173, 119);
+            this.lblChosenOption.Name = "lblChosenOption";
+            this.lblChosenOption.Size = new System.Drawing.Size(16, 15);
+            this.lblChosenOption.TabIndex = 21;
+            this.lblChosenOption.Text = "...";
+            // 
+            // lblProyectName
+            // 
+            this.lblProyectName.AutoSize = true;
+            this.lblProyectName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblProyectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblProyectName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblProyectName.Location = new System.Drawing.Point(173, 95);
+            this.lblProyectName.Name = "lblProyectName";
+            this.lblProyectName.Size = new System.Drawing.Size(16, 15);
+            this.lblProyectName.TabIndex = 20;
+            this.lblProyectName.Text = "...";
             // 
             // label1
             // 
@@ -186,6 +269,27 @@
             this.label36.TabIndex = 134;
             this.label36.Text = "Detalles del estudiante";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
+            this.pictureBox1.Location = new System.Drawing.Point(780, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(809, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -201,6 +305,33 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 192);
             this.panel2.TabIndex = 137;
+            // 
+            // lblAsesor
+            // 
+            this.lblAsesor.AutoSize = true;
+            this.lblAsesor.Location = new System.Drawing.Point(73, 119);
+            this.lblAsesor.Name = "lblAsesor";
+            this.lblAsesor.Size = new System.Drawing.Size(16, 13);
+            this.lblAsesor.TabIndex = 22;
+            this.lblAsesor.Text = "...";
+            // 
+            // lblrfc2
+            // 
+            this.lblrfc2.AutoSize = true;
+            this.lblrfc2.Location = new System.Drawing.Point(73, 94);
+            this.lblrfc2.Name = "lblrfc2";
+            this.lblrfc2.Size = new System.Drawing.Size(16, 13);
+            this.lblrfc2.TabIndex = 21;
+            this.lblrfc2.Text = "...";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(73, 59);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(16, 13);
+            this.lblCompanyName.TabIndex = 20;
+            this.lblCompanyName.Text = "...";
             // 
             // lblAssessor
             // 
@@ -243,7 +374,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel1.Controls.Add(this.lblSemesterStudent);
-            this.panel1.Controls.Add(this.lblStudentCarrer);
+            this.panel1.Controls.Add(this.lblStudentCareer);
             this.panel1.Controls.Add(this.lblNoControl);
             this.panel1.Controls.Add(this.lblStudentName);
             this.panel1.Controls.Add(this.label11);
@@ -256,6 +387,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 192);
             this.panel1.TabIndex = 136;
+            // 
+            // lblSemesterStudent
+            // 
+            this.lblSemesterStudent.AutoSize = true;
+            this.lblSemesterStudent.Location = new System.Drawing.Point(102, 150);
+            this.lblSemesterStudent.Name = "lblSemesterStudent";
+            this.lblSemesterStudent.Size = new System.Drawing.Size(16, 13);
+            this.lblSemesterStudent.TabIndex = 23;
+            this.lblSemesterStudent.Text = "...";
+            // 
+            // lblStudentCareer
+            // 
+            this.lblStudentCareer.AutoSize = true;
+            this.lblStudentCareer.Location = new System.Drawing.Point(102, 120);
+            this.lblStudentCareer.Name = "lblStudentCareer";
+            this.lblStudentCareer.Size = new System.Drawing.Size(16, 13);
+            this.lblStudentCareer.TabIndex = 22;
+            this.lblStudentCareer.Text = "...";
+            // 
+            // lblNoControl
+            // 
+            this.lblNoControl.AutoSize = true;
+            this.lblNoControl.Location = new System.Drawing.Point(102, 90);
+            this.lblNoControl.Name = "lblNoControl";
+            this.lblNoControl.Size = new System.Drawing.Size(16, 13);
+            this.lblNoControl.TabIndex = 21;
+            this.lblNoControl.Text = "...";
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.Location = new System.Drawing.Point(102, 60);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(16, 13);
+            this.lblStudentName.TabIndex = 20;
+            this.lblStudentName.Text = "...";
             // 
             // label11
             // 
@@ -303,172 +470,6 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Datos del Alumno";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::InternshipControlSystem.Properties.Resources.minimizar;
-            this.pictureBox1.Location = new System.Drawing.Point(780, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::InternshipControlSystem.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(809, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(73, 59);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(16, 13);
-            this.lblCompanyName.TabIndex = 20;
-            this.lblCompanyName.Text = "...";
-            // 
-            // lblrfc2
-            // 
-            this.lblrfc2.AutoSize = true;
-            this.lblrfc2.Location = new System.Drawing.Point(73, 94);
-            this.lblrfc2.Name = "lblrfc2";
-            this.lblrfc2.Size = new System.Drawing.Size(16, 13);
-            this.lblrfc2.TabIndex = 21;
-            this.lblrfc2.Text = "...";
-            // 
-            // lblAsesor
-            // 
-            this.lblAsesor.AutoSize = true;
-            this.lblAsesor.Location = new System.Drawing.Point(73, 119);
-            this.lblAsesor.Name = "lblAsesor";
-            this.lblAsesor.Size = new System.Drawing.Size(16, 13);
-            this.lblAsesor.TabIndex = 22;
-            this.lblAsesor.Text = "...";
-            // 
-            // lblStudentName
-            // 
-            this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Location = new System.Drawing.Point(102, 60);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(16, 13);
-            this.lblStudentName.TabIndex = 20;
-            this.lblStudentName.Text = "...";
-            // 
-            // lblNoControl
-            // 
-            this.lblNoControl.AutoSize = true;
-            this.lblNoControl.Location = new System.Drawing.Point(102, 90);
-            this.lblNoControl.Name = "lblNoControl";
-            this.lblNoControl.Size = new System.Drawing.Size(16, 13);
-            this.lblNoControl.TabIndex = 21;
-            this.lblNoControl.Text = "...";
-            // 
-            // lblStudentCarrer
-            // 
-            this.lblStudentCarrer.AutoSize = true;
-            this.lblStudentCarrer.Location = new System.Drawing.Point(102, 120);
-            this.lblStudentCarrer.Name = "lblStudentCarrer";
-            this.lblStudentCarrer.Size = new System.Drawing.Size(16, 13);
-            this.lblStudentCarrer.TabIndex = 22;
-            this.lblStudentCarrer.Text = "...";
-            // 
-            // lblSemesterStudent
-            // 
-            this.lblSemesterStudent.AutoSize = true;
-            this.lblSemesterStudent.Location = new System.Drawing.Point(102, 150);
-            this.lblSemesterStudent.Name = "lblSemesterStudent";
-            this.lblSemesterStudent.Size = new System.Drawing.Size(16, 13);
-            this.lblSemesterStudent.TabIndex = 23;
-            this.lblSemesterStudent.Text = "...";
-            // 
-            // lblProyectName
-            // 
-            this.lblProyectName.AutoSize = true;
-            this.lblProyectName.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblProyectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblProyectName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblProyectName.Location = new System.Drawing.Point(173, 95);
-            this.lblProyectName.Name = "lblProyectName";
-            this.lblProyectName.Size = new System.Drawing.Size(16, 15);
-            this.lblProyectName.TabIndex = 20;
-            this.lblProyectName.Text = "...";
-            // 
-            // lblChosenOption
-            // 
-            this.lblChosenOption.AutoSize = true;
-            this.lblChosenOption.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblChosenOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblChosenOption.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblChosenOption.Location = new System.Drawing.Point(173, 119);
-            this.lblChosenOption.Name = "lblChosenOption";
-            this.lblChosenOption.Size = new System.Drawing.Size(16, 15);
-            this.lblChosenOption.TabIndex = 21;
-            this.lblChosenOption.Text = "...";
-            // 
-            // lblPeriod
-            // 
-            this.lblPeriod.AutoSize = true;
-            this.lblPeriod.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblPeriod.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblPeriod.Location = new System.Drawing.Point(172, 151);
-            this.lblPeriod.Name = "lblPeriod";
-            this.lblPeriod.Size = new System.Drawing.Size(16, 15);
-            this.lblPeriod.TabIndex = 22;
-            this.lblPeriod.Text = "...";
-            // 
-            // lblCoordinator
-            // 
-            this.lblCoordinator.AutoSize = true;
-            this.lblCoordinator.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblCoordinator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblCoordinator.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCoordinator.Location = new System.Drawing.Point(172, 200);
-            this.lblCoordinator.Name = "lblCoordinator";
-            this.lblCoordinator.Size = new System.Drawing.Size(16, 15);
-            this.lblCoordinator.TabIndex = 23;
-            this.lblCoordinator.Text = "...";
-            // 
-            // lblCarrer
-            // 
-            this.lblCarrer.AutoSize = true;
-            this.lblCarrer.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblCarrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblCarrer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCarrer.Location = new System.Drawing.Point(172, 226);
-            this.lblCarrer.Name = "lblCarrer";
-            this.lblCarrer.Size = new System.Drawing.Size(16, 15);
-            this.lblCarrer.TabIndex = 24;
-            this.lblCarrer.Text = "...";
-            // 
-            // lblTutor
-            // 
-            this.lblTutor.AutoSize = true;
-            this.lblTutor.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblTutor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTutor.Location = new System.Drawing.Point(172, 252);
-            this.lblTutor.Name = "lblTutor";
-            this.lblTutor.Size = new System.Drawing.Size(16, 15);
-            this.lblTutor.TabIndex = 25;
-            this.lblTutor.Text = "...";
-            // 
-            // chbLiberar
-            // 
-            this.chbLiberar.AutoSize = true;
-            this.chbLiberar.Location = new System.Drawing.Point(33, 308);
-            this.chbLiberar.Name = "chbLiberar";
-            this.chbLiberar.Size = new System.Drawing.Size(103, 17);
-            this.chbLiberar.TabIndex = 26;
-            this.chbLiberar.Text = "Liberar Proyecto";
-            this.chbLiberar.UseVisualStyleBackColor = true;
-            // 
             // StudentDetails_Revisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,12 +485,12 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -519,7 +520,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chbLiberar;
         private System.Windows.Forms.Label lblTutor;
-        private System.Windows.Forms.Label lblCarrer;
+        private System.Windows.Forms.Label lblCareer;
         private System.Windows.Forms.Label lblCoordinator;
         private System.Windows.Forms.Label lblPeriod;
         private System.Windows.Forms.Label lblChosenOption;
@@ -528,7 +529,7 @@
         private System.Windows.Forms.Label lblrfc2;
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblSemesterStudent;
-        private System.Windows.Forms.Label lblStudentCarrer;
+        private System.Windows.Forms.Label lblStudentCareer;
         private System.Windows.Forms.Label lblNoControl;
         private System.Windows.Forms.Label lblStudentName;
     }

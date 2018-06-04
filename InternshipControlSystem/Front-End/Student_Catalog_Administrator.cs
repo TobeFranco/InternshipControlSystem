@@ -127,7 +127,7 @@ namespace InternshipControlSystem.Front_End
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

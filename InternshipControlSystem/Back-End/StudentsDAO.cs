@@ -89,20 +89,26 @@ namespace InternshipControlSystem.Back_End
         {
             MySqlConnection conn = Conection.getConnection();
             List<Student> students = new List<Student>();
-            List<int> studentsID = new List<int>();
             try
             {
                 conn.Open();
-                string sqlStatement = "SELECT student_ID FROM students_revisors where revisor_id=@revisor_id";
+                string sqlStatement = "SELECT * FROM students where revisor1_id=@revisor_id or revisor2_id=@revisor_id;";
                 MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
                 cmd.Parameters.AddWithValue("@revisor_id", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    studentsID.Add(Convert.ToInt32(reader["student_ID"]));
+                    Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
+                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
+                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
+                         Convert.ToString(reader["socialSecurity"]), Convert.ToString(reader["home"]), Convert.ToString(reader["email"])
+                         , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
+                         , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
+                         Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
+                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
+                    students.Add(student);
                 }
                 reader.Close();
-                students = GetAllItemsInRevisor_Continue(studentsID);
             }
             catch (Exception ex)
             {
@@ -115,44 +121,6 @@ namespace InternshipControlSystem.Back_End
             return students;
         }
 
-        public static List<Student> GetAllItemsInRevisor_Continue(List<int> students)
-        {
-            MySqlConnection conn = Conection.getConnection();
-            List<Student> studentsDetils = new List<Student>();
-            try
-            {
-                conn.Open();
-                foreach (var id in students)
-                {
-                    string sqlStatement = "SELECT * FROM students where revisor_id=@revisor_id";
-                    MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
-                    cmd.Parameters.AddWithValue("@revisor_id", id);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        Student student = new Student(Convert.ToInt32(reader["id"]), Convert.ToString(reader["control_id"]),
-                        Convert.ToString(reader["first_name"]), Convert.ToString(reader["last_name"]), Convert.ToString(reader["career"]),
-                        Convert.ToInt32(reader["semester"]), Convert.ToString(reader["cordinator"]), Convert.ToInt32(reader["tutor_id"]),
-                         Convert.ToString(reader["socialSecurity"]), Convert.ToString(reader["home"]), Convert.ToString(reader["email"])
-                         , Convert.ToString(reader["city"]), Convert.ToString(reader["phonehouse"]), Convert.ToInt32(reader["numberInsurance"])
-                         , Convert.ToString(reader["phone"]), Convert.ToInt32(reader["company_id"]), Convert.ToInt32(reader["revisor1_id"]),
-                         Convert.ToInt32(reader["revisor2_id"]), Convert.ToBoolean(reader["revisor1_approval"]), Convert.ToBoolean(reader["revisor2_approval"]),
-                         Convert.ToBoolean(reader["tutor_approval"]), Convert.ToBoolean(reader["titulation_approval"]));
-                        studentsDetils.Add(student);
-                    }
-                }
-                return studentsDetils;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return studentsDetils;
-        }
 
         public static int CreateItem(Student student){
             MySqlConnection conn = Conection.getConnection();
@@ -281,6 +249,110 @@ namespace InternshipControlSystem.Back_End
                 conn.Close();
             }
             return student;
+        }
+
+        public static void UpdateRevision1(int student_id, bool rev1_Approval)
+        {
+            MySqlConnection conn = Conection.getConnection();
+            try
+            {
+                conn.Open();
+
+                string sqlStatement = "UPDATE students set revisor1_approval = @rev1_approval WHERE id=@id;";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", student_id);
+                cmd.Parameters.AddWithValue("@rev1_approval", rev1_Approval);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void UpdateRevision2(int student_id, bool rev2_Approval)
+        {
+            MySqlConnection conn = Conection.getConnection();
+            try
+            {
+                conn.Open();
+
+                string sqlStatement = "UPDATE students set revisor2_approval = @rev2_approval WHERE id=@id;";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", student_id);
+                cmd.Parameters.AddWithValue("@rev2_approval", rev2_Approval);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static bool GetRev1(int id)
+        {
+            bool rev = false;
+            MySqlConnection conn = Conection.getConnection();
+            try
+            {
+                conn.Open();
+                string sqlStatement = "SELECT revisor1_approval FROM students where id=@id";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    rev = Convert.ToBoolean(reader["revisor1_approval"]);
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return rev;
+        }
+
+        public static bool GetRev2(int id)
+        {
+            bool rev = false;
+            MySqlConnection conn = Conection.getConnection();
+            try
+            {
+                conn.Open();
+                string sqlStatement = "SELECT revisor2_approval FROM students where id=@id";
+                MySqlCommand cmd = new MySqlCommand(sqlStatement, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    rev = Convert.ToBoolean(reader["revisor2_approval"]);
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return rev;
         }
 
     }

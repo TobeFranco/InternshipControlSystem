@@ -18,6 +18,7 @@ namespace InternshipControlSystem.Front_End
 {
     public partial class Student_Catalog_Revisor : Form
     {
+        
         private List<Student> students;
         private List<Student> displayStudents;
         private Student selectedStudent;
@@ -36,10 +37,12 @@ namespace InternshipControlSystem.Front_End
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             students = new List<Student>();
             students = StudentsDAO.GetAllItemsInRevisor(IDrevisor);
             displayStudents = new List<Student>(students);
             fillTable();
+          
         }
 
 
@@ -49,7 +52,10 @@ namespace InternshipControlSystem.Front_End
             dgvStudents.Rows.Clear();
             foreach (Student stud in displayStudents)
             {
-              
+                Tutor tutor = TutorDAO.GetItem(stud.Tutor_id);
+                String[] row = { stud.Control_id, stud.First_name + " " + stud.Last_name, stud.Career,
+                    tutor.FirstName + " " + tutor.LastName};
+                dgvStudents.Rows.Add(row);
             }
         }
         private void Studen_Catalog_asessor_Load(object sender, EventArgs e)
@@ -80,7 +86,7 @@ namespace InternshipControlSystem.Front_End
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentDetails_Revisor det = new StudentDetails_Revisor();
+            StudentDetails_Revisor det = new StudentDetails_Revisor(selectedStudent);
             det.Show();
         }
 

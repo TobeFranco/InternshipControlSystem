@@ -87,12 +87,6 @@
     <Compile Include="Front-End\StudentDetails_Revisor.Designer.cs">
       <DependentUpon>StudentDetails_Revisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Front-End\studentFollow-up.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Front-End\studentFollow-up.Designer.cs">
-      <DependentUpon>studentFollow-up.cs</DependentUpon>
-    </Compile>
     <Compile Include="Front-End\StudentDetails_Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,18 +110,6 @@
     </Compile>
     <Compile Include="Front-End\Studen_Catalog_asessor.Designer.cs">
       <DependentUpon>Studen_Catalog_asessor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Front-End\TakeData.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Front-End\TakeData.Designer.cs">
-      <DependentUpon>TakeData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Front-End\Tracing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Front-End\Tracing.Designer.cs">
-      <DependentUpon>Tracing.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Company_Assessor.cs" />
@@ -153,9 +135,6 @@
     <EmbeddedResource Include="Front-End\StudentDetails_Revisor.resx">
       <DependentUpon>StudentDetails_Revisor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Front-End\studentFollow-up.resx">
-      <DependentUpon>studentFollow-up.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Student_Catalog_Administrator.resx">
       <DependentUpon>Student_Catalog_Administrator.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\Studen_Catalog_asessor.resx">
       <DependentUpon>Studen_Catalog_asessor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Front-End\TakeData.resx">
-      <DependentUpon>TakeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Front-End\StudentDetails_Administrator.resx">
       <DependentUpon>StudentDetails_Administrator.cs</DependentUpon>
